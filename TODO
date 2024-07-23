@@ -1,0 +1,14 @@
+
+
+
+- Make a detailed documentation for conventions and structured.
+    - Naming convention, for objects, suffix it with Model at the End?
+    
+    - When do I make a view reusable? when at least exactly 2 are using them?
+    
+    - Declaring variables in a View, should I group the external ones (requires parameter when using) and internal ones which values are already given upon init
+    
+- Create A button view for navigating pages
+
+
+Left OFF - New Question View accept button for editing a question. Must find way to apply modification to the ViewModel

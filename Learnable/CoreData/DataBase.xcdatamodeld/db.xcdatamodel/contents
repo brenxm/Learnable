@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Lecture" representedClassName="Lecture" syncable="YES" codeGenerationType="class">
+        <attribute name="assignedIndexAtLecture" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="currentSubTopicIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lectureID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="quizIsReady" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="chatHistory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MessageData" inverseName="of" inverseEntity="MessageData"/>
+        <relationship name="generatedQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="from" inverseEntity="Question"/>
+        <relationship name="of" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="topics" inverseEntity="Subject"/>
+        <relationship name="topics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Topic" inverseName="of" inverseEntity="Topic"/>
+    </entity>
+    <entity name="MessageData" representedClassName="MessageData" syncable="YES" codeGenerationType="class">
+        <attribute name="message" optional="YES" attributeType="String"/>
+        <attribute name="user" optional="YES" attributeType="String"/>
+        <relationship name="of" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lecture" inverseName="chatHistory" inverseEntity="Lecture"/>
+    </entity>
+    <entity name="ParticipationDates" representedClassName="ParticipationDates" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="oneHourLectureParticipated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="quizParticipated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Progress" representedClassName="Progress" syncable="YES" codeGenerationType="class">
+        <attribute name="currentLectureParticipationTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="oneHourLectureStreak" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="quizStreak" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalQuestionsAnsweredCorrectly" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalQuestionsQuizzed" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="parcipitation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ParticipationDates"/>
+    </entity>
+    <entity name="Question" representedClassName="Question" syncable="YES" codeGenerationType="class">
+        <attribute name="baseDescription" optional="YES" attributeType="String"/>
+        <attribute name="lastDateAnswered" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="levelProgress" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="topicID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="from" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lecture" inverseName="generatedQuestions" inverseEntity="Lecture"/>
+        <relationship name="questionResults" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question"/>
+    </entity>
+    <entity name="QuestionResult" representedClassName="QuestionResult" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isCorrect" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Subject" representedClassName="Subject" syncable="YES" codeGenerationType="class">
+        <attribute name="currentLectureIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lastAccessed" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lectureDescripion" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="totalSubTopics" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="topics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="of" inverseEntity="Lecture"/>
+        <relationship name="viewingLecture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lecture"/>
+    </entity>
+    <entity name="Topic" representedClassName="Topic" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="orderIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="of" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lecture" inverseName="topics" inverseEntity="Lecture"/>
+    </entity>
+</model>
