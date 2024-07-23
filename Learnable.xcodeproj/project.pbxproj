@@ -26,6 +26,8 @@
 		DF13CA282C4DF03300ED7218 /* NewQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA272C4DF03300ED7218 /* NewQuestionView.swift */; };
 		DF13CA2B2C4F772000ED7218 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = DF13CA2A2C4F772000ED7218 /* Algorithms */; };
 		DF13CA2E2C4F7B4000ED7218 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA2D2C4F7B4000ED7218 /* ArrayExtension.swift */; };
+		DF13CA322C5010B300ED7218 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DF13CA312C5010B300ED7218 /* .gitignore */; };
+		DF13CA342C50118400ED7218 /* KEYS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA332C50118400ED7218 /* KEYS.swift */; };
 		DF415A312C1C94C300EB4BFB /* apiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF415A302C1C94C300EB4BFB /* apiRequest.swift */; };
 		DF415A402C1F75F300EB4BFB /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF415A3F2C1F75F300EB4BFB /* CoreData.swift */; };
 		DF415A452C1FB7D500EB4BFB /* QuickStudyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF415A442C1FB7D500EB4BFB /* QuickStudyPrompt.swift */; };
@@ -55,6 +57,8 @@
 		DF13CA242C42154900ED7218 /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
 		DF13CA272C4DF03300ED7218 /* NewQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionView.swift; sourceTree = "<group>"; };
 		DF13CA2D2C4F7B4000ED7218 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		DF13CA312C5010B300ED7218 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		DF13CA332C50118400ED7218 /* KEYS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEYS.swift; sourceTree = "<group>"; };
 		DF415A302C1C94C300EB4BFB /* apiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiRequest.swift; sourceTree = "<group>"; };
 		DF415A3F2C1F75F300EB4BFB /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		DF415A442C1FB7D500EB4BFB /* QuickStudyPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStudyPrompt.swift; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 		DF5A25A02C1B21DE00EECA46 = {
 			isa = PBXGroup;
 			children = (
+				DF13CA332C50118400ED7218 /* KEYS.swift */,
+				DF13CA312C5010B300ED7218 /* .gitignore */,
 				DF13CA0A2C3A57BC00ED7218 /* TODO */,
 				DF5A25AB2C1B21DE00EECA46 /* Learnable */,
 				DF5A25AA2C1B21DE00EECA46 /* Products */,
@@ -303,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF13CA322C5010B300ED7218 /* .gitignore in Resources */,
 				DF5A25B42C1B21DF00EECA46 /* Preview Assets.xcassets in Resources */,
 				DF13CA0B2C3A57BC00ED7218 /* TODO in Resources */,
 				DF5A25B12C1B21DF00EECA46 /* Assets.xcassets in Resources */,
@@ -317,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF5A25AF2C1B21DE00EECA46 /* ContentView.swift in Sources */,
+				DF13CA342C50118400ED7218 /* KEYS.swift in Sources */,
 				DF13CA032C3A398B00ED7218 /* HomeNavigationButtonView.swift in Sources */,
 				DF13CA012C3A38EF00ED7218 /* HomeHeaderButtonView.swift in Sources */,
 				DF13C9FF2C3A38DA00ED7218 /* HomeStealthNavBarView.swift in Sources */,

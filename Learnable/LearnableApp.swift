@@ -15,7 +15,8 @@ import SwiftUI
     var body: some Scene {
         WindowGroup {
             ContentView()
-                //.environment(\.managedObjectContext, coreDataStack.persistentContainer.viewContext)
+                .preferredColorScheme(.light)
+                
         }
     }
 }
