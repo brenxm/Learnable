@@ -38,7 +38,6 @@ func fetchChatCompletion(prompt: String, completion: @escaping (String?) -> Void
     let chatRequest = OpenAIChatRequest(
         model: "gpt-4o",
         messages: [
-            OpenAIChatMessage(role: "system", content: "You are a helpful assistant. Respond in json format only!."),
             OpenAIChatMessage(role: "user", content: prompt)
         ],
         response_format: OpenAIResponseFormat(type: "json_object")

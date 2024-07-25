@@ -22,7 +22,7 @@ struct HomeNavigationButtonView: View {
                 }
             ))
             
-            NavButton(icon: "thinking.circle.light", title: "Quick Study", destination: AnyView(MessageView(title: "Algebra")))
+            NavButton(icon: "thinking.circle.light", title: "Quick Study", destination: AnyView(MessageView(title: "")))
             
             NavButton(icon: "paper.circle.light", title: "Questions", destination: AnyView(QuestionsView()))
             
@@ -37,6 +37,7 @@ struct NavButton: View {
     var icon: String
     var title: String
     var destination: AnyView
+    
     var body: some View {
         NavigationLink(destination: destination) {
             RoundedRectangle(cornerRadius: 15)

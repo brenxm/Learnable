@@ -7,33 +7,29 @@
 
 import Foundation
 
-struct QuickStudyPrompt {
-    var system: String =
-    "You are an assistant but mainly a teacher of any lesson. Right now you are accepting quick lessons and not a full lecture. So whatever is asked, you only respond with the appropirate answer to the question. "
-    var formatDeclaration: String = "You only respond with json and must follow this schematic: /ntitle: String (title of this quick study)/nmessage: String (Your response)"
+
+struct QuickStudyPrompt: PromptEntity {
+    static var shared = QuickStudyPrompt()
     
-    var chatHistory: String = "/nThis is the chat history so far:\nTeachah: What do you want to learn? "
+    var systemPrompt: String = ""
+
+    var responseFormat: AnyJsonFormat? = AnyJsonFormat(QuickStudyFormat(title: "Title", message: "Some message"))
     
-    var prompt: String { self.system + self.formatDeclaration + self.chatHistory }
+    var prompt: String {
+        """
+        \(systemPrompt)
+        \(responseFormat != nil ? "Only response in JSON format. This is the schema: \( responseFormat!.format.propertiesInString())" : "")
+        """
+    }
 }
 
-// Datacore will store for quickStudyPrompt
-//      Title: String
-//      Conversation: [chatMessagesInstance]
-//      GeneratedQuestions: [questionsInstance]
-//      status: Enum( archive, active )
-//      lastAccessDate: Date
-
-
-// Schematic for openAIResponse
-//      Title: String
-//      Message: String
-//
-
-// Prompt:
-// System:
-//    "You are an assistant but mainly a teacher of any lesson. Right now you are accepting quick lessons and not a full lecture. So whatever is asked, you only respond with the appropirate answer to the question. "
-//      "You only respond with json and must follow this schematic:
-//      Title: String (Title of this quick study)
-//      Message: String (Your response)
-
+struct QuickStudyFormat: JsonFormat, Decodable {
+    var title: String
+    var message: String
+    
+    func propertiesInString() -> String {
+        let mirror = Mirror(reflecting: self)
+        let arrString = mirror.children.map { "\($0.label!): \(type(of: $0.value))"}
+        return arrString.joined(separator: ",\n")
+    }
+}

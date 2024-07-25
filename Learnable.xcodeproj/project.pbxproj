@@ -28,6 +28,7 @@
 		DF13CA2E2C4F7B4000ED7218 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA2D2C4F7B4000ED7218 /* ArrayExtension.swift */; };
 		DF13CA322C5010B300ED7218 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DF13CA312C5010B300ED7218 /* .gitignore */; };
 		DF13CA342C50118400ED7218 /* KEYS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA332C50118400ED7218 /* KEYS.swift */; };
+		DF13CA362C51B3FF00ED7218 /* PromptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA352C51B3FF00ED7218 /* PromptManager.swift */; };
 		DF415A312C1C94C300EB4BFB /* apiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF415A302C1C94C300EB4BFB /* apiRequest.swift */; };
 		DF415A402C1F75F300EB4BFB /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF415A3F2C1F75F300EB4BFB /* CoreData.swift */; };
 		DF415A452C1FB7D500EB4BFB /* QuickStudyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF415A442C1FB7D500EB4BFB /* QuickStudyPrompt.swift */; };
@@ -59,6 +60,7 @@
 		DF13CA2D2C4F7B4000ED7218 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		DF13CA312C5010B300ED7218 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DF13CA332C50118400ED7218 /* KEYS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEYS.swift; sourceTree = "<group>"; };
+		DF13CA352C51B3FF00ED7218 /* PromptManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptManager.swift; sourceTree = "<group>"; };
 		DF415A302C1C94C300EB4BFB /* apiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiRequest.swift; sourceTree = "<group>"; };
 		DF415A3F2C1F75F300EB4BFB /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		DF415A442C1FB7D500EB4BFB /* QuickStudyPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStudyPrompt.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				DF415A432C1FB7BD00EB4BFB /* prompts */,
 				DF415A302C1C94C300EB4BFB /* apiRequest.swift */,
+				DF13CA352C51B3FF00ED7218 /* PromptManager.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				DF13CA1D2C3C87D300ED7218 /* SubjectsViewModel.swift in Sources */,
 				DF13CA282C4DF03300ED7218 /* NewQuestionView.swift in Sources */,
 				DF13CA162C3B551200ED7218 /* SubjectsView.swift in Sources */,
+				DF13CA362C51B3FF00ED7218 /* PromptManager.swift in Sources */,
 				DF415A482C25E45300EB4BFB /* DataBase.xcdatamodeld in Sources */,
 				DF415A312C1C94C300EB4BFB /* apiRequest.swift in Sources */,
 				DF13CA212C3DF62100ED7218 /* MyProgressViewModel.swift in Sources */,
