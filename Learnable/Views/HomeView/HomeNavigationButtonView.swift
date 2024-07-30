@@ -11,7 +11,7 @@ import SwiftUI
 struct HomeNavigationButtonView: View {
     var body: some View {
         NavigationStack {
-            NavButton(icon: "pileofbooks.circle.light", title: "Subjects", destination: AnyView(
+            NavButton(icon: "pileofbooks.circle.light", title: "Subjects", destination: {
                 PageView(
                     title: "Subjects",
                     topTrailingButton: AnyView(PageAddButton(""){
@@ -20,23 +20,23 @@ struct HomeNavigationButtonView: View {
                 {
                     AnyView(SubjectsView())
                 }
-            ))
+            })
             
-            NavButton(icon: "thinking.circle.light", title: "Quick Study", destination: AnyView(MessageView(title: "")))
+            NavButton(icon: "thinking.circle.light", title: "Quick Study", destination: {MessageView(title: "", promptRule: QuickStudyPrompt())})
             
-            NavButton(icon: "paper.circle.light", title: "Questions", destination: AnyView(QuestionsView()))
+            NavButton(icon: "paper.circle.light", title: "Questions", destination: {QuestionsView()})
             
-            NavButton(icon: "statistic.circle.light", title: "My Progress", destination: AnyView(MyProgressView()))
+            NavButton(icon: "statistic.circle.light", title: "My Progress", destination: {MyProgressView()})
         }
         .padding(.vertical, 8)
     }
 }
 
 //** Components for NavigationButton View **//
-struct NavButton: View {
+struct NavButton<V: View>: View {
     var icon: String
     var title: String
-    var destination: AnyView
+    var destination: () -> V
     
     var body: some View {
         NavigationLink(destination: destination) {

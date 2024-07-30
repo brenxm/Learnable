@@ -25,10 +25,9 @@
 		DF13CA252C42154900ED7218 /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA242C42154900ED7218 /* QuestionsViewModel.swift */; };
 		DF13CA282C4DF03300ED7218 /* NewQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA272C4DF03300ED7218 /* NewQuestionView.swift */; };
 		DF13CA2B2C4F772000ED7218 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = DF13CA2A2C4F772000ED7218 /* Algorithms */; };
-		DF13CA2E2C4F7B4000ED7218 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA2D2C4F7B4000ED7218 /* ArrayExtension.swift */; };
 		DF13CA322C5010B300ED7218 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DF13CA312C5010B300ED7218 /* .gitignore */; };
 		DF13CA342C50118400ED7218 /* KEYS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA332C50118400ED7218 /* KEYS.swift */; };
-		DF13CA362C51B3FF00ED7218 /* PromptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA352C51B3FF00ED7218 /* PromptManager.swift */; };
+		DF13CA362C51B3FF00ED7218 /* ResponseFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA352C51B3FF00ED7218 /* ResponseFormat.swift */; };
 		DF415A312C1C94C300EB4BFB /* apiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF415A302C1C94C300EB4BFB /* apiRequest.swift */; };
 		DF415A402C1F75F300EB4BFB /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF415A3F2C1F75F300EB4BFB /* CoreData.swift */; };
 		DF415A452C1FB7D500EB4BFB /* QuickStudyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF415A442C1FB7D500EB4BFB /* QuickStudyPrompt.swift */; };
@@ -57,10 +56,9 @@
 		DF13CA222C40B4B000ED7218 /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 		DF13CA242C42154900ED7218 /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
 		DF13CA272C4DF03300ED7218 /* NewQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionView.swift; sourceTree = "<group>"; };
-		DF13CA2D2C4F7B4000ED7218 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		DF13CA312C5010B300ED7218 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DF13CA332C50118400ED7218 /* KEYS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEYS.swift; sourceTree = "<group>"; };
-		DF13CA352C51B3FF00ED7218 /* PromptManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptManager.swift; sourceTree = "<group>"; };
+		DF13CA352C51B3FF00ED7218 /* ResponseFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseFormat.swift; sourceTree = "<group>"; };
 		DF415A302C1C94C300EB4BFB /* apiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiRequest.swift; sourceTree = "<group>"; };
 		DF415A3F2C1F75F300EB4BFB /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		DF415A442C1FB7D500EB4BFB /* QuickStudyPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStudyPrompt.swift; sourceTree = "<group>"; };
@@ -93,13 +91,6 @@
 				DF13CA002C3A38EF00ED7218 /* HomeHeaderButtonView.swift */,
 			);
 			path = HomeView;
-			sourceTree = "<group>";
-		};
-		DF13CA042C3A41BC00ED7218 /* SourceExtensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SourceExtensions;
 			sourceTree = "<group>";
 		};
 		DF13CA072C3A42DE00ED7218 /* MessageView */ = {
@@ -147,20 +138,12 @@
 			path = QuestionView;
 			sourceTree = "<group>";
 		};
-		DF13CA2C2C4F7B1500ED7218 /* Standard Library Extension */ = {
-			isa = PBXGroup;
-			children = (
-				DF13CA2D2C4F7B4000ED7218 /* ArrayExtension.swift */,
-			);
-			path = "Standard Library Extension";
-			sourceTree = "<group>";
-		};
 		DF415A2F2C1C92A200EB4BFB /* api */ = {
 			isa = PBXGroup;
 			children = (
 				DF415A432C1FB7BD00EB4BFB /* prompts */,
 				DF415A302C1C94C300EB4BFB /* apiRequest.swift */,
-				DF13CA352C51B3FF00ED7218 /* PromptManager.swift */,
+				DF13CA352C51B3FF00ED7218 /* ResponseFormat.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -212,9 +195,7 @@
 		DF5A25AB2C1B21DE00EECA46 /* Learnable */ = {
 			isa = PBXGroup;
 			children = (
-				DF13CA2C2C4F7B1500ED7218 /* Standard Library Extension */,
 				DF13CA0F2C3B4CD600ED7218 /* ModelView */,
-				DF13CA042C3A41BC00ED7218 /* SourceExtensions */,
 				DF415A3A2C1EA1CE00EB4BFB /* CoreData */,
 				DF5A25AC2C1B21DE00EECA46 /* LearnableApp.swift */,
 				DF5A25AE2C1B21DE00EECA46 /* ContentView.swift */,
@@ -333,7 +314,6 @@
 				DF13C9FF2C3A38DA00ED7218 /* HomeStealthNavBarView.swift in Sources */,
 				DF13CA132C3B4FA300ED7218 /* ViewModelSingleton.swift in Sources */,
 				DF13CA1B2C3B5C1100ED7218 /* Color.swift in Sources */,
-				DF13CA2E2C4F7B4000ED7218 /* ArrayExtension.swift in Sources */,
 				DF13C9FC2C384E5500ED7218 /* HomeView.swift in Sources */,
 				DF415A452C1FB7D500EB4BFB /* QuickStudyPrompt.swift in Sources */,
 				DF13CA232C40B4B000ED7218 /* QuestionsView.swift in Sources */,
@@ -345,7 +325,7 @@
 				DF13CA1D2C3C87D300ED7218 /* SubjectsViewModel.swift in Sources */,
 				DF13CA282C4DF03300ED7218 /* NewQuestionView.swift in Sources */,
 				DF13CA162C3B551200ED7218 /* SubjectsView.swift in Sources */,
-				DF13CA362C51B3FF00ED7218 /* PromptManager.swift in Sources */,
+				DF13CA362C51B3FF00ED7218 /* ResponseFormat.swift in Sources */,
 				DF415A482C25E45300EB4BFB /* DataBase.xcdatamodeld in Sources */,
 				DF415A312C1C94C300EB4BFB /* apiRequest.swift in Sources */,
 				DF13CA212C3DF62100ED7218 /* MyProgressViewModel.swift in Sources */,

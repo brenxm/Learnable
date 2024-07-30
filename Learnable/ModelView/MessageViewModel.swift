@@ -10,10 +10,10 @@ import Foundation
 class MessageViewModel: SingletonViewModel, ObservableObject {
     static var shared = MessageViewModel()
     
-    @Published var chatMessages: [GroupMessages] = []
+    @Published var chatMessages: [MessageGroup] = []
 }
 
-class GroupMessages: ObservableObject {
+class MessageGroup: ObservableObject {
     @Published var chatMessages: [ChatMessage] = []
     
     func addChatMessage(message: ChatMessage) {

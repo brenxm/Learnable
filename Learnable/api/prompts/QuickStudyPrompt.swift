@@ -8,28 +8,18 @@
 import Foundation
 
 
-struct QuickStudyPrompt: PromptEntity {
+struct QuickStudyPrompt: PromptRules {
     static var shared = QuickStudyPrompt()
     
-    var systemPrompt: String = ""
+    var systemPrompt: String = "You are a teacher. You assist the user to questions."
 
-    var responseFormat: AnyJsonFormat? = AnyJsonFormat(QuickStudyFormat(title: "Title", message: "Some message"))
+    var responseFormat: ResponseFormatProtocol = QuickStudyFormat()
     
-    var prompt: String {
-        """
-        \(systemPrompt)
-        \(responseFormat != nil ? "Only response in JSON format. This is the schema: \( responseFormat!.format.propertiesInString())" : "")
-        """
+    var systemAndResponseFormat: String {
+        "\(systemPrompt).\("Only response in JSON format. This is the schema: {\n \(responseFormat.propertiesInString())\n}")"
     }
 }
 
-struct QuickStudyFormat: JsonFormat, Decodable {
-    var title: String
-    var message: String
-    
-    func propertiesInString() -> String {
-        let mirror = Mirror(reflecting: self)
-        let arrString = mirror.children.map { "\($0.label!): \(type(of: $0.value))"}
-        return arrString.joined(separator: ",\n")
-    }
+struct QuickStudyFormat: ResponseFormatProtocol {
+    var message: String = ""
 }

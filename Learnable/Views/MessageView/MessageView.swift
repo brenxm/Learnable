@@ -11,12 +11,10 @@ import SwiftUI
 
 struct MessageView: View {
     @Environment(\.dismiss) var dismiss
-    @StateObject var messageViewModel = MessageViewModel.shared
-    @StateObject var messageGroup = GroupMessages()
-    var prompt: Prompt { Prompt(.quickStudy, messages: messageGroup) }
+    @StateObject var messageGroup = MessageGroup()
     var title: String
+    var promptRule: PromptRules
     
-
     var body: some View {
         VStack (alignment: .leading, spacing: 0) {
             PageTitle(title)
@@ -40,9 +38,30 @@ struct MessageView: View {
             }
             .listStyle(.plain)
     
-            
-            // Chat box here
-            ChatBoxFieldView(messageGroup: messageGroup, promptRules: prompt)
+            ChatBoxFieldView {
+                print($0)
+                let newChatMessage = ChatMessage(sender: .user, message: $0)
+                messageGroup.addChatMessage(message: newChatMessage)
+                let newPrompt = prompt(promptRules: promptRule, messages: messageGroup.chatMessages)
+                
+                print("This is the initial prompt: \(newPrompt)")
+                fetchChatCompletion(prompt: newPrompt) {
+                
+                    // add response of openAi to chat messages
+                    
+                    let responseFormat = promptRule.responseFormat
+                    
+                    let formattedResult = formatResponse(format: responseFormat, message: $0!)
+                    print(formattedResult!)
+                    
+                    
+                    let aiResponse = ChatMessage(sender: .teacher, message: formattedResult!.message)
+                    
+                    DispatchQueue.main.async {
+                        messageGroup.addChatMessage(message: aiResponse)                        
+                    }
+                }
+            }
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -87,15 +106,47 @@ struct MessageView: View {
             return "Bryan" // To be refactored, get user name from the personal info data
         }
     }
+    
+    func prompt(promptRules: PromptRules, messages: [ChatMessage]) -> String {
+        // Structures the prompt message to be submitted to openai api
+        // It takes the prompt rules and the chatmessages to single String
+        let chatMessages = messages.map { "\($0.sender == .teacher ? "Teacher" : "User"): \($0.message)" }
+        let chatMessagesToString = chatMessages.joined(separator: "\n")
+        
+        return "\(promptRules.systemAndResponseFormat). And this is the chat history: \(chatMessagesToString)"
+    }
+    
+    func formatResponse<T>(format: T, message: String) -> T? where T: Decodable {
+        
+        print("received string: \(message)")
+        let decoder = JSONDecoder()
+        
+        do {
+            let encodedData = message.data(using: .utf8)
+            
+            
+            let formattedObj = try decoder.decode(type(of: format), from: encodedData!)
+            
+            return formattedObj
+            
+        } catch {
+            print("Error encoding or decoding message: \(error)")
+        }
+        
+        return nil
+    }
 }
 
 //** Component for MessageView **//
 struct ChatBoxFieldView: View {
-    @StateObject var messageViewModel = MessageViewModel.shared
-    var messageGroup: GroupMessages
-    var promptRules: Prompt
+    
+    var submitFn: (String) -> Void
     
     @State var text: String = ""
+    
+    init(_ submitFn: @escaping (String) -> Void) {
+        self.submitFn = submitFn
+    }
     
     var body: some View {
         VStack {
@@ -119,18 +170,10 @@ struct ChatBoxFieldView: View {
                     .frame(width: 30, height: 30)
                     .onTapGesture {
                         if !text.isEmpty {
-                            let newChat = ChatMessage(sender: .user, message: text)
+                            
+                            submitFn(text)
                             text = ""
-                            messageGroup.addChatMessage(message: newChat)
-                            fetchChatCompletion(prompt: promptRules.promptMessage) {
-                                    if let response = $0 {
-                                        DispatchQueue.main.async {
-                                            let resObj = responseToObj(response: response)
-                                            messageGroup.addChatMessage(message: ChatMessage(sender: .teacher, message: resObj.message))}
-                                    } else {
-                                        print("error occured")
-                                    }
-                            }
+                            
                         } else {
                             print("nothing was sent")
                         }
@@ -146,25 +189,4 @@ struct ChatBoxFieldView: View {
 enum Sender {
     case teacher
     case user
-}
-
-struct ResponseFormat: Codable {
-    var sender: String
-    var message: String
-}
-
-func responseToObj(response: String) -> QuickStudyFormat {
-    let decoder = JSONDecoder()
-    
-    if let jsonData = response.data(using: .utf8) {
-        do {
-            let chatMessage = try decoder.decode(QuickStudyFormat.self, from: jsonData)
-            print("succefully decoded \(chatMessage)")
-            return chatMessage
-        } catch {
-            print("Error decoding response")
-        }
-    }
-    
-    return QuickStudyFormat(title: "Error", message: "Error")
 }

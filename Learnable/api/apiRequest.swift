@@ -58,12 +58,10 @@ func fetchChatCompletion(prompt: String, completion: @escaping (String?) -> Void
             return
         }
         
-        print("this is the data received \(data)")
         
         do {
             let response = try JSONDecoder().decode(OpenAIChatResponse.self, from: data)
             
-            print("\(response): This is the response")
             
             let result = response.choices.first?.message.content
             completion(result)
