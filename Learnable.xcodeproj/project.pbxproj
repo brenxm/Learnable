@@ -24,10 +24,10 @@
 		DF13CA232C40B4B000ED7218 /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA222C40B4B000ED7218 /* QuestionsView.swift */; };
 		DF13CA252C42154900ED7218 /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA242C42154900ED7218 /* QuestionsViewModel.swift */; };
 		DF13CA282C4DF03300ED7218 /* NewQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA272C4DF03300ED7218 /* NewQuestionView.swift */; };
-		DF13CA2B2C4F772000ED7218 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = DF13CA2A2C4F772000ED7218 /* Algorithms */; };
 		DF13CA322C5010B300ED7218 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DF13CA312C5010B300ED7218 /* .gitignore */; };
 		DF13CA342C50118400ED7218 /* KEYS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA332C50118400ED7218 /* KEYS.swift */; };
 		DF13CA362C51B3FF00ED7218 /* ResponseFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA352C51B3FF00ED7218 /* ResponseFormat.swift */; };
+		DF13CA392C59450500ED7218 /* NewSubjectPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13CA382C59450500ED7218 /* NewSubjectPrompt.swift */; };
 		DF415A312C1C94C300EB4BFB /* apiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF415A302C1C94C300EB4BFB /* apiRequest.swift */; };
 		DF415A402C1F75F300EB4BFB /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF415A3F2C1F75F300EB4BFB /* CoreData.swift */; };
 		DF415A452C1FB7D500EB4BFB /* QuickStudyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF415A442C1FB7D500EB4BFB /* QuickStudyPrompt.swift */; };
@@ -59,6 +59,8 @@
 		DF13CA312C5010B300ED7218 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DF13CA332C50118400ED7218 /* KEYS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEYS.swift; sourceTree = "<group>"; };
 		DF13CA352C51B3FF00ED7218 /* ResponseFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseFormat.swift; sourceTree = "<group>"; };
+		DF13CA372C59424600ED7218 /* NewPromptRuleInstruction.MD */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NewPromptRuleInstruction.MD; sourceTree = "<group>"; };
+		DF13CA382C59450500ED7218 /* NewSubjectPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubjectPrompt.swift; sourceTree = "<group>"; };
 		DF415A302C1C94C300EB4BFB /* apiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiRequest.swift; sourceTree = "<group>"; };
 		DF415A3F2C1F75F300EB4BFB /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		DF415A442C1FB7D500EB4BFB /* QuickStudyPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStudyPrompt.swift; sourceTree = "<group>"; };
@@ -75,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF13CA2B2C4F772000ED7218 /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				DF415A442C1FB7D500EB4BFB /* QuickStudyPrompt.swift */,
+				DF13CA372C59424600ED7218 /* NewPromptRuleInstruction.MD */,
+				DF13CA382C59450500ED7218 /* NewSubjectPrompt.swift */,
 			);
 			path = prompts;
 			sourceTree = "<group>";
@@ -246,7 +249,6 @@
 			);
 			name = Learnable;
 			packageProductDependencies = (
-				DF13CA2A2C4F772000ED7218 /* Algorithms */,
 			);
 			productName = Learnable;
 			productReference = DF5A25A92C1B21DE00EECA46 /* Learnable.app */;
@@ -325,6 +327,7 @@
 				DF13CA1D2C3C87D300ED7218 /* SubjectsViewModel.swift in Sources */,
 				DF13CA282C4DF03300ED7218 /* NewQuestionView.swift in Sources */,
 				DF13CA162C3B551200ED7218 /* SubjectsView.swift in Sources */,
+				DF13CA392C59450500ED7218 /* NewSubjectPrompt.swift in Sources */,
 				DF13CA362C51B3FF00ED7218 /* ResponseFormat.swift in Sources */,
 				DF415A482C25E45300EB4BFB /* DataBase.xcdatamodeld in Sources */,
 				DF415A312C1C94C300EB4BFB /* apiRequest.swift in Sources */,
@@ -557,14 +560,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		DF13CA2A2C4F772000ED7218 /* Algorithms */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DF13CA292C4F772000ED7218 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
-			productName = Algorithms;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		DF415A462C25E45300EB4BFB /* DataBase.xcdatamodeld */ = {

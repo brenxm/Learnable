@@ -39,23 +39,24 @@ struct MessageView: View {
             .listStyle(.plain)
     
             ChatBoxFieldView {
-                print($0)
                 let newChatMessage = ChatMessage(sender: .user, message: $0)
                 messageGroup.addChatMessage(message: newChatMessage)
                 let newPrompt = prompt(promptRules: promptRule, messages: messageGroup.chatMessages)
                 
-                print("This is the initial prompt: \(newPrompt)")
                 fetchChatCompletion(prompt: newPrompt) {
                 
                     // add response of openAi to chat messages
-                    
                     let responseFormat = promptRule.responseFormat
                     
                     let formattedResult = formatResponse(format: responseFormat, message: $0!)
-                    print(formattedResult!)
                     
+                    
+                    let curriculumFormated = formatResponse(format: CurricuLumProposalFormat, message: $0!)
+                   
                     
                     let aiResponse = ChatMessage(sender: .teacher, message: formattedResult!.message)
+                    
+                    print("this is the response " + $0!)
                     
                     DispatchQueue.main.async {
                         messageGroup.addChatMessage(message: aiResponse)                        

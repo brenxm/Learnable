@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SubjectsView: View {
     @StateObject var subjectViewModel = SubjectsViewModel.shared
+    
     var body: some View {
         VStack (spacing: 0){
             SortDateView()

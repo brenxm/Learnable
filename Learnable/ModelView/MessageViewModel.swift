@@ -13,6 +13,11 @@ class MessageViewModel: SingletonViewModel, ObservableObject {
     @Published var chatMessages: [MessageGroup] = []
 }
 
+protocol ChatMessageProtocol: Hashable {
+    var sender: Sender { get }
+    var message: String { get }
+}
+
 class MessageGroup: ObservableObject {
     @Published var chatMessages: [ChatMessage] = []
     
@@ -25,7 +30,8 @@ class MessageGroup: ObservableObject {
     }
 }
 
-struct ChatMessage: Hashable {
+struct ChatMessage: ChatMessageProtocol {
     var sender: Sender
     var message: String
+   
 }

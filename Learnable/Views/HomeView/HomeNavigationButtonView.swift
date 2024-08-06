@@ -14,8 +14,8 @@ struct HomeNavigationButtonView: View {
             NavButton(icon: "pileofbooks.circle.light", title: "Subjects", destination: {
                 PageView(
                     title: "Subjects",
-                    topTrailingButton: AnyView(PageAddButton(""){
-                        print("clicked add button")
+                    topTrailingButton: AnyView(CustomnNavViewButton(){
+                        MessageView(title: "New subject", promptRule: NewSubjectPrompt())
                     }))
                 {
                     AnyView(SubjectsView())

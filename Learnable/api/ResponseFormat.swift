@@ -34,5 +34,6 @@ extension ResponseFormatProtocol {
 }
 
 struct DefaultResponseFormat: ResponseFormatProtocol {
-    var message: String = ""
+    var message: String
 }
+

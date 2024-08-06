@@ -9,16 +9,14 @@ import Foundation
 import SwiftUI
 
 struct PageView: View {
-    // Add view
-    // Title
-    // Back view button
     @Environment(\.dismiss) var dismiss
+    
     var title: String
-    var topTrailingButton: AnyView?
+    var topTrailingButton: AnyView
     var hasBackButton: Bool
     var content: AnyView
     
-    init(title: String, topTrailingButton: AnyView? = nil, hasBackButton: Bool = false, _ content: () -> AnyView) {
+    init(title: String, topTrailingButton: AnyView, hasBackButton: Bool = false, _ content: () -> AnyView) {
         self.title = title
         self.topTrailingButton = topTrailingButton
         self.hasBackButton = hasBackButton
@@ -192,6 +190,32 @@ struct ButtonView: View {
             print("Error: Unable to find image with name \(value) in catalog or system")
             return Image(systemName: "Exclamation")
         }
-        
+    }
+}
+
+// Used for trailing top right button
+struct CustomnNavViewButton<T: View>: View {
+    var  destination: () -> T
+    
+    init(_ destination: @escaping () -> T) {
+        self.destination = destination
+    }
+    
+    var body: some View {
+        NavigationLink(destination: destination) {
+            RoundedRectangle(cornerRadius: 5)
+                .fill(Color.limeGreen)
+                .frame(width: 150, height: 30)
+                .overlay {
+                    HStack {
+                        Text("Add subject")
+                            .font(.system(size: 14))
+                        Image(systemName: "plus")
+                            .resizable()
+                            .frame(width: 15, height: 15)
+                    }
+                }
+        }
+        .foregroundStyle(Color.black)
     }
 }
