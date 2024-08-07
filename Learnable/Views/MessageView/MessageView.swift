@@ -22,27 +22,66 @@ struct MessageView: View {
             PageDivider()
             
             List ( messageGroup.chatMessages, id: \.self) {data in
-                VStack (alignment: senderAlignment(sender: data.sender)){
-                    Text(senderToTitle(sender: data.sender))
-                        .frame(maxWidth: .infinity, alignment: senderHorizontalAlignment(sender: data.sender))
-                        .foregroundStyle(Color(white: 0.3))
-                        .font(.system(size: 13))
-        
-                    Text(data.message)
-                        .frame(maxWidth: 300, alignment: senderHorizontalAlignment(sender: data.sender))
-                        .font(.system(size: 15))
+                
+                // Display of chat bubbles
+                if (data.sender != .curriculum) {
+                    VStack (alignment: senderAlignment(sender: data.sender)){
+                        Text(senderToTitle(sender: data.sender))
+                            .frame(maxWidth: .infinity, alignment: senderHorizontalAlignment(sender: data.sender))
+                            .foregroundStyle(Color(white: 0.3))
+                            .font(.system(size: 13))
+                        
+                        Text(data.message)
+                            .frame(maxWidth: 300, alignment: senderHorizontalAlignment(sender: data.sender))
+                            .font(.system(size: 15))
+                    }
+                    .listRowSeparator(.hidden)
+                    .padding(.bottom, 3) // Gap for the list
+                } else { // Manage curriculum
                     
+                    let curriculumFormat = formatResponse(format: CurriculumFormat(), message: data.message)
+                    
+                    if let curriculum = curriculumFormat {
+                        
+                        VStack {
+                            Text(curriculum.title)
+                            
+                            VStack (alignment: .leading, spacing: 10){
+                                ForEach (curriculum.topics, id: \.self) { data in
+                                    
+                                    VStack(alignment: .leading, spacing: 3) {
+                                        Text(data.title)
+                                            .font(.system(size: 15))
+                                            .padding(.leading, 6)
+                                    
+                                        ForEach (data.subTopics, id: \.self) { subTopic in
+                                            Text(subTopic)
+                                                .font(.system(size: 11))
+                                                .padding(.leading, 15)
+                                                .listSectionSpacing(4)
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(5)
+                        .background(Color(white: 0.95))
+                        .cornerRadius(5)
+                    }
                 }
-                .listRowSeparator(.hidden)
-                .padding(.bottom, 3) // Gap for the list
             }
             .listStyle(.plain)
     
             ChatBoxFieldView {
+                // Handle User prompt appending to chatMessages
                 let newChatMessage = ChatMessage(sender: .user, message: $0)
                 messageGroup.addChatMessage(message: newChatMessage)
                 let newPrompt = prompt(promptRules: promptRule, messages: messageGroup.chatMessages)
                 
+                
+                // Handle gpt response
                 fetchChatCompletion(prompt: newPrompt) {
                 
                     // add response of openAi to chat messages
@@ -51,16 +90,34 @@ struct MessageView: View {
                     let formattedResult = formatResponse(format: responseFormat, message: $0!)
                     
                     
-                    let curriculumFormated = formatResponse(format: CurricuLumProposalFormat, message: $0!)
-                   
+                    let curriculumFormated = formatResponse(format: CurricuLumProposalFormat(), message: $0!)
                     
                     let aiResponse = ChatMessage(sender: .teacher, message: formattedResult!.message)
                     
-                    print("this is the response " + $0!)
-                    
+                    // Appending 'message' of gpt response to chatmessages
                     DispatchQueue.main.async {
-                        messageGroup.addChatMessage(message: aiResponse)                        
+                        messageGroup.addChatMessage(message: aiResponse)
                     }
+                    
+                    if let curriculum = curriculumFormated?.curriculum {
+                        //print(curriculum)
+                        
+                        let encoder = JSONEncoder()
+                        
+                        do {
+                            let curriculumString = try String(data: encoder.encode(curriculum), encoding: .utf8)
+                            
+                            let newMessage = ChatMessage(sender: .curriculum, message: curriculumString!)
+                            
+                            DispatchQueue.main.async {
+                                messageGroup.addChatMessage(message: newMessage)
+                            }
+                            
+                        } catch {
+                            print("Error occur during attempt of encoding")
+                        }
+                    }
+                    
                 }
             }
         }
@@ -79,14 +136,16 @@ struct MessageView: View {
             }
         )
     }
-        
     
     func senderAlignment(sender: Sender) -> HorizontalAlignment {
         switch sender {
+            
         case .teacher:
             return .leading
         case .user:
             return .trailing
+        case .curriculum:
+            return .center
         }
     }
     
@@ -96,6 +155,9 @@ struct MessageView: View {
             return .leading
         case .user:
             return .trailing
+            
+        case .curriculum:
+            return .center
         }
     }
     
@@ -105,6 +167,8 @@ struct MessageView: View {
             return "Teacher"
         case .user:
             return "Bryan" // To be refactored, get user name from the personal info data
+        case .curriculum:
+            return ""
         }
     }
     
@@ -187,7 +251,3 @@ struct ChatBoxFieldView: View {
 
 
 
-enum Sender {
-    case teacher
-    case user
-}

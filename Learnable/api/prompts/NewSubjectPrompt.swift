@@ -87,15 +87,15 @@ struct NewSubjectFormat: ResponseFormatProtocol {
 
 struct CurricuLumProposalFormat: Codable {
     var message: String = ""
-    var curriculum: String = ""
+    var curriculum: CurriculumFormat = CurriculumFormat()
 }
 
-struct CurriculumFormat: Codable  {
-    var title: String
-    var topics: [CurriculumTopic]
+struct CurriculumFormat: Codable, Hashable  {
+    var title: String = ""
+    var topics: [CurriculumTopic] = []
 }
 
-struct CurriculumTopic: Codable {
-    var title: String
-    var subTopics: [String]
+struct CurriculumTopic: Codable, Hashable {
+    var title: String = ""
+    var subTopics: [String] = []
 }

@@ -11,6 +11,13 @@ class MessageViewModel: SingletonViewModel, ObservableObject {
     static var shared = MessageViewModel()
     
     @Published var chatMessages: [MessageGroup] = []
+    
+}
+
+enum Sender {
+    case teacher
+    case user
+    case curriculum
 }
 
 protocol ChatMessageProtocol: Hashable {
@@ -19,7 +26,12 @@ protocol ChatMessageProtocol: Hashable {
 }
 
 class MessageGroup: ObservableObject {
-    @Published var chatMessages: [ChatMessage] = []
+    @Published var chatMessages: [ChatMessage] = [
+        ChatMessage(sender: .curriculum, message: """
+{"title":"Basic Elementary Algebra","topics":[{"subTopics":["Definition and History","Basic Terminology","Symbols and Notations"],"title":"Introduction to Algebra"},{"title":"Numbers and Operations","subTopics":["Natural Numbers","Whole Numbers","Integers","Fraction and Decimal Numbers","Order of Operations (PEMDAS)"]},{"title":"Basic Equations","subTopics":["Understanding Equations","Balancing Equations","Solving Simple Linear Equations","Word Problems Involving Equations"]},{"subTopics":["What are Variables?","Using Variables in Equations","Substitution Method"],"title":"Understanding Variables"},{"subTopics":["Cartesian Plane","Plotting Points","Basic Linear Graphs"],"title":"Introduction to Graphs"}]}
+"""
+                   )
+    ]
     
     func addChatMessage(message: ChatMessage) {
         self.chatMessages.append(message)
