@@ -78,3 +78,23 @@ func fetchChatCompletion(prompt: String, completion: @escaping (String?) -> Void
     task.resume()
 }
 
+func formatResponse<T>(format: T, message: String) -> T? where T: Decodable {
+    
+   // print("received string: \(message)")
+    let decoder = JSONDecoder()
+    
+    do {
+        let encodedData = message.data(using: .utf8)
+        
+        
+        let formattedObj = try decoder.decode(type(of: format), from: encodedData!)
+        
+        return formattedObj
+        
+    } catch {
+        print("Error encoding or decoding message: \(error)")
+    }
+    
+    return nil
+}
+

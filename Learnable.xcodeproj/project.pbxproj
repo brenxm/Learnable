@@ -36,6 +36,9 @@
 		DF5A25AF2C1B21DE00EECA46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A25AE2C1B21DE00EECA46 /* ContentView.swift */; };
 		DF5A25B12C1B21DF00EECA46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5A25B02C1B21DF00EECA46 /* Assets.xcassets */; };
 		DF5A25B42C1B21DF00EECA46 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5A25B32C1B21DF00EECA46 /* Preview Assets.xcassets */; };
+		DF658BD92C6B06C100D3CA5B /* GenerateSubjectLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF658BD82C6B06C100D3CA5B /* GenerateSubjectLoadingView.swift */; };
+		DF658BDD2C6B09A300D3CA5B /* GenerateSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF658BDC2C6B09A300D3CA5B /* GenerateSubject.swift */; };
+		DF658BE12C73A52300D3CA5B /* LectureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF658BE02C73A52300D3CA5B /* LectureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		DF5A25AE2C1B21DE00EECA46 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DF5A25B02C1B21DF00EECA46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF5A25B32C1B21DF00EECA46 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DF658BD82C6B06C100D3CA5B /* GenerateSubjectLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateSubjectLoadingView.swift; sourceTree = "<group>"; };
+		DF658BDC2C6B09A300D3CA5B /* GenerateSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateSubject.swift; sourceTree = "<group>"; };
+		DF658BE02C73A52300D3CA5B /* LectureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,7 @@
 		DF415A2F2C1C92A200EB4BFB /* api */ = {
 			isa = PBXGroup;
 			children = (
+				DF658BDB2C6B098C00D3CA5B /* Subject */,
 				DF415A432C1FB7BD00EB4BFB /* prompts */,
 				DF415A302C1C94C300EB4BFB /* apiRequest.swift */,
 				DF13CA352C51B3FF00ED7218 /* ResponseFormat.swift */,
@@ -221,6 +228,7 @@
 		DF5A25BA2C1B222500EECA46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DF658BE22C73A52B00D3CA5B /* Lectures */,
 				DF13CA262C4DEFFD00ED7218 /* QuestionView */,
 				DF13CA192C3B5C0000ED7218 /* SourceExtensions */,
 				DF13CA072C3A42DE00ED7218 /* MessageView */,
@@ -228,8 +236,25 @@
 				DF13CA152C3B551200ED7218 /* SubjectsView.swift */,
 				DF13CA172C3B559E00ED7218 /* GlobalUIComponentViews.swift */,
 				DF13CA1E2C3D881C00ED7218 /* MyProgressView.swift */,
+				DF658BD82C6B06C100D3CA5B /* GenerateSubjectLoadingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DF658BDB2C6B098C00D3CA5B /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				DF658BDC2C6B09A300D3CA5B /* GenerateSubject.swift */,
+			);
+			path = Subject;
+			sourceTree = "<group>";
+		};
+		DF658BE22C73A52B00D3CA5B /* Lectures */ = {
+			isa = PBXGroup;
+			children = (
+				DF658BE02C73A52300D3CA5B /* LectureView.swift */,
+			);
+			path = Lectures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +356,9 @@
 				DF13CA362C51B3FF00ED7218 /* ResponseFormat.swift in Sources */,
 				DF415A482C25E45300EB4BFB /* DataBase.xcdatamodeld in Sources */,
 				DF415A312C1C94C300EB4BFB /* apiRequest.swift in Sources */,
+				DF658BD92C6B06C100D3CA5B /* GenerateSubjectLoadingView.swift in Sources */,
+				DF658BE12C73A52300D3CA5B /* LectureView.swift in Sources */,
+				DF658BDD2C6B09A300D3CA5B /* GenerateSubject.swift in Sources */,
 				DF13CA212C3DF62100ED7218 /* MyProgressViewModel.swift in Sources */,
 				DF5A25AD2C1B21DE00EECA46 /* LearnableApp.swift in Sources */,
 				DF415A402C1F75F300EB4BFB /* CoreData.swift in Sources */,
