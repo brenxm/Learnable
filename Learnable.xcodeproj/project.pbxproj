@@ -39,6 +39,9 @@
 		DF658BD92C6B06C100D3CA5B /* GenerateSubjectLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF658BD82C6B06C100D3CA5B /* GenerateSubjectLoadingView.swift */; };
 		DF658BDD2C6B09A300D3CA5B /* GenerateSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF658BDC2C6B09A300D3CA5B /* GenerateSubject.swift */; };
 		DF658BE12C73A52300D3CA5B /* LectureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF658BE02C73A52300D3CA5B /* LectureView.swift */; };
+		DF658BE52C78D72200D3CA5B /* LectureReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF658BE42C78D72200D3CA5B /* LectureReaderView.swift */; };
+		DF658BE72C78D73300D3CA5B /* TabletOfContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF658BE62C78D73300D3CA5B /* TabletOfContentsView.swift */; };
+		DF658BE92C78D73C00D3CA5B /* LectureChatAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF658BE82C78D73C00D3CA5B /* LectureChatAssistant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,9 @@
 		DF658BD82C6B06C100D3CA5B /* GenerateSubjectLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateSubjectLoadingView.swift; sourceTree = "<group>"; };
 		DF658BDC2C6B09A300D3CA5B /* GenerateSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateSubject.swift; sourceTree = "<group>"; };
 		DF658BE02C73A52300D3CA5B /* LectureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureView.swift; sourceTree = "<group>"; };
+		DF658BE42C78D72200D3CA5B /* LectureReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureReaderView.swift; sourceTree = "<group>"; };
+		DF658BE62C78D73300D3CA5B /* TabletOfContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabletOfContentsView.swift; sourceTree = "<group>"; };
+		DF658BE82C78D73C00D3CA5B /* LectureChatAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureChatAssistant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,7 +242,6 @@
 				DF13CA152C3B551200ED7218 /* SubjectsView.swift */,
 				DF13CA172C3B559E00ED7218 /* GlobalUIComponentViews.swift */,
 				DF13CA1E2C3D881C00ED7218 /* MyProgressView.swift */,
-				DF658BD82C6B06C100D3CA5B /* GenerateSubjectLoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,9 +257,21 @@
 		DF658BE22C73A52B00D3CA5B /* Lectures */ = {
 			isa = PBXGroup;
 			children = (
+				DF658BE32C78D70400D3CA5B /* Lecture Component */,
+				DF658BD82C6B06C100D3CA5B /* GenerateSubjectLoadingView.swift */,
 				DF658BE02C73A52300D3CA5B /* LectureView.swift */,
 			);
 			path = Lectures;
+			sourceTree = "<group>";
+		};
+		DF658BE32C78D70400D3CA5B /* Lecture Component */ = {
+			isa = PBXGroup;
+			children = (
+				DF658BE42C78D72200D3CA5B /* LectureReaderView.swift */,
+				DF658BE62C78D73300D3CA5B /* TabletOfContentsView.swift */,
+				DF658BE82C78D73C00D3CA5B /* LectureChatAssistant.swift */,
+			);
+			path = "Lecture Component";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +357,7 @@
 				DF13CA012C3A38EF00ED7218 /* HomeHeaderButtonView.swift in Sources */,
 				DF13C9FF2C3A38DA00ED7218 /* HomeStealthNavBarView.swift in Sources */,
 				DF13CA132C3B4FA300ED7218 /* ViewModelSingleton.swift in Sources */,
+				DF658BE52C78D72200D3CA5B /* LectureReaderView.swift in Sources */,
 				DF13CA1B2C3B5C1100ED7218 /* Color.swift in Sources */,
 				DF13C9FC2C384E5500ED7218 /* HomeView.swift in Sources */,
 				DF415A452C1FB7D500EB4BFB /* QuickStudyPrompt.swift in Sources */,
@@ -353,7 +371,9 @@
 				DF13CA282C4DF03300ED7218 /* NewQuestionView.swift in Sources */,
 				DF13CA162C3B551200ED7218 /* SubjectsView.swift in Sources */,
 				DF13CA392C59450500ED7218 /* NewSubjectPrompt.swift in Sources */,
+				DF658BE92C78D73C00D3CA5B /* LectureChatAssistant.swift in Sources */,
 				DF13CA362C51B3FF00ED7218 /* ResponseFormat.swift in Sources */,
+				DF658BE72C78D73300D3CA5B /* TabletOfContentsView.swift in Sources */,
 				DF415A482C25E45300EB4BFB /* DataBase.xcdatamodeld in Sources */,
 				DF415A312C1C94C300EB4BFB /* apiRequest.swift in Sources */,
 				DF658BD92C6B06C100D3CA5B /* GenerateSubjectLoadingView.swift in Sources */,

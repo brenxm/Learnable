@@ -27,6 +27,13 @@ struct HomeNavigationButtonView: View {
             NavButton(icon: "paper.circle.light", title: "Questions", destination: {QuestionsView()})
             
             NavButton(icon: "statistic.circle.light", title: "My Progress", destination: {MyProgressView()})
+            
+            // //////////////// TESTING a view page ///////////////// //
+            
+            NavButton(icon: "thinking.circle.light", title: "Test Lecture View", destination: {LectureView()})
+            
+            
+            // //////////////////////////////////////////////// //
         }
         .padding(.vertical, 8)
     }

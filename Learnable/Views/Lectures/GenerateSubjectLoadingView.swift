@@ -12,10 +12,11 @@ struct GenerateSubjectLoadingView: View {
     @Binding var subjectGenerationCompleted: Bool
     @Binding var generatedLecture: GeneratedLectureObject
     
+
     var body: some View {
         Text("Generating Subject. Please wait")
         
-        NavigationLink(destination: LectureView(generatedLecture: $generatedLecture), isActive: $subjectGenerationCompleted) {
+        NavigationLink(destination: LectureView(), isActive: $subjectGenerationCompleted) {
             EmptyView()
         }
     }
