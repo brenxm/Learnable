@@ -131,24 +131,98 @@ struct LectureView: View {
     
     @State var isTableOfContentsActive = false
     @State var isChatAssistantActive = false
+    @State var initialDragPosition: CGPoint? = nil
+    @State var draggingFromEdge: Bool = false
+    @State var draggingFromDrawerHandle: Bool = false // tablet of contents drawer handle
+    @State var tabletOfContentOffset: CGFloat = -160
+    @State var dragDistance: CGPoint = .zero
+    @State var initialTableOfContentOffset: CGFloat = .zero // placeholder init value
     
-    let tabletOfContentWidth: Double = 320
+    let tableOfContentWidth: Double = 320
     
     
     var body: some View {
-        ZStack {
+        HStack (spacing: 0){
+            
+            // Table of Contents
+            TableOfContentsView(isActive: $isTableOfContentsActive, width: tableOfContentWidth)
+                
+            
             // Lecture Viewer
             LectureReaderView(
                 isTableOfContentsActive: $isTableOfContentsActive,
-                isChatAssistantActive: $isChatAssistantActive)
-            
-            // Table of Contents
-            TableOfContentsView(isActive: $isTableOfContentsActive, width: tabletOfContentWidth)
-                .offset(x: isTableOfContentsActive ? 0 : -tabletOfContentWidth)
-            
+                isChatAssistantActive: $isChatAssistantActive,
+                data: testGeneratedLecture
+            )
+           
             // Chat assistant
         }
+        //.offset(x: -160)
+        .offset(x: tabletOfContentOffset)
+        .gesture(
+            DragGesture(minimumDistance: 0)
+                .onChanged { value in
+                    
+                    
+                    
+                    // Set initial touch
+                    if initialDragPosition == nil {
+                        initialDragPosition = CGPoint(x: value.location.x, y: value.location.y)
+                        initialTableOfContentOffset = tabletOfContentOffset
+                        
+                        // ////// Initial set dragging from edge //////////
+                        if value.location.x < 180 && value.location.x >= 160 && !isTableOfContentsActive {
+                            draggingFromEdge = true
+                            
+                        } else if isTableOfContentsActive
+                                    && value.location.x >= (tableOfContentWidth + 150)
+                                    && value.location.x <= (tableOfContentWidth + 170) {
+                            print("clicked the edge")
+                            draggingFromDrawerHandle = true
+                        }
+                        
+                        return
+                    }
+                    
+                    dragDistance = CGPoint(
+                        x: initialDragPosition!.x - value.location.x,
+                        y: initialDragPosition!.y - value.location.y
+                    )
+                    
+                    
+                    if draggingFromEdge {
+                        print(dragDistance.x)
+                        tabletOfContentOffset = -160 + dragDistance.x
+                        
+                    } else if draggingFromDrawerHandle {
+                        print("dragging from the handle \(dragDistance.x)")
+                        tabletOfContentOffset = initialTableOfContentOffset + dragDistance.x
+                    }
+                    
+                    
+                }.onEnded { value in
+                    
+                    
+                    // Open drawer function
+                    if draggingFromEdge && dragDistance.x >= 160 {
+                        isTableOfContentsActive = true
+                        withAnimation {
+                            tabletOfContentOffset = 160
+                        }
+                    
+                    // Close the drawer
+                    } else if draggingFromEdge && dragDistance.x < 160 {
+                        isTableOfContentsActive = false
+                        withAnimation {
+                                tabletOfContentOffset = -160
+                        }
+                    }
+                    
+                    initialDragPosition = nil
+                    draggingFromEdge = false
+                    draggingFromDrawerHandle = false
+                }
+        )
     }
-    
 }
   
