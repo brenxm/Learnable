@@ -9,19 +9,35 @@ import Foundation
 import SwiftUI
 
 struct TableOfContentsView: View {
+    
+    var lectureData: GeneratedLectureObject
     @Binding var isActive: Bool
     var width: Double
     
     var body: some View {
-        
-        VStack {
-            Text("Table of content")
+        ScrollView {
+            VStack {
+                Text(lectureData.subjectTitle)
+                    .font(.system(size: 30))
+                    .fontWeight(.medium)
+                
+                ForEach (lectureData.topics, id: \.self) { data in
+                    Text(data.title)
+                    
+                    ForEach (data.content, id: \.self) { subData in
+                        Text( subData.subTopic )
+                    }
+                }
+            }
+            
+            Spacer()
         }
         .frame(
-            width: width,
-            height: .infinity
+            width: width
+           
         )
-        .background(Color.red)
-       
     }
+    
+    
+    
 }

@@ -33,7 +33,7 @@ struct HomeNavigationButtonView: View {
             NavButton(icon: "thinking.circle.light", title: "Test Lecture View", destination: {LectureView()})
             
             
-            // //////////////////////////////////////////////// //
+            // //////////////// END of testing page ///////////////// //
         }
         .padding(.vertical, 8)
     }

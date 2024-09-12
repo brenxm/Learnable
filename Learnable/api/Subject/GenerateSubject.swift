@@ -144,13 +144,15 @@ enum ValueError: Error {
     case valueError
 }
 
-struct TopicResponseFormat: Codable {
+struct TopicResponseFormat: Hashable, Codable {
+    var id = UUID()
     var title: String = ""
     var content: [SubTopicResponseFormat] = []
 }
 
 
-struct SubTopicResponseFormat: Codable {
+struct SubTopicResponseFormat: Codable, Hashable {
+    var id = UUID()
     var subTopic: String = ""
     var body: String = ""
 }

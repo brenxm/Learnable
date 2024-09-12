@@ -127,7 +127,7 @@ struct LectureView: View {
         ]
     )
     
-    // //////////////////////////////////////////////////////// // end of test object
+    // ////////////////////// End of Test Object //////////////////// //
     
     @State var isTableOfContentsActive = false
     @State var isChatAssistantActive = false
@@ -145,7 +145,7 @@ struct LectureView: View {
         HStack (spacing: 0){
             
             // Table of Contents
-            TableOfContentsView(isActive: $isTableOfContentsActive, width: tableOfContentWidth)
+            TableOfContentsView(lectureData: testGeneratedLecture,isActive: $isTableOfContentsActive, width: tableOfContentWidth)
                 
             
             // Lecture Viewer
@@ -185,36 +185,59 @@ struct LectureView: View {
                     }
                     
                     dragDistance = CGPoint(
-                        x: initialDragPosition!.x - value.location.x,
-                        y: initialDragPosition!.y - value.location.y
+                        x: value.location.x - initialDragPosition!.x,
+                        y: value.location.y - initialDragPosition!.y
                     )
                     
                     
+                    //print("distance is of x axis:\(dragDistance.x)")
+                    
                     if draggingFromEdge {
-                        print(dragDistance.x)
-                        tabletOfContentOffset = -160 + dragDistance.x
+                       
+                        if (value.location.x - tableOfContentWidth) <= 160 { // setting max scroll
+                            tabletOfContentOffset = -160 + dragDistance.x
+                            print(tabletOfContentOffset)
+                        } else {
+                            print(dragDistance.x - (tableOfContentWidth))
+                           
+                            tabletOfContentOffset = 160 + ((dragDistance.x - (tableOfContentWidth) ) * 0.30)
+                        }
                         
                     } else if draggingFromDrawerHandle {
-                        print("dragging from the handle \(dragDistance.x)")
-                        tabletOfContentOffset = initialTableOfContentOffset + dragDistance.x
+                        
+                        if (value.location.x - tableOfContentWidth) <= 160 {
+                            tabletOfContentOffset = initialTableOfContentOffset + dragDistance.x
+                        } else {
+                            
+                        }
                     }
                     
                     
                 }.onEnded { value in
                     
-                    
                     // Open drawer function
-                    if draggingFromEdge && dragDistance.x >= 160 {
+                    if draggingFromEdge && abs(dragDistance.x) >= 160 {
                         isTableOfContentsActive = true
                         withAnimation {
                             tabletOfContentOffset = 160
                         }
                     
                     // Close the drawer
-                    } else if draggingFromEdge && dragDistance.x < 160 {
+                    } else if draggingFromEdge && abs(dragDistance.x) < 160 {
                         isTableOfContentsActive = false
                         withAnimation {
                                 tabletOfContentOffset = -160
+                        }
+                    } else if draggingFromDrawerHandle && abs(dragDistance.x) >= 160 {
+                        isTableOfContentsActive = false
+                        withAnimation {
+                            tabletOfContentOffset = -160
+                        }
+                        
+                    } else if draggingFromDrawerHandle && abs(dragDistance.x) < 160 {
+                        isTableOfContentsActive = true
+                        withAnimation {
+                            tabletOfContentOffset = 160
                         }
                     }
                     
