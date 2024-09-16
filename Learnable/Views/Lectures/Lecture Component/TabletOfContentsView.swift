@@ -16,28 +16,35 @@ struct TableOfContentsView: View {
     
     var body: some View {
         ScrollView {
-            VStack {
+            VStack ( alignment: .leading ){
                 Text(lectureData.subjectTitle)
                     .font(.system(size: 30))
                     .fontWeight(.medium)
                 
-                ForEach (lectureData.topics, id: \.self) { data in
-                    Text(data.title)
-                    
-                    ForEach (data.content, id: \.self) { subData in
-                        Text( subData.subTopic )
-                    }
-                }
+                TableOfContentsTopicGroupView(topics: lectureData.topics)
             }
             
             Spacer()
         }
         .frame(
             width: width
-           
         )
+        .background(Color.red)
     }
+}
+
+struct TableOfContentsTopicGroupView: View {
+    var topics: [TopicResponseFormat]
     
-    
-    
+    var body: some View {
+        ForEach (topics, id: \.self) { data in
+            Text(data.title)
+                .padding(.leading, 10)
+            
+            ForEach (data.content, id: \.self) { subData in
+                Text( subData.subTopic )
+                    .padding(.leading, 20)
+            }
+        }
+    }
 }
