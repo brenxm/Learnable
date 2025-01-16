@@ -15,7 +15,7 @@
    - Requirement ID: FR-002
    - Descriptions:
       - Should be accessible in Lecture Scene 
-3. ### Table fo Contents
+3. ### Table of Contents
    - Requirement ID: FR-003
    - Descriptions:
        - Should be accesible in Lecture Scene
@@ -23,3 +23,16 @@
        - Displays the current progress of the subject
        - Signifies current topic
        - Signifies if a quiz is ready for the topic
+4. ### Subject Management Scene
+   - Requirement ID: FR-004
+   - Descriptions:
+      - Users should be able to create new subject from this scene
+      - Users can delete a subject
+      - Users can sort subjects based on name, progress in percent and last date of accessed
+      - Users can toggle between list mode view or book mode view (graphical icons view)
+      - Each subject on the list should display:
+         - Title
+         - Progress in percent
+         - Title of current topic
+         - Count of completed topic and total topic count
+        
