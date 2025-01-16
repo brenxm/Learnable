@@ -3,7 +3,7 @@
  A key feature of the app is its reinforcement system, which provides users with a daily quiz. These quizzes are dynamically geenrated by the AI based on the topics users have completed. This ensures that users reinforce their knowledge effectively through a spaced repitition approach, aiding in long-term retention and mastery of the material.
   
 ## Study Feature
-1. Lecture Scene
+1. ### Lecture Scene
 - Requirement ID: FR-001
 - Scene ID:
 - Descriptions:
