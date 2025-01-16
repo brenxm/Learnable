@@ -56,7 +56,7 @@
         - Most recent lecture
         - New lecture
         - Question Management Scene
-        - Subject Management Scene
+        - Subject Management Scene (Library)
         - Daily Quiz Scene
         - Quick Quiz Scene
         - Personal Achievement Scene
