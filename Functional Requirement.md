@@ -8,6 +8,18 @@
    - Scene ID:
    - Descriptions:
       - Materials should be displayed to users in a sequential order
-      - Special contents like codes, math equations or quoted messages have their own special font formats or containters.
-      - Each scene displays the material one topic at a time.
-      - Periodic engagement questions should interrupt the flow of material intervally.
+      - Special contents like codes, math equations or quoted messages have their own special font formats or containters
+      - Each scene displays the material one topic at a time
+      - Periodic engagement questions should interrupt the flow of material intervally
+2. ### Assistive AI Chat
+   - Requirement ID: FR-002
+   - Descriptions:
+      - Should be accessible in Lecture Scene 
+3. ### Table fo Contents
+   - Requirement ID: FR-003
+   - Descriptions:
+       - Should be accesible in Lecture Scene
+       - Navigates to completed topics and cannot go forward to uncompleted topics
+       - Displays the current progress of the subject
+       - Signifies current topic
+       - Signifies if a quiz is ready for the topic
