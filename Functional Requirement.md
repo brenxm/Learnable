@@ -35,4 +35,30 @@
          - Progress in percent
          - Title of current topic
          - Count of completed topic and total topic count
-        
+5. ### Subject Creation Scene
+   - Requirement ID: FR-005
+   - Descriptions:
+      - **TODO**
+6. ### Reinforcement Feature (Quiz Scene)
+   - Requirement ID: FR-006
+   - Descriptions:
+      - Daily Quiz
+         - **TODO**
+       - Optional Quiz
+          - **TODO**
+7. ### Personal Achievement Scene
+   - **TODO**
+8. ### Home Scene
+   - Requirement ID: FR-007
+   - Scene ID: SC-001
+   - Descriptions:
+      - Users should be able to navigate from this scene to:
+        - Most recent lecture
+        - New lecture
+        - Question Management Scene
+        - Subject Management Scene
+        - Daily Quiz Scene
+        - Quick Quiz Scene
+        - Personal Achievement Scene
+        - Settings Scene
+9. Question Management Scene
