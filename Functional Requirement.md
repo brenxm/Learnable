@@ -4,10 +4,10 @@
   
 ## Study Feature
 1. ### Lecture Scene
- - Requirement ID: FR-001
- - Scene ID:
- - Descriptions:
- - Materials should be displayed to users in a sequential order
- - Special contents like codes, math equations or quoted messages have their own special font formats or containters.
- - Each scene displays the material one topic at a time.
- - Periodic engagement questions should interrupt the flow of material intervally.
+   - Requirement ID: FR-001
+   - Scene ID:
+   - Descriptions:
+   - Materials should be displayed to users in a sequential order
+   - Special contents like codes, math equations or quoted messages have their own special font formats or containters.
+   - Each scene displays the material one topic at a time.
+   - Periodic engagement questions should interrupt the flow of material intervally.
