@@ -10,10 +10,11 @@
    - Requirement ID: FR-001
    - Scene ID: SC-002
    - Descriptions:
-      - Lecture materials or contents should be displayed to users in a sequential order
+      - Lecture materials or contents should be displayed and presented to users in a top to bottom scrolling behavior. 
       - Special contents like codes, math equations or quoted messages have their own special font formats or containters
-      - Each scene displays the material one topic at a time
+      - Each scene should only display one topic at a time
       - Periodic engagement questions should interrupt the flow of topic material intervally, a response from the user is required to proceed and continue the flow
+      - 
 2. ### Assistive AI Chat
    - Requirement ID: FR-002
    - UI Requirement: UI-002
