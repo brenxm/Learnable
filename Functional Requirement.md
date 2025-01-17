@@ -80,9 +80,11 @@
 1. ### Subscription
    - Requirement ID: FR-011
    - Description:
-      - New users should have a free trial for 7 days
+      - New users should be offered with free 7 day trial access. Each user should only be granted one free trial
       - Subscription is required for users to continue usage after free trial  
 2. ### Subscription Scene
    - Scene ID: TBD
    - Description:
-      - Subscription scene should be displayed each access 
+      - Subscription scene should be displayed as a start up scene with each app reset or if app is newly opened. Only applicable to non-subscriber or free-trial users.
+      - Subscription scene should display the cost of the subscription, perks, benefits and days of free trial remaining (if applicable)
+      - Users with expired free trial access should not be able to bypass the subscription scene. The user is required to sign up for a subscription to continue/gain access to the service.
