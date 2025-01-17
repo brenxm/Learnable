@@ -78,7 +78,7 @@
    - Requirement ID: FR-011
    - Description:
       - New users should have a free trial for 7 days
-      - Subscription is required for users to continue usage after free trial
+      - Subscription is required for users to continue usage after free trial  
 1.1 ### Subscription Scene
    - Scene ID: TBD
    - Description:
