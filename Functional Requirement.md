@@ -10,10 +10,10 @@
    - Requirement ID: FR-001
    - Scene ID: TBD
    - Descriptions:
-      - Materials should be displayed to users in a sequential order
+      - Lecture materials or contents should be displayed to users in a sequential order
       - Special contents like codes, math equations or quoted messages have their own special font formats or containters
       - Each scene displays the material one topic at a time
-      - Periodic engagement questions should interrupt the flow of material intervally
+      - Periodic engagement questions should interrupt the flow of topic material intervally, a response from the user is required to proceed and continue the flow
 2. ### Assistive AI Chat
    - Requirement ID: FR-002
    - UI Requirement: UI-002
