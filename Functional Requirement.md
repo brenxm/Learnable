@@ -72,3 +72,14 @@
 10. ### Setting Scene
    - Requirement ID: FR-010
    - Scene ID: TBD
+
+## Miscellaneous
+1. ### Subscription
+   - Requirement ID: FR-011
+   - Description:
+      - New users should have a free trial for 7 days
+      - Subscription is required for users to continue usage after free trial
+1.1 ### Subscription Scene
+   - Scene ID: TBD
+   - Description:
+      - Subscription scene should be displayed each access 
