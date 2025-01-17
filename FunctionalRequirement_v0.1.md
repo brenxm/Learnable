@@ -8,7 +8,7 @@
 ## Study Feature
 1. ### Lecture Scene
    - Requirement ID: FR-001
-   - Scene ID: TBD
+   - Scene ID: SC-002
    - Descriptions:
       - Lecture materials or contents should be displayed to users in a sequential order
       - Special contents like codes, math equations or quoted messages have their own special font formats or containters
