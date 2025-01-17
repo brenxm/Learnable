@@ -19,7 +19,8 @@
    - Requirement ID: FR-002
    - UI Requirement: UI-002
    - Descriptions:
-      - Should be accessible in Lecture Scene 
+      - Should be accessible in Lecture Scene via toggle button that slides vertically from the bottom
+      - The chat AI should know the content of the current topic
 3. ### Table of Contents
    - Requirement ID: FR-003
    - UI Requirement: UI-001
