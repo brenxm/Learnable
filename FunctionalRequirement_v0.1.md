@@ -8,7 +8,7 @@
 ## Study Feature
 1. ### Lecture Scene
    - Requirement ID: FR-001
-   - Scene ID: SC-002
+   - Scene ID: TBD
    - Descriptions:
       - Lecture materials or contents should be displayed and presented to users in a top to bottom scrolling behavior. 
       - Special contents like codes, math equations or quoted messages have their own special font formats or containters
@@ -55,12 +55,19 @@
        - Optional Quiz
           - **TODO**
 7. ### Personal Achievement Scene
-   - **TODO**
+   - Requirement ID: FR-007
+   - Scene ID: SC-002
+   - Description:
+      - It should display/signify:
+         - The dates when users studied for a minumum of 15 minutes a day
+         - The dates when users took the daily quiz
+         - How many subjects were generated
+         - How many subjects were completed
+         - How many questions were generated
+         - How many questions were answered correctly
 8. ### Home Scene
    - Requirement ID: FR-008
    - Scene ID: SC-001
-   - Summary:
-      -
    - Descriptions:
       - Users should be able to navigate from this scene to:
         - Most recent lecture
