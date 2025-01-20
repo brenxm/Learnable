@@ -14,7 +14,6 @@
       - Special contents like codes, math equations or quoted messages have their own special font formats or containters
       - Each scene should only display one topic at a time
       - Periodic engagement questions should interrupt the flow of topic material intervally, a response from the user is required to proceed and continue the flow
-      - 
 2. ### Assistive AI Chat
    - Requirement ID: FR-002
    - UI Requirement: UI-002
@@ -25,7 +24,8 @@
    - Requirement ID: FR-003
    - UI Requirement: UI-001
    - Descriptions:
-       - Should be accesible in Lecture Scene
+       - Should display all the topics in a list
+       - Should be accesible in Lecture Scene via toggle button
        - Navigates to completed topics and cannot go forward to uncompleted topics
        - Displays the current progress of the subject
        - Signifies current topic
