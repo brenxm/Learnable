@@ -14,13 +14,16 @@
       - Special contents like codes, math equations or quoted messages have their own special font formats or containters
       - Each scene should only display one topic at a time
       - Periodic engagement questions should interrupt the flow of topic material intervally, a response from the user is required to proceed and continue the flow
-2. ### Assistive AI Chat
+2. ### Engagement Question
+   - Requirement ID: TBD
+   - UI Requirement: TBD
+3. ### Assistive AI Chat
    - Requirement ID: FR-002
    - UI Requirement: UI-002
    - Descriptions:
       - Should be accessible in Lecture Scene via toggle button that slides vertically from the bottom
       - The chat AI should know the content of the current topic
-3. ### Table of Contents
+4. ### Table of Contents
    - Requirement ID: FR-003
    - UI Requirement: UI-001
    - Descriptions:
@@ -30,7 +33,8 @@
        - Displays the current progress of the subject
        - Signifies current topic
        - Signifies if a quiz is ready for the topic
-4. ### Subject Management Scene
+## Subject Management
+1. ### Subject Management Scene
    - Requirement ID: FR-004
    - Scene ID: TBD
    - Descriptions:
@@ -43,18 +47,19 @@
          - Progress in percent
          - Title of current topic
          - Count of completed topic and total topic count
-5. ### Subject Creation Scene
+2. ### Subject Creation Scene
    - Requirement ID: FR-005
    - Descriptions:
       - **TODO**
-6. ### Reinforcement Feature (Quiz Scene)
+## Reinforcement Feature
+1. ### Daily Quiz Scene
    - Requirement ID: FR-006
    - Descriptions:
       - Daily Quiz
          - **TODO**
        - Optional Quiz
           - **TODO**
-7. ### Personal Achievement Scene
+2. ### Personal Achievement Scene
    - Requirement ID: FR-007
    - Scene ID: SC-002
    - Description:
