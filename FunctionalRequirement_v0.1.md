@@ -17,6 +17,9 @@
 2. ### Engagement Question
    - Requirement ID: TBD
    - UI Requirement: TBD
+       - Users should be interrupted every after reading a page and should be prompted at the end of the page.
+       - The users can only attempt to answer one time regardless if it's correct or wrong.
+       - The AI should provide feedback to the answers the users has given.
 3. ### Assistive AI Chat
    - Requirement ID: FR-002
    - UI Requirement: UI-002
