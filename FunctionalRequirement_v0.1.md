@@ -11,10 +11,10 @@
    - Scene ID: SC-001
    - Purpose: To deliver lecture content in a structured, linear format that enforces active user engagement.
    - Descriptions:
-      1. The scene shall display lecture content in **linear, top-to-bottom scrollable interface**, allowing users to navigate forward/backward within the current topic only. 
-      2. The system shall render **code blocks, math equations, and quoted messages** in a dedicated containers to distinguish them from standard text (desgin specs apply).
-      3. The system shall display **one topic per scene**; users must complete the current topic to access the next.
-      4. The system shall **interrupt lecture content every end of each page** to display an engagement question. Users must submit a response to move forward to next topic page.
+      - The scene shall display lecture content in **linear, top-to-bottom scrollable interface**, allowing users to navigate forward/backward within the current topic only. 
+      - The system shall render **code blocks, math equations, and quoted messages** in a dedicated containers to distinguish them from standard text (desgin specs apply).
+      - The system shall display **one topic per scene**; users must complete the current topic to access the next.
+      - The system shall **interrupt lecture content every end of each page** to display an engagement question. Users must submit a response to move forward to next topic page.
 2. ### Engagement Question
    - Requirement ID: TBD
    - UI Requirement: TBD
