@@ -7,7 +7,7 @@
   
 ## Study Feature
 1. ### Lecture Scene
-   - **Requirement I**D: FR-001
+   - **Requirement ID**: FR-001
    - **Scene ID**: SC-001
    - **Purpose**: To deliver lecture content in a structured, linear format that enforces active user engagement.
    - **Descriptions**:
