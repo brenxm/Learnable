@@ -9,9 +9,9 @@
 - ### Lecture containers
 Topic materials are rendered using Markdown as the foundational format.  
 To support modern rendering standards, specialized content types (e.g., **math equations**, **programming code blocks**, and **blockquotes**) will be embedded within **stylized containers**. These containers will:
-  - **Visually distinguish** specialized content from standard text (e.g., via borders, background shading, or icons)
-  - **Improve scannability** by creating clear separation within the content flow.
-  - **Preserve content** (e.g., syntax highlighting for code, LaTex rendering for math).
+1. **Visually distinguish** specialized content from standard text (e.g., via borders, background shading, or icons)
+2. **Improve scannability** by creating clear separation within the content flow.
+3. **Preserve content** (e.g., syntax highlighting for code, LaTex rendering for math).
 - #### Math equation blocks
   - UI Requirement: UI-003.1
   - Summary: TBD
