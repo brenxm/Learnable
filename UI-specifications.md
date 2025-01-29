@@ -12,13 +12,13 @@
   - **Visually distinguish** specialized content from standard text (e.g., via borders, background shading, or icons)
   - **Improve scannability** by creating clear separation within the content flow.
   - **Preserve content** (e.g., syntax highlighting for code, LaTex rendering for math).
-- ### Math equation blocks
+- #### Math equation blocks
   - UI Requirement: UI-003.1
   - Summary: TBD
-- ### Programming code blocks
+- #### Programming code blocks
   - UI Requirement: UI-003.2
   - Summary: TBD
-- ### Blockquotes
+- #### Blockquotes
   - UI Requirement: UI-003.3
   - Summary: TBD    
 ## 
