@@ -7,8 +7,8 @@
 - Topic materials are rendered using Markdown as the foundational format. For reference: [Markdown Cheat sheet](https://www.markdownguide.org/basic-syntax/)
 ## Component Library
 - ### Lecture containers
-:Topic materials are rendered using Markdown as the foundational format
-:To support modern rendering standards, specialized content types (e.g., **math equations**, **programming code blocks**, and **blockquotes**) will be embedded within **stylized containers**. These containers will:
+Topic materials are rendered using Markdown as the foundational format.  
+To support modern rendering standards, specialized content types (e.g., **math equations**, **programming code blocks**, and **blockquotes**) will be embedded within **stylized containers**. These containers will:
   - **Visually distinguish** specialized content from standard text (e.g., via borders, background shading, or icons)
   - **Improve scannability** by creating clear separation within the content flow.
   - **Preserve content** (e.g., syntax highlighting for code, LaTex rendering for math).
