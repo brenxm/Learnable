@@ -29,7 +29,7 @@
       - The chat AI should know the content of the current topic
 4. ### Table of Contents
    - **Requirement ID**: FR-003
-   - **UI Requirement**: UI-001
+   - **UI Requirement**: UI-003.4
    - **Descriptions**:
        - Should display all the topics in a list
        - Should be accesible in Lecture Scene via toggle button
@@ -37,6 +37,7 @@
        - Displays the current progress of the subject
        - Signifies current topic
        - Signifies if a quiz is ready for the topic
+       - System shall distinguish completed topics to uncompleted topics by rendering text of uncompleted topics to gray
 ## Subject Management
 1. ### Subject Management Scene
    - **Requirement ID**: FR-004
