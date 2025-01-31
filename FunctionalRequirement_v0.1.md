@@ -23,10 +23,12 @@
        - The AI should provide feedback to the answers the users has given.
 3. ### Assistive AI Chat
    - **Requirement ID**: FR-002
-   - **UI Requirement**: UI-002
+   - **UI Requirement**: UI-001.5
    - **Descriptions**:
-      - Should be accessible in Lecture Scene via toggle button that slides vertically from the bottom
-      - The chat AI should know the content of the current topic
+      - The system shall be accessible within the Lecture Scene (SC-003), utilizing a vertical sliding behavior within its own UI layer. Users can open or close the chat system via a toggle button within the Lecture Scene.
+      - The system shall maintain context awareness by tracking both the topic and chat history for interactions between the chat assistant and users.
+      - The system shall provide **dedicated fields** with **specialized formatting support** for entering programming code or mathematical equations. Users can enable these formats via a toggle button located within the input text field.
+      - 
 4. ### Table of Contents
    - **Requirement ID**: FR-003
    - **UI Requirement**: UI-003.4
