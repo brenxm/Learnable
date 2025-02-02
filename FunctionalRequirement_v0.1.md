@@ -35,8 +35,9 @@
    - **Descriptions**:
       - The system shall be accessible within the Lecture Scene (SC-003), utilizing a vertical sliding behavior within its own UI layer. Users can open or close the chat system via a toggle button within the Lecture Scene.
       - The system shall maintain context awareness by tracking both the topic and chat history for interactions between the chat assistant and users.
-      - The system shall provide **dedicated fields** with **specialized formatting support** for entering programming code or mathematical equations. Users can enable these formats via a toggle button located within the input text field.
-      - 
+      - The system shall provide **dedicated fields** with **specialized formatting support** and ensure compatability to standard rendering for entering programming code or mathematical equations. It will automatically detect such inputs and prompt users to embed a **special field** for the detected format. Users can also manually embed these **dedicated fields** via button in the chat text field.
+      - The system shall support multiple dedicated fields within the input flow, each functioning as a self-contained unit. users shall be able to create, delete, and navigate between these fields, as well as return to a standard text input.
+       
 4. ### Table of Contents
    - **Requirement ID**: FR-003
    - **UI Requirement**: UI-003.4
