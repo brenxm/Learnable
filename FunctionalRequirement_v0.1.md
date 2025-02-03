@@ -37,7 +37,7 @@
       - The system shall maintain context awareness by tracking both the topic and chat history for interactions between the chat assistant and users.
       - The system shall provide **dedicated fields** with **specialized formatting support** and ensure compatability to standard rendering for entering programming code or mathematical equations. It will automatically detect such inputs and prompt users to embed a **special field** for the detected format. Users can also manually embed these **dedicated fields** via button in the chat text field.
       - The system shall support multiple dedicated fields within the input flow, each functioning as a self-contained unit. users shall be able to create, delete, and navigate between these fields, as well as return to a standard text input.
-       
+      - The system shall provide additional keyboard input for commonly used characters when the typing keyboard is active, reducing the need for users to browse the default keyboard system. UI buttons that simulate keyboard keys shall be available while users are typing. (e.g., **tab** button for tab spaces when writing a programming code)
 4. ### Table of Contents
    - **Requirement ID**: FR-003
    - **UI Requirement**: UI-003.4
