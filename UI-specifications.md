@@ -21,4 +21,10 @@ To support modern rendering standards, specialized content types (e.g., **math e
 - #### Blockquotes
   - UI Requirement: UI-003.3
   - Summary: TBD    
-## 
+- ### Chat system
+(Summary TBD)  
+  - #### Font and Format
+  - #### Special Container behavior
+    - Embedding a special container (e.g., math blocks, programming code blocks) automatically or manually will expand the chat box
+    - Detection of inputs for special container will prompt a button to user to embed in a specialized container
+    - 
