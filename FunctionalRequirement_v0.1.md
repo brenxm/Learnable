@@ -26,9 +26,13 @@
 2. ### Engagement Question
    - **Requirement ID**: TBD
    - **UI Requirement**: TBD
-       - Users should be interrupted every after reading a page and should be inserted at the end of the page.
-       - The users can only attempt to answer one time regardless if it's correct or wrong.
-       - The AI should provide feedback to the answers the users has given.
+       - // Question should be about the current topic
+       - // There should be two type of engagement question, multiple choice and free-text-response
+       - // Question should be embeded at the end the topic
+       - // User required to answer before moving on
+       - // Feedback should be given to user regardless provided correct or incorrect question
+       - // After feedback provider to patient, system should provide option to user if add one more question or move forward to next topic
+     
 3. ### Assistive AI Chat
    - **Requirement ID**: FR-002
    - **UI Requirement**: UI-001.5
