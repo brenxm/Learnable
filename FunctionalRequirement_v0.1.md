@@ -15,7 +15,9 @@
 
 |Code|Description|
 |:---|:---|
+| SC-001 | Home Page |
 | SC-003 | Lecture Scene | 
+| SC-005 | Subject Creation |
 
 ## Study Feature
 1. ### Lecture Scene
@@ -73,7 +75,7 @@
          - Count of completed topic and total topic count
 2. ### Subject Creation Scene
    - **Requirement ID**: FR-005
-   - Scene ID: SC-005
+   - **Scene ID**: SC-005
    - **Descriptions**:
       - // Create in specific sequence to promote guided interaction using Step-by-step flow Wizard
         1. Create base curriculum
