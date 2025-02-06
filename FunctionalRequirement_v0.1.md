@@ -70,7 +70,19 @@
 2. ### Subject Creation Scene
    - **Requirement ID**: FR-005
    - **Descriptions**:
-      - **TODO**
+      - // Create in specific sequence to promote guided interaction using Step-by-step flow Wizard
+        1. Create base curriculum
+            - Describe base curriculum
+            - Add default loaded preset
+            - Present generated curriculum + prompt of confirmation
+        2. Tone of delivery
+            - options presented in radio buttons or a custom delivery
+            - present example from one of the topics generated from curriculom + prompt of confirmation 
+        3. Add ons
+            - Engagement question
+            - Topic ending curriculum
+        4. Generate
+        
 ## Reinforcement Feature
 1. ### Daily Quiz Scene
    - **Requirement ID**: FR-006
