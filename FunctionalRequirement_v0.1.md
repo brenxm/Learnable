@@ -13,6 +13,10 @@
 3. Share or sell your created lectures in the Lecture Shop, providing access to a wider audience.
 4. Reinforce learning with a daily quiz that utilizes spaced repetition, ensuring long-term retention of key topics.
 
+|Code|Description|
+|:---|:---|
+| SC-003 | Lecture Scene | 
+
 ## Study Feature
 1. ### Lecture Scene
    - **Requirement ID**: FR-003
@@ -35,7 +39,7 @@
      
 3. ### Assistive AI Chat
    - **Requirement ID**: FR-002
-   - **UI Requirement**: UI-001.5
+   - **UI Requirement**: UI-003.5
    - **Descriptions**:
       - The system shall be accessible within the Lecture Scene (SC-003), utilizing a vertical sliding behavior within its own UI layer. Users can open or close the chat system via a toggle button within the Lecture Scene.
       - The system shall maintain context awareness by tracking both the topic and chat history for interactions between the chat assistant and users.
@@ -69,6 +73,7 @@
          - Count of completed topic and total topic count
 2. ### Subject Creation Scene
    - **Requirement ID**: FR-005
+   - Scene ID: SC-005
    - **Descriptions**:
       - // Create in specific sequence to promote guided interaction using Step-by-step flow Wizard
         1. Create base curriculum
