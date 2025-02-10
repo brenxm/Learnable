@@ -127,7 +127,12 @@
    - **Scene ID**: SC-009
 10. ### Setting Scene
    - **Requirement ID**: FR-010
-   - **Scene ID**: TBD
+   - **Scene ID**: SC-010
+   - **Description**:
+      - // Dark/light mode
+      - // Subscription
+      - // Delete account
+      - // 
 
 ## Miscellaneous
 1. ### Subscription
