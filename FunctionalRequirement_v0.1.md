@@ -18,6 +18,8 @@
 | SC-001 | Home Page |
 | SC-003 | Lecture Scene | 
 | SC-005 | Subject Creation |
+| SC-009 | Reinforcement Feature |
+| SC-010 | Settings |
 
 ## Study Feature
 1. ### Lecture Scene
