@@ -93,11 +93,20 @@
 ## Reinforcement Feature
 1. ### Daily Quiz Scene
    - **Requirement ID**: FR-006
+   - **SC ID**: SC-006
    - **Descriptions**:
       - Daily Quiz
-         - **TODO**
+         - // Proceeds with the activity every first open of app for the day
+         - // It should precedes everything
+         - // Levels of questions
+            - // 1. basic (e.g., multiple choice, simple identification) 1 to 2 days. Occurs 7 times 
+            - // 2. intermediate (e.g., simple problem solving, answer) 3 to 4 days. Occurs 7 times
+            - // 3. advance (e.g, advance problem solving) 7-8 days. Occurs 7 times
+            - // 4. master (e.g., explanation, practical challenges) 14-15 days. Occurs 7 times
        - Optional Quiz
-          - **TODO**
+          - // Provides 5 questions
+          - // Does not change the progress of each question
+          - // Randomly chooses questions from the question pool. Level of question is chosen at random
 2. ### Personal Achievement Scene
    - **Requirement ID**: FR-007
    - **Scene ID**: SC-002
