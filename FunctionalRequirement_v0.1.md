@@ -11,15 +11,16 @@
 1. Study lectures in a structured and engaging way, making content easier to absorb with the help of AI-powered assistant chat.
 2. Create a fully customizable lectures with AI support, allowing for a personalized learning experience.
 3. Share or sell your created lectures in the Lecture Shop, providing access to a wider audience.
-4. Reinforce learning with a daily quiz that utilizes spaced repetition, ensuring long-term retention of key topics.
+4. Reinforce learning with a daily quiz that utilizes spaced repetition, ensuring long-term retention of key topics. <br>
 
-|Code|Description|
-|:---|:---|
-| SC-001 | Home Page |
-| SC-003 | Lecture Scene | 
-| SC-005 | Subject Creation |
-| SC-009 | Reinforcement Feature |
-| SC-010 | Settings |
+## Scene Identification Table
+|Scene ID|Domain|Subdomain|
+|:---|:---|:--- |
+| SC-001 | Home Page | <table><th>sup</th></table>|
+| SC-003 | Lecture Scene || 
+| SC-005 | Subject Creation ||
+| SC-009 | Reinforcement Feature ||
+| SC-010 | Settings ||
 
 ## Study Feature
 1. ### Lecture Scene
@@ -36,20 +37,20 @@
    - **UI Requirement**: TBD
        - // Question should be about the current topic
        - // There should be two type of engagement question, multiple choice and free-text-response
-       - // Question should be embeded at the end the topic
+       - // Question should be embeded at the end the topic at the end of the flow (not separate page)
        - // User required to answer before moving on
-       - // Feedback should be given to user regardless provided correct or incorrect question
-       - // After feedback provider to patient, system should provide option to user if add one more question or move forward to next topic
+       - // Feedback should be given to user regardless provided correct or incorrect answer
+       - // After feedback provider to user, system should provide option to user to provide one more question or move forward to the next topic.
      
 3. ### Assistive AI Chat
    - **Requirement ID**: FR-002
    - **UI Requirement**: UI-003.5
    - **Descriptions**:
       - The system shall be accessible within the Lecture Scene (SC-003), utilizing a vertical sliding behavior within its own UI layer. Users can open or close the chat system via a toggle button within the Lecture Scene.
-      - The system shall maintain context awareness by tracking both the topic and chat history for interactions between the chat assistant and users.
+      - The system shall maintain context awareness by tracking both the topic and chat history for interactions between the chat assistant and users. The system shall erase the chat history once moved forward to different topic.
       - The system shall provide **dedicated fields** with **specialized formatting support** and ensure compatability to standard rendering for entering programming code or mathematical equations. It will automatically detect such inputs and prompt users to embed a **special field** for the detected format. Users can also manually embed these **dedicated fields** via button in the chat text field.
       - The system shall support multiple dedicated fields within the input flow, each functioning as a self-contained unit. users shall be able to create, delete, and navigate between these fields, as well as return to a standard text input.
-      - The system shall provide additional keyboard input for commonly used characters when the typing keyboard is active, reducing the need for users to browse the default keyboard system. UI buttons that simulate keyboard keys shall be available while users are typing. (e.g., **tab** button for tab spaces when writing a programming code)
+      - The system shall provide additional keyboard input for commonly used characters when the typing keyboard and a special container mode is active, reducing the need for users to browse the default keyboard system. UI buttons that simulate keyboard keys shall be available while users are typing. (e.g., **tab** button for tab spaces when writing a programming code)
 4. ### Table of Contents
    - **Requirement ID**: FR-003
    - **UI Requirement**: UI-003.4
