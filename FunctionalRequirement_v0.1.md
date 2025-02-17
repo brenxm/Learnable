@@ -1,42 +1,83 @@
  # Functional Requirement
 - **Title**: Learnable
 
-## Core Principles and Purpose
-1. // Utilize AI to learn virtually anything
-2. // Change the way how people acquire knowledge instead of the old school way like going to school. But instead utilize technology and AI to boost learning.
-3. // People are more effective in learning if the content is personalized (e.g., choice of content, tone of materials delivery)
-4. // A way to structure your acquired knowledge of your experience as a master or specialist of a certain task to a structured lecture to share and mentor people
-5. 
-## Core Functions of this app
-1. Study lectures in a structured and engaging way, making content easier to absorb with the help of AI-powered assistant chat.
-2. Create a fully customizable lectures with AI support, allowing for a personalized learning experience.
-3. Share or sell your created lectures in the Lecture Shop, providing access to a wider audience.
-4. Reinforce learning with a daily quiz that utilizes spaced repetition, ensuring long-term retention of key topics. <br>
+**Core Principles and Purpose**
+---------------------------------
+- **Harness AI to enable learning across virtually any subject.**
+- **Revolutionize education by replacing traditional classroom methods with innovative technology and AI-driven approaches.**
+- **Personalize the learning experience—tailoring content selection and delivery tone to maximize effectiveness.**
+- **Transform expert knowledge into structured lectures, empowering specialists to share insights and mentor others.**
+
+**Core Functions of This App**
+------------------------------
+- **Engage with lectures in a structured, captivating format, supported by an AI-powered chat assistant for easier comprehension.**
+- **Customize lectures fully with AI assistance, creating a personalized learning journey.**
+- **Share or monetize your lectures via the Lecture Shop, expanding access to a wider audience.**
+- **Reinforce learning with daily quizzes that apply spaced repetition, ensuring long-term retention of key topics.**
+
 
 ## Scene Identification Table
-|Scene ID|Domain|Subdomain|
+|Requirement ID|Title|Subdomain|
 |:---|:---|:--- |
-| SC-001 | Home Page | <table><th>sup</th></table>|
-| SC-003 | Lecture Scene || 
-| SC-005 | Subject Creation ||
-| SC-009 | Reinforcement Feature ||
-| SC-010 | Settings ||
+| FR-001 | Home Page | |
+| [FR-003](#fr-003) | Lecture Scene || 
+| FR-005 | Subject Creation ||
+| FR-009 | Reinforcement Feature ||
+| FR-010 | Settings ||
 
 ## Study Feature
-1. ### Lecture Scene
-   - **Requirement ID**: FR-003
-   - **Scene ID**: SC-003
-   - **Purpose**: To deliver lecture content in a structured, linear format that enforces active user engagement.
-   - **Descriptions**:
-      - The scene shall display lecture content in **linear, top-to-bottom scrollable interface**, allowing users to navigate forward/backward within the current topic only. 
-      - The system shall render **code blocks, math equations, and quoted messages** in a dedicated containers to distinguish them from standard text (desgin specs apply).
-      - The system shall display **one topic per scene**; users must complete the current topic to access the next.
-      - The system shall **interrupt lecture content every end of each topic page** to display an **engagement question** ([FR-003.6](#fr-003-6)). Users must submit a response to move forward to next topic page.
-      - // allows users to access **table of content** (FR-003)
-      - // allows users to access **chat assistant** (FR-002)
-      - [Personal Achievement](#fr-007)
+1. ### <a id="fr-003"></a>Lecture Scene
+ - **Requirement ID:** FR-003 
+ - **Scene ID:** SC-003
+
+    #### Description
+    - **Lecture Content Display:**  
+       - The scene shall present lecture content in a **linear, top-to-bottom scrollable interface**.  
+       - Navigation is restricted to moving forward and backward **within the current topic only**.
+    - **Specialized Content Rendering:**  
+       - The system shall render **code blocks, math equations, and quoted messages** in dedicated containers to distinguish them from standard text.  
+       - (Refer to the associated design specifications for style details.)
+    - **Topic-Based Navigation:**  
+       - The scene shall display **one topic per scene**.  
+       - Users must complete the current topic before accessing the next one.
+    - **Engagement Questions:**  
+       - At the end of each topic page, the system shall interrupt the lecture content to display an **engagement question** ([FR-003.6](#fr-003-6)).  
+       - A valid user response is required to proceed to the next topic page, after which feedback is provided.
+    - **Table of Contents Access:**  
+       - The scene shall include a toggle button allowing users to access the **table of contents**.  
+       - This enables users to view their progress and navigate to previously completed topics.
+    - **Chat Assistant:**  
+       - The scene shall allow users to access a **chat assistant** ([FR-002](#fr-002)) for real-time guidance, explanations, and support related to the lecture content.  
+       - The chat assistant box shall display the chat history for the current topic only.
+   
+    #### Acceptance Criteria
+    - **Vertical Scrolling:**  
+      - The system must provide smooth vertical scrolling from the start to the end of the topic.
+    - **Engagement Question Trigger:**  
+      - Upon reaching the end of a topic, the engagement question must be triggered.  
+      - A user must submit a response, after which appropriate feedback is provided before proceeding.
+    - **Distinct Content Styling:**  
+      - Code blocks, math equations, and quoted messages must be rendered with distinctive styles as per design specifications.
+    - **Table of Contents Access:**  
+      - A toggle button must be available to open and close the table of contents.
+    - **Chat Assistant Functionality:**  
+      - The chat assistant must be accessible at any point during the lecture and display only the chat history relevant to the current topic.
+    
+    #### Rationale
+    - **Linear Navigation Focus:**  
+      A linear, top-to-bottom scrolling interface ensures that users focus on one topic at a time, reducing cognitive load and maintaining a structured learning flow.
+    - **Enhanced Readability:**  
+      Rendering code blocks, math equations, and quoted messages in dedicated containers enhances clarity and readability, making it easier for users to differentiate between types of content.
+    - **Active Engagement:**  
+      Interrupting the lecture with an engagement question at the end of each topic reinforces learning by prompting users to reflect on and apply what they’ve learned, thereby improving retention.
+    - **Progress Awareness:**  
+      The inclusion of a table of contents provides users with a clear view of their progress and facilitates easy navigation to previously completed topics, supporting a self-paced learning approach.
+    - **Immediate Support:**  
+      Providing access to a chat assistant ensures that users can receive timely help and explanations, which is crucial for addressing uncertainties and maintaining engagement throughout the lecture.
+   
+    
 2. ### <a id="fr-003-6"></a>Engagement Question
-   - **Requirement ID**: TBD
+   - **Requirement ID**: FR-003.6
    - **UI Requirement**: TBD
        - // Question should be about the current topic
        - // There should be two type of engagement question, multiple choice and free-text-response
@@ -45,7 +86,7 @@
        - // Feedback should be given to user regardless provided correct or incorrect answer
        - // After feedback provider to user, system should provide option to user to provide one more question or move forward to the next topic.
      
-3. ### Assistive AI Chat
+3. ### <a id="fr-002"></a>Assistive AI Chat
    - **Requirement ID**: FR-002
    - **UI Requirement**: UI-003.5
    - **Descriptions**:
