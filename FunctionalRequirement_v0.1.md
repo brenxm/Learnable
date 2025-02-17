@@ -31,8 +31,11 @@
       - The scene shall display lecture content in **linear, top-to-bottom scrollable interface**, allowing users to navigate forward/backward within the current topic only. 
       - The system shall render **code blocks, math equations, and quoted messages** in a dedicated containers to distinguish them from standard text (desgin specs apply).
       - The system shall display **one topic per scene**; users must complete the current topic to access the next.
-      - The system shall **interrupt lecture content every end of each page** to display an engagement question. Users must submit a response to move forward to next topic page.
-2. ### Engagement Question
+      - The system shall **interrupt lecture content every end of each topic page** to display an **engagement question** ([FR-003.6](#fr-003-6)). Users must submit a response to move forward to next topic page.
+      - // allows users to access **table of content** (FR-003)
+      - // allows users to access **chat assistant** (FR-002)
+      - [Personal Achievement](#fr-007)
+2. ### <a id="fr-003-6"></a>Engagement Question
    - **Requirement ID**: TBD
    - **UI Requirement**: TBD
        - // Question should be about the current topic
@@ -110,7 +113,7 @@
           - // Provides 5 questions
           - // Does not change the progress of each question
           - // Randomly chooses questions from the question pool. Level of question is chosen at random
-2. ### Personal Achievement Scene
+2. ### <a id="fr-007"></a>Personal Achievement Scene
    - **Requirement ID**: FR-007
    - **Scene ID**: SC-002
    - **Description**:
