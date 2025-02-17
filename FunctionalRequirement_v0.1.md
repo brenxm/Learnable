@@ -60,6 +60,7 @@
       - Code blocks, math equations, and quoted messages must be rendered with distinctive styles as per design specifications.
     - **Table of Contents Access:**  
       - A toggle button must be available to open and close the table of contents.
+      - It can also be accessed with left-to-right scroll gesture. 
     - **Chat Assistant Functionality:**  
       - The chat assistant must be accessible at any point during the lecture and display only the chat history relevant to the current topic.
     
