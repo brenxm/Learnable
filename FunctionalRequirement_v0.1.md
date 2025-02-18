@@ -121,7 +121,15 @@
 - The system shall provide additional keyboard input for commonly used characters when the typing keyboard and a special container mode is active, reducing the need for users to browse the default keyboard system. UI buttons that simulate keyboard keys shall be available while users are typing. (e.g., **tab** button for tab spaces when writing a programming code)
      
 #### Acceptance Criteria
-- Users 
+- The chatbox should slide in top-bottom vertical behavior in it's own page (separate page in front of the topic page).
+- The chatbox should open via engaging in type mode (clicking the chat assistant text field) and can be closed by clicking the close button while chatbox is active.
+- The chat should retain the history of messages between the user and the AI.
+- Chat history should reset after moving to another topic.
+- Similar to **Specialized Content Rendering** of the **lecture requirement**, responses of the AI assistant that has special contents such as math expressions, programming codes and quouted messages should be rendered in their respective styling.
+- The user should be able to activate a special typing mode, where once active, it enables an automatic formatting to the text that follows the current standard rendering. (TODO: Design specs should be written here for programming codes and math latex)
+- While typing, the system should constantly monitor what the text is, if the text is to be predicted as a **specialized content** (code or math expression), it should highlight the text and prompt the user to activate a typing mode.
+- While in typing mode, the keyboard should provide additional keyboard key for the commonly used characters for that mode that is not provided by the default keyboard. (TODO: Separated design spec should be provided)
+- The chatbox should support multiple **dedicated fields** and the users have the option to create new field, step out (return to normal input), delete or enter to an existing field.
 
 4. ## Table of Contents
    - **Requirement ID**: FR-003
