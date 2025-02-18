@@ -22,6 +22,7 @@
 | FR-001 | Home Page | |
 | [FR-003](#fr-003) | Lecture Scene || 
 | [FR-004](#fr-004)| Engagement Question |
+| [FR-005](#fr-005)| Assistive AI Chat |
 
 # Functional Requirements
 1. ## <a id="fr-003"></a>Lecture Scene
@@ -74,7 +75,7 @@
 2. ## <a id="fr-004"></a>Engagement Question  
 **Requirement ID**: FR-004
    
-**UI Requirement**: TBD  
+**UI Requirement**: SC-003.6
 
 **Descriptions**:
 - **Context of the question**:
@@ -107,18 +108,22 @@
 - **Linear Navigation Focus**:
     - Embedding the engagement question within the topic page ensures a seamless, linear flow of learning, reducing cognitive load and maintaining focus on the current topic without disrupting the user’s concentration.
       
-3. ## <a id="fr-002"></a>Assistive AI Chat
-**Requirement ID**: FR-002  
+3. ## <a id="fr-005"></a>Assistive AI Chat
+**Requirement ID**: FR-005  
 
 **UI Requirement**: UI-003.5  
 
 **Descriptions**:
-   - The system shall be accessible within the Lecture Scene (SC-003), utilizing a vertical sliding behavior within its own UI layer. Users can open or close the chat system via a toggle button within the Lecture Scene.
-   - The system shall maintain context awareness by tracking both the topic and chat history for interactions between the chat assistant and users. The system shall erase the chat history once moved forward to different topic.
-   - The system shall provide **dedicated fields** with **specialized formatting support** and ensure compatability to standard rendering for entering programming code or mathematical equations. It will automatically detect such inputs and prompt users to embed a **special field** for the detected format. Users can also manually embed these **dedicated fields** via button in the chat text field.
-   - The system shall support multiple dedicated fields within the input flow, each functioning as a self-contained unit. users shall be able to create, delete, and navigate between these fields, as well as return to a standard text input.
-   - The system shall provide additional keyboard input for commonly used characters when the typing keyboard and a special container mode is active, reducing the need for users to browse the default keyboard system. UI buttons that simulate keyboard keys shall be available while users are typing. (e.g., **tab** button for tab spaces when writing a programming code)
-4. ### Table of Contents
+- The system shall be accessible within the Lecture Scene (SC-003), utilizing a vertical sliding behavior within its own UI layer. Users can open or close the chat system via a toggle button within the Lecture Scene.
+- The system shall maintain context awareness by tracking both the topic and chat history for interactions between the chat assistant and users. The system shall erase the chat history once moved forward to a different topic.
+- The system shall provide **dedicated fields** with **specialized formatting support** and ensure compatability to standard rendering for entering programming code or mathematical equations. It will automatically detect such inputs and prompt users to embed a **special field** for the detected format. Users can also manually embed these **dedicated fields** via button in the chat text field.
+- The system shall support multiple dedicated fields within the input flow, each functioning as a self-contained unit. Users shall be able to create, delete, and navigate between these fields, as well as return to a standard text input.
+- The system shall provide additional keyboard input for commonly used characters when the typing keyboard and a special container mode is active, reducing the need for users to browse the default keyboard system. UI buttons that simulate keyboard keys shall be available while users are typing. (e.g., **tab** button for tab spaces when writing a programming code)
+     
+#### Acceptance Criteria
+- Users 
+
+4. ## Table of Contents
    - **Requirement ID**: FR-003
    - **UI Requirement**: UI-003.4
    - **Descriptions**:
