@@ -25,6 +25,7 @@
 | [FR-005](#fr-005)| Assistive AI Chat |
 | [FR-006](#fr-006)| Table of Contents |
 | [FR-007](#fr-007)| Subject Management |
+| [FR-008](#fr-008)| Subject Creation |
 
 # Functional Requirements
 1. ## <a id="fr-003"></a>Lecture Scene
@@ -244,75 +245,116 @@ The Subject Management Scene is a core feature for users to organize and interac
    - Placing actionable options (like "Delete") in a right-side button keeps the interface clean while providing essential controls. This design balances functionality with simplicity.
 
   
-2. ### Subject Creation Scene
-   - **Requirement ID**: FR-005
-   - **Scene ID**: SC-005
-   - **Descriptions**:
-      The Subject Creation Scene is a 3-step wizard designed to help users generate a customized curriculum for a new subject. The wizard takes user inputs and preferences to create a structured output in the following JSON format:
+2. ### <a id="fr-008"></a>Subject Creation Scene
+**Requirement ID**: FR-008  
 
-json
-Wrap
-Copy
-{
-  title: String,
-  topics: [
-    [ subtopics: String ]
-  ]
-}
-Here’s how the wizard works, step by step:
+**Scene ID**: SC-005  
 
-Step 1: Create Base Curriculum
-User Input: Users start by describing the subject or course in a free-text box. This description serves as the foundation for the AI to generate a curriculum or table of contents.
-Preset Options: An additional option allows users to select a preset (e.g., "comprehensive" or "basic to advanced") that modifies the curriculum’s depth and structure. This preset enhances the free-text input rather than replacing it.
-System Response: The system generates a curriculum based on the user’s description and selected preset (if any) and displays it for review.
-Editing: Users can confirm the curriculum as-is or edit it using an AI-assisted text field, which allows for real-time customization of the generated list.
-Step 2: Tone of Delivery
-Tone Customization: Users define how the content for each subtopic will be delivered by specifying a tone (e.g., "ELI5," "in a piratey way," or "like my mom") in a free-text input field.
-Preset Options: Similar to Step 1, preset tone options are available and can be combined with the free-text input for greater flexibility.
-Tone Preview: The system generates an example of how the tone will be applied to one of the curriculum topics. A "Refresh" button is provided to update the example if the user modifies the tone input—users must press this button to see changes reflected.
-User Control: This step ensures users can fine-tune the tone to make the content engaging and suited to their audience.
-Step 3: Add-ons
-Selection Method: Users are presented with clickable radio options to add extra features to the subject. These options are independent and can be toggled on or off.
-Available Add-ons:
-Engagement Question: Adds an engagement question at the end of each topic to encourage interaction. (Default: True)
-Ending Project: Adds a hands-on, practical exercise at the end of each major topic (not subtopics). These projects are more challenging than engagement questions. (Default: True)
-Generate Voice: Generates narrated voice content for the entire subject. (Default: False)
-Generate Questions for Reinforcement: Adds questions to a reinforcement system (e.g., for spaced repetition or review). (Default: False)
-Final Action: A "Generate" button is placed at the bottom of this step. When clicked, it triggers the creation of the full subject material based on all prior inputs and navigates the user to a loading screen while the content is prepared.
-How It All Ties Together
-Step-by-Step Flow: The wizard progresses sequentially from Step 1 (defining the curriculum) to Step 2 (setting the tone) to Step 3 (adding features). Each step builds on the previous one, ensuring a cohesive and personalized subject-creation process.
-User Feedback: At every stage, the system provides previews or editable outputs, giving users control and confidence in the final product.
-Output: Once the "Generate" button is clicked, the system compiles the curriculum, applies the chosen tone, and incorporates the selected add-ons, delivering a fully customized subject ready for use.
+#### Descriptions:
+   The Subject Creation Scene is a 3-step wizard designed to help users generate a customized curriculum for a new subject. The wizard takes user inputs and preferences to create a structured output in the following structured format:
+- **A title**:
+   - This is a string that represents the name or identifier of the entire structure, such as curriculum or course.
+- **A list of subjects**:
+   - This is a collection of subjects, where each subject is an individual entity. There must be at least on subject.
+- **Each subject contains**:
+   - **A list of topics**:
+      - A collection of topics, where each topic is represented as a string. Each subject must have at least one topic in its list.
+```
+Curriculum Title
+   Subject 1
+      Topic 1
+      Topic 2
+   Subject 2
+      Topic 1
+      Topic 2
+```        
 
-Acceptance Criteria
+**Here’s how the wizard works, step by step**:
+
+**Step 1: Create Base Curriculum**
+ - **User Input**:
+    - Users start by describing the subject or course in a free-text box. This description serves as the foundation for the AI to generate a curriculum or table of contents.
+ - **Preset Options**:
+    - An additional option allows users to select a preset (e.g., "comprehensive" or "basic to advanced") that modifies the curriculum’s depth and structure. This preset enhances the free-text input rather than replacing it.
+ - **System Response**:
+ - The system generates a curriculum based on the user’s description and selected preset (if any) and displays it for review.
+ - **Editing**:
+ - Users can confirm the curriculum as-is or edit it using an AI-assisted text field, which allows for real-time customization of the generated list.
+**Step 2: Tone of Delivery**
+   - **Tone Customization**:
+      - Users define how the content for each subtopic will be delivered by specifying a tone (e.g., "ELI5," "in a piratey way," or "like my mom") in a free-text input field.
+   - **Preset Options**:
+      - Similar to Step 1, preset tone options are available and can be combined with the free-text input for greater flexibility.
+   - **Tone Preview**:
+      - The system generates an example of how the tone will be applied to one of the curriculum topics. A "Refresh" button is provided to update the example if the user modifies the tone input—users must press this button to see changes reflected.
+   - **User Control**:
+      - This step ensures users can fine-tune the tone to make the content engaging and suited to their audience.
+**Step 3: Add-ons**
+   - **Selection Method**:
+      - Users are presented with clickable radio options to add extra features to the subject. These options are independent and can be toggled on or off.
+   - **Available Add-ons**:
+      - **Engagement Question**:
+         - Adds an engagement question at the end of each topic to encourage interaction. (Default: True)
+      - **Ending Project**:
+         - Adds a hands-on, practical exercise at the end of each major topic (not subtopics). These projects are more challenging than engagement questions. (Default: True)
+      - **Generate Voice**:
+         - Generates narrated voice content for the entire subject. (Default: False)
+      - **Generate Questions for Reinforcement**:
+         - Adds questions to a reinforcement system (e.g., for spaced repetition or review). (Default: False)
+      - **Final Action**:
+         - A **Generate** button is placed at the bottom of this step. When clicked, it triggers the creation of the full subject material based on all prior inputs and navigates the user to a loading screen while the content is prepared.
+#### How It All Ties Together
+   **Step-by-Step Flow**: The wizard progresses sequentially from Step 1 (defining the curriculum) to Step 2 (setting the tone) to Step 3 (adding features). Each step builds on the previous one, ensuring a cohesive and personalized subject-creation process.
+   **User Feedback**: At every stage, the system provides previews or editable outputs, giving users control and confidence in the final product.
+   **Output**: Once the "Generate" button is clicked, the system compiles the curriculum, applies the chosen tone, and incorporates the selected add-ons, delivering a fully customized subject ready for use.
+
+#### Acceptance Criteria
 The Acceptance Criteria outline the specific conditions that must be met to ensure the Subject Creation Scene works as intended. These are broken down by the three steps of the process and include general requirements:
 
-Step 1: Create Base Curriculum
-Free-Text Input: The free-text box must accept user input and process it to generate a curriculum. The AI should produce a structured list of topics and subtopics based on the provided description.
-Preset Selection: Preset options (e.g., "comprehensive," "basic to advanced") must be selectable and modify the curriculum’s structure accordingly.
-Curriculum Preview and Editing: The generated curriculum must appear in an editable format, allowing users to adjust it. Any changes should update the preview instantly.
-Confirmation: A clear option (e.g., a "Next" or "Confirm" button) must be available for users to finalize the curriculum before moving to the next step.
-Step 2: Tone of Delivery
-Tone Input: The free-text field for tone description must accept input, and preset tone options must be selectable.
-Tone Example Generation: The system must generate an example of the selected tone applied to a random topic from the curriculum. This example should only refresh when the "Refresh" button is clicked after changes are made.
-Refresh Functionality: The "Refresh" button must work, triggering a new tone example based on the current tone settings.
-Step 3: Add-ons
-Radio Options: Add-ons (e.g., Engagement Questions, Generate Voice) must be presented as clickable radio buttons or checkboxes, with default settings (e.g., Engagement Question: True, Generate Voice: False).
-Generate Button: A prominent "Generate" button must appear at the bottom of this step. When clicked, it must start the subject creation process and display a loading screen.
-Loading Screen: The loading screen must show a progress indicator or message to inform users that the subject is being generated.
-General
-Navigation: Users must be able to move between the three steps (e.g., via back and next buttons) until the final "Generate" action is completed.
-Error Handling: If any step is incomplete (e.g., no curriculum created), the system must display a prompt requiring the user to fill in the necessary fields before proceeding.
-Data Persistence: User inputs must be temporarily saved during the process, allowing users to go back and edit without losing their work.
+**Step 1: Create Base Curriculum**
+   - **Free-Text Input**:
+      - The free-text box must accept user input and process it to generate a curriculum. The AI should produce a structured list of topics and subtopics based on the provided description.
+   - **Preset Selection**:
+      - Preset options (e.g., "comprehensive," "basic to advanced") must be selectable and modify the curriculum’s structure accordingly.
+   - **Curriculum Preview and Editing**:
+      - The generated curriculum must appear in an editable format, allowing users to adjust it. Any changes should update the preview instantly.
+   - **Confirmation**:
+      - A clear option (e.g., a "Next" or "Confirm" button) must be available for users to finalize the curriculum before moving to the next step.
+**Step 2: Tone of Delivery**
+   - **Tone Input**:
+      - The free-text field for tone description must accept input, and preset tone options must be selectable.
+   - **Tone Example Generation**:
+      - The system must generate an example of the selected tone applied to a random topic from the curriculum. This example should only refresh when the "Refresh" button is clicked after changes are made.
+   - **Refresh Functionality**:
+      - The "Refresh" button must work, triggering a new tone example based on the current tone settings.
+**Step 3: Add-ons**
+   - **Radio Options**:
+      - Add-ons (e.g., Engagement Questions, Generate Voice) must be presented as clickable radio buttons or checkboxes, with default settings (e.g., Engagement Question: True, Generate Voice: False).
+   - **Generate Button**:
+      - A prominent "Generate" button must appear at the bottom of this step. When clicked, it must start the subject creation process and display a loading screen.
+   - **Loading Screen**:
+      - The loading screen must show a progress indicator or message to inform users that the subject is being generated.
+**General**
+   - **Navigation**:
+      - Users must be able to move between the three steps (e.g., via back and next buttons) until the final "Generate" action is completed.
+   - **Error Handling**:
+      - If any step is incomplete (e.g., no curriculum created), the system must display a prompt requiring the user to fill in the necessary fields before proceeding.
+   - **Data Persistence**:
+      - User inputs must be temporarily saved during the process, allowing users to go back and edit without losing their work.
 
-Rationale
+#### Rationale
 The Rationale explains why these features are included and how they support the overall purpose of the Subject Creation Scene:
 
-Step-by-Step Wizard: Dividing the process into three steps—curriculum creation, tone selection, and add-ons—makes it easier for users to manage. This reduces complexity and helps users focus on one task at a time, improving the overall experience.
-AI-Powered Curriculum Generation: Using AI to generate an initial curriculum saves time and provides a helpful starting point, especially for users unsure of how to structure their content. The editing option ensures they retain full control.
-Tone Customization: Letting users define the tone ensures the content suits their audience. The tone preview builds confidence that the chosen tone will be consistently applied.
-Add-ons for Enhanced Learning: Optional add-ons like engagement questions and voice narration enrich the learning experience, catering to diverse preferences and encouraging active participation.
-User Control and Feedback: Features like the "Refresh" button and editable curriculum keep users in charge, while the loading screen confirms the system is processing their request.
+- **Step-by-Step Wizard**:
+   - Dividing the process into three steps—curriculum creation, tone selection, and add-ons—makes it easier for users to manage. This reduces complexity and helps users focus on one task at a time, improving the overall experience.
+- **AI-Powered Curriculum Generation**:
+   - Using AI to generate an initial curriculum saves time and provides a helpful starting point, especially for users unsure of how to structure their content. The editing option ensures they retain full control.
+- **Tone Customization**:
+   - Letting users define the tone ensures the content suits their audience. The tone preview builds confidence that the chosen tone will be consistently applied.
+- **Add-ons for Enhanced Learning**:
+   - Optional add-ons like engagement questions and voice narration enrich the learning experience, catering to diverse preferences and encouraging active participation.
+- **User Control and Feedback**:
+   - Features like the "Refresh" button and editable curriculum keep users in charge, while the loading screen confirms the system is processing their request.
 
 
 
