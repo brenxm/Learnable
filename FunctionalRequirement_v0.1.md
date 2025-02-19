@@ -161,27 +161,23 @@ The Table of Contents shall be accessible within the Lecture Scene (SC-003) via 
 #### Acceptance Criteria
 - The Table of Contents must present all topics in a vertically scrollable list, ensuring visibility of the entire subject structure, even for lengthy subjects.
 - The toggle button must be prominently placed within the Lecture Scene and, when clicked, smoothly open or close the Table of Contents in its own UI layer without obstructing the lecture content.
+- A horizontal sliding gesture (left-right) can also be used to open or close the Table of Contents section.
 - Clicking on a completed topic in the list must immediately navigate the user to that topic, while clicking on an uncompleted topic must have no effect or display a brief message (e.g., “Topic not yet unlocked”).
-- A progress indicator (e.g., percentage, progress bar, or completed/total topics count) must be visible within the Table of Contents and update dynamically as the user completes topics.
 - The current topic must be visually distinct (e.g., bolded, highlighted, or marked with an icon) and automatically updated as the user progresses through the subject.
-- Topics with a ready quiz must display a consistent visual indicator (e.g., a “Quiz” badge or icon) next to the topic name, visible only when the quiz is available.
 - Completed topics must appear in a standard, legible color (e.g., black), while uncompleted topics must be rendered in gray, with sufficient contrast to remain readable but clearly differentiated.
 - The system must refresh the Table of Contents state (progress, current topic, quiz availability) in real-time as the user interacts with the Lecture Scene.
+  
 #### Rationale
 - The Table of Contents (FR-003) serves as a navigational and motivational tool within the Lecture Scene, enhancing user experience by providing structure, clarity, and feedback on progress. The following points justify its design and functionality:
 
 - **Comprehensive Topic Overview**:
 - Displaying all topics in a list format offers users a clear roadmap of the subject, fostering an understanding of its scope and sequence. This is essential for educational contexts where users benefit from knowing what lies ahead and how topics interrelate.
 - **Seamless Accessibility**:
-- The toggle button integration ensures the Table of Contents is readily available without disrupting the Lecture Scene workflow. By residing in its own UI layer, it balances accessibility with minimal interference, aligning with UI-003.4’s emphasis on intuitive design.
+- The toggle button ensures the Table of Contents is readily accessible without disrupting the Lecture Scene workflow, while its seamless integration with the main topic page and smooth transition animation help users maintain focus.
 - **Controlled Progression**:
 - Restricting navigation to completed topics enforces a logical learning sequence, preventing users from skipping foundational material. This supports educational integrity and ensures users build knowledge incrementally, which is critical for subjects with interdependent concepts.
-- **Progress Tracking**:
-- Displaying subject progress motivates users by visualizing their achievements and providing a sense of accomplishment. This gamification element encourages continued engagement, a key factor in sustained learning.
 - **Contextual Awareness**:
 - Signifying the current topic keeps users oriented within the subject, reducing cognitive load and enhancing focus. This is particularly valuable in long or complex lectures where users might otherwise lose track of their position.
-- **Quiz Readiness Notification**:
-- Highlighting available quizzes prompts users to test their understanding at appropriate intervals, reinforcing learning through active recall. This feature aligns with pedagogical best practices and increases the system’s utility as an educational tool.
 - **Visual Differentiation**:
 - Rendering uncompleted topics in gray provides an immediate, intuitive distinction from completed topics, leveraging color psychology to signal accessibility. This visual cue simplifies decision-making and reinforces the sequential progression model.
 
