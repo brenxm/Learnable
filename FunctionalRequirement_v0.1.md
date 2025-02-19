@@ -24,6 +24,7 @@
 | [FR-004](#fr-004)| Engagement Question |
 | [FR-005](#fr-005)| Assistive AI Chat |
 | [FR-006](#fr-006)| Table of Contents |
+| [FR-007](#fr-007)| Subject Management |
 
 # Functional Requirements
 1. ## <a id="fr-003"></a>Lecture Scene
@@ -168,7 +169,7 @@ The Table of Contents shall be accessible within the Lecture Scene (SC-003) via 
 - The system must refresh the Table of Contents state (progress, current topic, quiz availability) in real-time as the user interacts with the Lecture Scene.
   
 #### Rationale
-- The Table of Contents (FR-003) serves as a navigational and motivational tool within the Lecture Scene, enhancing user experience by providing structure, clarity, and feedback on progress. The following points justify its design and functionality:
+The Table of Contents (FR-006) serves as a navigational and motivational tool within the Lecture Scene, enhancing user experience by providing structure, clarity, and feedback on progress. The following points justify its design and functionality:
 
 - **Comprehensive Topic Overview**:
 - Displaying all topics in a list format offers users a clear roadmap of the subject, fostering an understanding of its scope and sequence. This is essential for educational contexts where users benefit from knowing what lies ahead and how topics interrelate.
@@ -182,37 +183,140 @@ The Table of Contents shall be accessible within the Lecture Scene (SC-003) via 
 - Rendering uncompleted topics in gray provides an immediate, intuitive distinction from completed topics, leveraging color psychology to signal accessibility. This visual cue simplifies decision-making and reinforces the sequential progression model.
 
 
-## Subject Management
+## <a id="fr-007"></a>Subject Management
 1. ### Subject Management Scene
-   - **Requirement ID**: FR-004
-   - **Scene ID**: TBD
-   - **Descriptions**:
-      - Users should be able to create new subject from this scene
-      - Users can delete a subject
-      - Users can sort subjects based on name, progress in percent and last date of accessed
-      - Users can toggle between list mode view or book mode view (graphical icons view)
-      - Each subject on the list should display:
-         - Title
-         - Progress in percent
-         - Title of current topic
-         - Count of completed topic and total topic count
+**Requirement ID**: FR-007  
+
+**Scene ID**: TBD
+#### Descriptions:
+- Users should be able to create a new subject from this scene, allowing them to add new learning modules or courses to their list.
+- Users can delete a subject, with a confirmation step to prevent accidental removal.
+- Users can choose a subject from this scene to access its associated content, such as lectures or quizzes.
+- Users can sort subjects based on:
+   - **Name**: Alphabetical order (A-Z or Z-A).
+   - **Progress in percent**: Percentage of completion (e.g., 0% to 100%).
+   - **Last date of accessed**: Date the subject was last viewed, from most recent to oldest.
+- Each subject on the list should display:
+   - **Title**: The name of the subject in a clear, prominent format.
+   - **Progress in percent**: A percentage indicating how much of the subject has been completed (e.g., "75%").
+   - **Date last time accessed**: The most recent date the subject was opened (e.g., "2023-10-10").
+   - **Total of chapters**: The total number of chapters or sections in the subject (e.g., "10 chapters").
+- Each subject should have a button at the very right where, when clicked, it will open up a list of options, including "Delete" and potentially other actions like "Rename" or "Archive."
+#### Acceptance Criteria:
+- **Creating a Subject**:
+   - A "Create New Subject" button must be visible and functional, allowing users to add a new subject.
+Upon creation, the users must be navigated to the **New subject creation page**.
+- **Deleting a Subject**:
+   - Selecting "Delete" from the options button must trigger a confirmation prompt (e.g., "Are you sure you want to delete this subject?").
+   - After confirmation, the subject must be removed from the list.
+- **Choosing a Subject**:
+   - Clicking a subject (outside the options button) must navigate the user to that subject’s content or overview page.
+   - Navigation must occur without delay or errors.
+- **Sorting Subjects**:
+   - A sorting control (e.g., dropdown or buttons) must allow selection of name, progress, or last accessed date.
+   - The list must update instantly to reflect the chosen sorting order.
+- **Subject Display**:
+   - Each subject entry must show:
+      - **Title** (e.g., "Mathematics").
+      - **Progress in percent** (e.g., "50% complete").
+      - **Last accessed date** (e.g., "Last accessed: October 10, 2023").
+      - **Total chapters** (e.g., "8 chapters").
+   - Information must be accurate and visually distinct (e.g., progress as a percentage or bar).
+- **Options Button**:
+   - A button (e.g., three dots or gear icon) must appear at the far right of each subject.
+   - Clicking it must display a menu with at least "Delete" as an option.
+   - The menu must be easy to access and dismiss.
+- **Edge Cases**:
+   - If no subjects exist, display a message like "No subjects available. Create one to begin."
+   - Subjects with no progress (0%) or no access history ("Never accessed") must still display correctly.
+#### Rationale:
+The Subject Management Scene is a core feature for users to organize and interact with their educational content. Here’s why each component is included:
+
+- **Creating and Deleting Subjects**:
+   - Users need the ability to add new subjects as their learning needs evolve and remove those no longer relevant, ensuring a tailored experience. The confirmation on deletion protects against mistakes.
+- **Choosing Subjects**:
+   - Direct access to a subject’s content from this scene simplifies navigation, making learning more efficient and intuitive.
+- **Sorting Functionality**:
+   - Sorting by name, progress, or last accessed date accommodates different user priorities—finding subjects quickly, tracking progress, or resuming recent work—enhancing usability.
+- **Subject Information Display**:
+   - Showing title, progress, last accessed date, and chapter count gives users a clear overview, motivating them with progress visibility and informing them of subject scope and recency.
+- **Options Button**:
+   - Placing actionable options (like "Delete") in a right-side button keeps the interface clean while providing essential controls. This design balances functionality with simplicity.
+
+  
 2. ### Subject Creation Scene
    - **Requirement ID**: FR-005
    - **Scene ID**: SC-005
    - **Descriptions**:
-      - // Create in specific sequence to promote guided interaction using Step-by-step flow Wizard
-        1. Create base curriculum
-            - Describe base curriculum
-            - Add default loaded preset
-            - Present generated curriculum + prompt of confirmation
-        2. Tone of delivery
-            - options presented in radio buttons or a custom delivery
-            - present example from one of the topics generated from curriculom + prompt of confirmation 
-        3. Add ons
-            - Engagement question
-            - Topic ending curriculum
-        4. Generate
-        
+      The Subject Creation Scene is a 3-step wizard designed to help users generate a customized curriculum for a new subject. The wizard takes user inputs and preferences to create a structured output in the following JSON format:
+
+json
+Wrap
+Copy
+{
+  title: String,
+  topics: [
+    [ subtopics: String ]
+  ]
+}
+Here’s how the wizard works, step by step:
+
+Step 1: Create Base Curriculum
+User Input: Users start by describing the subject or course in a free-text box. This description serves as the foundation for the AI to generate a curriculum or table of contents.
+Preset Options: An additional option allows users to select a preset (e.g., "comprehensive" or "basic to advanced") that modifies the curriculum’s depth and structure. This preset enhances the free-text input rather than replacing it.
+System Response: The system generates a curriculum based on the user’s description and selected preset (if any) and displays it for review.
+Editing: Users can confirm the curriculum as-is or edit it using an AI-assisted text field, which allows for real-time customization of the generated list.
+Step 2: Tone of Delivery
+Tone Customization: Users define how the content for each subtopic will be delivered by specifying a tone (e.g., "ELI5," "in a piratey way," or "like my mom") in a free-text input field.
+Preset Options: Similar to Step 1, preset tone options are available and can be combined with the free-text input for greater flexibility.
+Tone Preview: The system generates an example of how the tone will be applied to one of the curriculum topics. A "Refresh" button is provided to update the example if the user modifies the tone input—users must press this button to see changes reflected.
+User Control: This step ensures users can fine-tune the tone to make the content engaging and suited to their audience.
+Step 3: Add-ons
+Selection Method: Users are presented with clickable radio options to add extra features to the subject. These options are independent and can be toggled on or off.
+Available Add-ons:
+Engagement Question: Adds an engagement question at the end of each topic to encourage interaction. (Default: True)
+Ending Project: Adds a hands-on, practical exercise at the end of each major topic (not subtopics). These projects are more challenging than engagement questions. (Default: True)
+Generate Voice: Generates narrated voice content for the entire subject. (Default: False)
+Generate Questions for Reinforcement: Adds questions to a reinforcement system (e.g., for spaced repetition or review). (Default: False)
+Final Action: A "Generate" button is placed at the bottom of this step. When clicked, it triggers the creation of the full subject material based on all prior inputs and navigates the user to a loading screen while the content is prepared.
+How It All Ties Together
+Step-by-Step Flow: The wizard progresses sequentially from Step 1 (defining the curriculum) to Step 2 (setting the tone) to Step 3 (adding features). Each step builds on the previous one, ensuring a cohesive and personalized subject-creation process.
+User Feedback: At every stage, the system provides previews or editable outputs, giving users control and confidence in the final product.
+Output: Once the "Generate" button is clicked, the system compiles the curriculum, applies the chosen tone, and incorporates the selected add-ons, delivering a fully customized subject ready for use.
+
+Acceptance Criteria
+The Acceptance Criteria outline the specific conditions that must be met to ensure the Subject Creation Scene works as intended. These are broken down by the three steps of the process and include general requirements:
+
+Step 1: Create Base Curriculum
+Free-Text Input: The free-text box must accept user input and process it to generate a curriculum. The AI should produce a structured list of topics and subtopics based on the provided description.
+Preset Selection: Preset options (e.g., "comprehensive," "basic to advanced") must be selectable and modify the curriculum’s structure accordingly.
+Curriculum Preview and Editing: The generated curriculum must appear in an editable format, allowing users to adjust it. Any changes should update the preview instantly.
+Confirmation: A clear option (e.g., a "Next" or "Confirm" button) must be available for users to finalize the curriculum before moving to the next step.
+Step 2: Tone of Delivery
+Tone Input: The free-text field for tone description must accept input, and preset tone options must be selectable.
+Tone Example Generation: The system must generate an example of the selected tone applied to a random topic from the curriculum. This example should only refresh when the "Refresh" button is clicked after changes are made.
+Refresh Functionality: The "Refresh" button must work, triggering a new tone example based on the current tone settings.
+Step 3: Add-ons
+Radio Options: Add-ons (e.g., Engagement Questions, Generate Voice) must be presented as clickable radio buttons or checkboxes, with default settings (e.g., Engagement Question: True, Generate Voice: False).
+Generate Button: A prominent "Generate" button must appear at the bottom of this step. When clicked, it must start the subject creation process and display a loading screen.
+Loading Screen: The loading screen must show a progress indicator or message to inform users that the subject is being generated.
+General
+Navigation: Users must be able to move between the three steps (e.g., via back and next buttons) until the final "Generate" action is completed.
+Error Handling: If any step is incomplete (e.g., no curriculum created), the system must display a prompt requiring the user to fill in the necessary fields before proceeding.
+Data Persistence: User inputs must be temporarily saved during the process, allowing users to go back and edit without losing their work.
+
+Rationale
+The Rationale explains why these features are included and how they support the overall purpose of the Subject Creation Scene:
+
+Step-by-Step Wizard: Dividing the process into three steps—curriculum creation, tone selection, and add-ons—makes it easier for users to manage. This reduces complexity and helps users focus on one task at a time, improving the overall experience.
+AI-Powered Curriculum Generation: Using AI to generate an initial curriculum saves time and provides a helpful starting point, especially for users unsure of how to structure their content. The editing option ensures they retain full control.
+Tone Customization: Letting users define the tone ensures the content suits their audience. The tone preview builds confidence that the chosen tone will be consistently applied.
+Add-ons for Enhanced Learning: Optional add-ons like engagement questions and voice narration enrich the learning experience, catering to diverse preferences and encouraging active participation.
+User Control and Feedback: Features like the "Refresh" button and editable curriculum keep users in charge, while the loading screen confirms the system is processing their request.
+
+
+
+
 ## Reinforcement Feature
 1. ### Daily Quiz Scene
    - **Requirement ID**: FR-006
