@@ -131,6 +131,20 @@
 - While in typing mode, the keyboard should provide additional keyboard key for the commonly used characters for that mode that is not provided by the default keyboard. (TODO: Separated design spec should be provided)
 - The chatbox should support multiple **dedicated fields** and the users have the option to create new field, step out (return to normal input), delete or enter to an existing field.
 
+#### Rationale
+- **Seamless Integration with Lecture Scene**:
+- The vertical sliding behavior and toggle button ensure the chat system integrates smoothly into the Lecture Scene without disrupting the user's focus on the primary content. By residing in its own UI layer, the chat remains accessible yet unobtrusive, allowing users to engage with the assistant as needed while maintaining a clean and intuitive interface. This aligns with UI-003.5’s goal of providing a cohesive and user-friendly experience.
+- **Context Awareness for Enhanced Interaction**:
+- Maintaining chat history and topic awareness enables the AI to provide relevant, coherent responses based on prior interactions, mimicking a natural conversation flow. Resetting the history when switching topics ensures that the assistant remains focused on the current subject, avoiding confusion or irrelevant responses. This is particularly valuable in an educational context where discussions often pivot between distinct concepts.
+- **Support for Specialized Content**:
+- The inclusion of dedicated fields with specialized formatting for programming code and mathematical equations addresses the need for precise, visually distinct rendering of technical content. Automatic detection and prompting for these formats reduce user effort, while manual embedding options empower advanced users with control. This dual approach accommodates varying levels of user expertise, ensuring accessibility for beginners and flexibility for experts.
+- **Efficient Multi-Field Management**:
+- Supporting multiple dedicated fields within the chat flow allows users to structure complex queries or responses (e.g., combining code snippets, equations, and explanatory text). The ability to create, delete, and navigate between fields enhances usability by offering a modular, organized input system. Returning to standard text input ensures versatility, catering to both technical and casual interactions.
+- **Optimized Typing Experience**:
+Providing additional keyboard inputs for commonly used characters (e.g., tab spacing in code) while in special container mode minimizes friction during technical input. This feature reduces reliance on default keyboard browsing, which can be cumbersome for frequent symbols or formatting needs in programming and mathematics. The UI buttons simulating keyboard keys further streamline the process, improving efficiency and user satisfaction.
+- **Educational and Practical Value**:
+- The combination of context retention, specialized rendering, and enhanced typing capabilities ensures the chat system is a powerful tool for learning and problem-solving. By rendering AI responses with proper styling (e.g., syntax-highlighted code, LaTeX-formatted equations), users receive clear, professional-grade feedback that mirrors real-world standards, reinforcing comprehension and application of lecture material.
+  
 4. ## Table of Contents
    - **Requirement ID**: FR-003
    - **UI Requirement**: UI-003.4
