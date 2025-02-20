@@ -16,7 +16,7 @@
 - **Reinforce learning with daily quizzes that apply spaced repetition, ensuring long-term retention of key topics.**
 
 
-## Scene Identification Table
+## Table of contents
 |Requirement ID|Title|Subdomain|
 |:---|:---|:--- |
 | FR-001 | Home Page | |
@@ -26,6 +26,7 @@
 | [FR-006](#fr-006)| Table of Contents |
 | [FR-007](#fr-007)| Subject Management |
 | [FR-008](#fr-008)| Subject Creation |
+| [FR-009](#fr-009)| Daily Quiz |
 
 # Functional Requirements
 1. ## <a id="fr-003"></a>Lecture Scene
@@ -363,22 +364,86 @@ The Rationale explains why these features are included and how they support the 
 
 
 ## Reinforcement Feature
-1. ### Daily Quiz Scene
-   - **Requirement ID**: FR-006
-   - **SC ID**: SC-006
-   - **Descriptions**:
-      - Daily Quiz
-         - // Proceeds with the activity every first open of app for the day
-         - // It should precedes everything
-         - // Levels of questions
-            - // 1. basic (e.g., multiple choice, simple identification) 1 to 2 days. Occurs 7 times 
-            - // 2. intermediate (e.g., simple problem solving, answer) 3 to 4 days. Occurs 7 times
-            - // 3. advance (e.g, advance problem solving) 7-8 days. Occurs 7 times
-            - // 4. master (e.g., explanation, practical challenges) 14-15 days. Occurs 7 times
-       - Optional Quiz
-          - // Provides 5 questions
-          - // Does not change the progress of each question
-          - // Randomly chooses questions from the question pool. Level of question is chosen at random
+1. ### <a id="fr-009"></a>Daily Quiz Scene
+**Requirement ID**: FR-009  
+ 
+**SC ID**: SC-006
+#### Descriptions:
+The Daily Quiz Scene is a key feature designed to reinforce user learning through a structured, daily quiz activity. Here’s how it works:
+- **Activation**:
+   -  The quiz activates every time the app is opened for the first time each day. If the daily reinforcement activity (i.e., the quiz) hasn’t been completed, it takes precedence over all other app features, ensuring users engage with it before proceeding.
+- **Question Formats**:
+   - Questions are presented in two formats:
+- **Multiple Choice**:
+   - Users select the correct answer from a set of options.
+- **Free-Text-Field**:
+   - Users type their answers without provided options.
+- **Question Generation**:
+   - All questions are generated based on topics the user has completed. Generation happens instantly upon topic completion, ensuring relevance to the user’s progress.
+- **Question Pool**:
+   - Generated questions are stored in a "question pool," which operates as a queue. The frequency assigned to each question determines whether it appears in the day’s reinforcement activity.
+- **Levels of Questions**:
+   - Questions are categorized into levels, each with specific attributes:
+      - **Difficulty**:
+         - How challenging the question is.
+      - **Frequency:**
+         - How often the question reappears.
+      - **Format**:
+         - How the question is presented (multiple choice or free-text).
+      - **Occurrence**:
+         - The number of times a question must be answered correctly before advancing to the next level.
+#### Levels of Questions
+- **Level 1**:
+   - **Difficulty**: Basic
+   - **Frequency**: Every 1-2 days
+   - **Format**: Multiple choice
+   - **Occurrence**: 7 correct answers required to progress
+- **Level 2**:
+   - **Difficulty**: Intermediate (e.g., simple problem solving)
+   - **Frequency**: Every 3-4 days
+   - **Format**: Multiple choice or free-text (system can use either)
+   - **Occurrence**: 7 correct answers required to progress
+- **Level 3**:
+   - **Difficulty**: Advanced (e.g., advanced problem solving)
+   - **Frequency**: Every 7-8 days
+   - **Format**: Free-text
+   - **Occurrence**: 7 correct answers required to progress
+- **Level 4**:
+   - **Difficulty**: Master (e.g., explanation, practical challenges)
+   - **Frequency**: Every 14-15 days
+   - **Format**: Free-text
+   - **Occurrence**: 7 correct answers required to complete
+- **Mastered Status**:
+   - After completing Level 4 (7 correct answers), the question is marked as Mastered.
+   - Mastered questions reappear every 20 days with a random difficulty level.
+   - Users can disable the recurrence of mastered questions via the Question Management Scene.
+#### Workflow
+- **Generation**:
+   - When a user completes a topic, questions are created and added to the question pool at Level 1.
+- **Scheduling**:
+   - Each question has a due date based on its frequency. The daily quiz includes questions whose due date is today or earlier.
+- **Progression**:
+   - When a question is answered correctly, its due date is updated within its level’s frequency range. After 7 correct answers at a level, it advances to the next level, updating its format and frequency.
+- **Daily Quiz**:
+   - On the first app open of the day, if questions are due, the quiz is presented. Users must complete it to access other features unless skipped. If no questions are due, the quiz is skipped.
+ 
+     
+#### Acceptance Criteria
+To ensure the Daily Quiz Scene meets its intended purpose, the following must be verified:
+- The quiz appears on the first app open of the day if the reinforcement activity hasn’t been completed and questions are due.
+- The quiz is skippable, but if skipped, a notification or indicator must appear on the homepage showing that a quiz is due for today.
+- Questions are generated instantly after a topic is completed and added to the question pool at Level 1.
+- The system tracks each question’s level, frequency, format, and correct answer count accurately.
+- For multiple choice questions, the system verifies correctness automatically.
+- For free-text questions, the system shows the correct answer after submission, and the user self-assesses correctness.
+- After 7 correct answers at a level, the question advances to the next level, with updated frequency and format.
+- Mastered questions (post-Level 4) appear every 20 days with random difficulty unless disabled by the user in the Question Management Scene.
+- If no questions are due, the quiz does not appear, and the app should navigate to the homepage immediately.
+#### Rationale
+The Daily Quiz Scene uses a spaced repetition approach to reinforce learning, gradually increasing question difficulty and intervals as users demonstrate mastery. By presenting the quiz on the first daily app open with a skippable option, it encourages consistent engagement while offering flexibility. The two question formats cater to different learning styles—multiple choice for quick recall, free-text for deeper understanding. The level system and question pool provide a structured progression, while the option to disable mastered questions respects user preferences, making the feature both effective and adaptable.
+
+
+     
 2. ### <a id="fr-007"></a>Personal Achievement Scene
    - **Requirement ID**: FR-007
    - **Scene ID**: SC-002
