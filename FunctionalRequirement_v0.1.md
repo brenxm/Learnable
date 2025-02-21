@@ -27,6 +27,7 @@
 | [FR-007](#fr-007)| Subject Management |
 | [FR-008](#fr-008)| Subject Creation |
 | [FR-009](#fr-009)| Daily Quiz |
+| [FR-010](#fr-010)| Optional Quiz |
 
 # Functional Requirements
 1. ## <a id="fr-003"></a>Lecture Scene
@@ -364,7 +365,7 @@ The Rationale explains why these features are included and how they support the 
 
 
 ## Reinforcement Feature
-1. ### <a id="fr-009"></a>Daily Quiz Scene
+1. ## <a id="fr-009"></a>Daily Quiz Scene
 **Requirement ID**: FR-009  
  
 **SC ID**: SC-006
@@ -451,6 +452,65 @@ To ensure the Daily Quiz Scene meets its intended purpose, the following must be
 - If no questions are due, the quiz does not appear, and the app should navigate to the homepage immediately.
 #### Rationale
 The Daily Quiz Scene uses a spaced repetition approach to reinforce learning, gradually increasing question difficulty and intervals as users demonstrate mastery. By presenting the quiz on the first daily app open with a skippable option, it encourages consistent engagement while offering flexibility. The two question formats cater to different learning styles—multiple choice for quick recall, free-text for deeper understanding. The level system and question pool provide a structured progression, while the option to disable mastered questions respects user preferences, making the feature both effective and adaptable.
+
+2. ## <a id="fr-010"></a>Optional Quiz
+**Requirement ID: FR-010  
+
+**Scene ID: TBD
+
+#### Descriptions
+
+The Optional Quiz is a user-initiated feature designed to provide additional practice without impacting the progress or attributes of questions in the main reinforcement system. Here’s how it functions:
+
+- **Question Quantity**:
+   - The system shall present 5 questions at a time per quiz session.
+- **Question Selection**:
+   - Questions are pulled randomly from the existing "question pool" (as used in the Daily Quiz Scene). The selection includes:
+      - **Random Difficulty**: Any difficulty level (Basic, Intermediate, Advanced, Master).
+      - **Random Format**: Either multiple choice or free-text, independent of the question’s original level-specific format.
+- **Non-Impactful**:
+   - Completing or answering questions in the Optional Quiz does not update the progress, frequency, occurrence count, or any other attributes of the questions in the question pool.
+- **Question Presentation**:
+   - The rendering and format for displaying each question match the Daily Quiz Scene (FR-006):
+      - One question per page.
+      - Includes the body of the question, an answer input area (multiple choice options or text field), a submit button, and a feedback area below the question body.
+      - After submission, feedback is rendered, and a "Next" button appears to proceed to the next question.
+- **Error Handling and Termination**:
+   - **No Time Limit**: There is no timeout or time restriction for completing the quiz.
+   - **App Termination**: If the app is closed or terminated while the quiz is in progress, no data is saved or affected. Upon reopening the app, it resumes normal operation, bypassing the quiz unless the user initiates it again.
+#### Workflow
+1. Users manually start the Optional Quiz from an accessible point in the app (e.g., a button on the homepage or a menu).
+2. The system randomly selects 5 questions from the question pool, ignoring their current level or due status.
+3. Questions are presented one at a time, following the same layout as the Daily Quiz.
+4. After answering all 5 questions, the quiz ends, returning the user to normal app operation.
+5. If interrupted (e.g., app closure), the quiz resets upon the next app launch, with no record of the prior session.
+#### Acceptance Criteria
+To ensure the Optional Quiz meets its intended purpose, the following conditions must be verified:
+
+- The quiz presents exactly 5 questions per session when initiated.
+- Questions are randomly selected from the question pool, with varying difficulty (Basic, Intermediate, Advanced, Master) and format (multiple choice or free-text) each time.
+- Answering questions (correctly or incorrectly) does not alter the question’s progress, frequency, occurrence count, or level in the question pool.
+- Each question page displays:
+   - The question body.
+   - An answer input (multiple choice options or text field) below the body.
+   - A submit button below the input.
+   - Feedback below the question body after submission, with a "Next" button to proceed.
+- The quiz has no time limit; users can take as long as needed to answer each question.
+- If the app is terminated mid-quiz (e.g., closed or crashed), no quiz progress is saved, and reopening the app navigates to the homepage or normal operation without resuming the quiz.
+- The quiz is only accessible via user initiation (e.g., a button or menu option), not triggered automatically like the Daily Quiz.
+#### Rationale
+The Optional Quiz provides a low-stakes, flexible practice option for users who want additional engagement without affecting their structured learning progress. Here’s why each aspect is included:
+
+- **Fixed Question Count (5)**: Limiting the quiz to 5 questions keeps it manageable and focused, encouraging casual use without overwhelming the user.
+- **Random Selection**: Pulling questions randomly from the pool with varying difficulty and format ensures variety and unpredictability, making it a fun and challenging practice tool.
+- **Non-Impactful Design**: By not updating question attributes, the feature preserves the integrity of the spaced repetition system in the Daily Quiz, maintaining its effectiveness while offering supplemental practice.
+- **Consistent Presentation**: Reusing the Daily Quiz’s question layout ensures a familiar user experience, reducing the learning curve and maintaining visual consistency across the app.
+- **No Time Limit**: Removing time pressure accommodates different paces and preferences, making the quiz accessible to all users.
+- **Termination Handling**: Allowing app closure without consequences aligns with the optional nature of the feature, ensuring it’s a stress-free addition to the app. 
+  
+This feature enhances user autonomy and supports voluntary learning, complementing the app’s structured reinforcement system with a casual, user-driven alternative.
+
+
 
 
      
