@@ -518,13 +518,27 @@ This feature enhances user autonomy and supports voluntary learning, complementi
    - **Requirement ID**: FR-007
    - **Scene ID**: SC-002
    - **Description**:
-      - It should display/signify:
-         - The dates when users studied for a minumum of 15 minutes a day
-         - The dates when users took the daily quiz
-         - How many subjects were generated
-         - How many subjects were completed
-         - How many questions were generated
-         - How many questions were answered correctly
+      Personal Achievement Scene
+	This is where user will view and track their overall progress
+	It shall display the progress to the users:
+		Total of generated subjects
+		Total of completed subjects
+		Total of questions generated
+		Total of questions answered
+		Total of time studying
+
+	It shall also display the streaks of studied daily
+	and streaks of took the quiz
+		
+	
+	System -> Evaluate the efficiency and mastery of each subject
+		    based on the completion of each subjects percentage
+		    based on total generated questions and correct answers
+
+	The system shall present the evaluation to a graph and an AI that explain what 
+	the users are not proficient by examining the wrong answers. Pending progressions
+		
+		
 8. ### Home Scene
    - **Requirement ID**: FR-008
    - **Scene ID**: SC-001
