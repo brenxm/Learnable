@@ -373,11 +373,21 @@ The Daily Quiz Scene is a key feature designed to reinforce user learning throug
 - **Activation**:
    -  The quiz activates every time the app is opened for the first time each day. If the daily reinforcement activity (i.e., the quiz) hasn’t been completed, it takes precedence over all other app features, ensuring users engage with it before proceeding.
 - **Question Formats**:
-   - Questions are presented in two formats:
-- **Multiple Choice**:
-   - Users select the correct answer from a set of options.
-- **Free-Text-Field**:
-   - Users type their answers without provided options.
+   - **Questions are presented in two formats**:
+      - **Multiple Choice**:
+         - Users select the correct answer from a set of options.
+      - **Free-Text-Field**:
+         - Users type their answers without provided options.
+- **Question Presentation**:
+   - The system shall present one question per page. Each page includes:
+      - **Body of Question**:
+         - The question text displayed promintently at the top
+      - **Answer Input**:
+         - Below the body, an input area (either multiple-choice options or a text field) for the user to respond.
+      - **Submit Button**:
+         - Positioned below the input area to submit the answer.
+      - **Feedback Area**:
+         - Located below the body of the question (and alongisde the input area), where feedback appears after submission. If the feedback is rendered, a "Next" button shall also appear to allow users to proceed to the next question.
 - **Question Generation**:
    - All questions are generated based on topics the user has completed. Generation happens instantly upon topic completion, ensuring relevance to the user’s progress.
 - **Question Pool**:
