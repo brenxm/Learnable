@@ -19,7 +19,7 @@
 ## Table of contents
 |Requirement ID|Title|Subdomain|
 |:---|:---|:--- |
-| FR-001 | Home Page | |
+| [FR-001](#fr-001) | Home Page | |
 | [FR-003](#fr-003) | Lecture Scene || 
 | [FR-004](#fr-004)| Engagement Question |
 | [FR-005](#fr-005)| Assistive AI Chat |
@@ -28,6 +28,9 @@
 | [FR-008](#fr-008)| Subject Creation |
 | [FR-009](#fr-009)| Daily Quiz |
 | [FR-010](#fr-010)| Optional Quiz |
+| [FR-011](#fr-011)| Question Management |
+| [FR-012](#fr-012)| Setting Scene |
+| [FR-013](#fr-013)| Subscription |
 
 # Functional Requirements
 1. ## <a id="fr-003"></a>Lecture Scene
@@ -539,8 +542,8 @@ This feature enhances user autonomy and supports voluntary learning, complementi
 	the users are not proficient by examining the wrong answers. Pending progressions
 		
 		
-8. ### Home Scene
-   - **Requirement ID**: FR-008
+8. ### <a id="fr-001"></a>Home Scene
+   - **Requirement ID**: FR-001
    - **Scene ID**: SC-001
    - **Descriptions**:
 This is the scene every time the app is freshly opened (fresh start up not reopened from minimize) unless the daily quiz is not performed yet which takes priority
@@ -556,11 +559,16 @@ settings
 And at the very top of the layout. A notification bar should be taken account, this is where notification will show, like for a daily quiz that was not completed yet. And or to promote/advertise the subscription mode. The UI will just be responsive, meaning if no notification to display, the other UI will cover the area, otherwise it will insert the bar at the very top
 A quick quiz button should be also present. 
 
-9. ### Question Management Scene
-   - **Requirement ID**: FR-009
+9. ### <a id="fr-011"></a>Question Management Scene
+   - **Requirement ID**: FR-011
    - **Scene ID**: SC-009
-10. ### Setting Scene
-   - **Requirement ID**: FR-010
+// Users can view the question pool that are used in daily quiz and optional quiz
+// Users can also delete. Though updating and adding will not be supported at the first version yet
+// The statistic for each question can be viewed here too like how many times this question was already asked and how many times the users has correct answer.
+
+     
+10. ### <a id="fr-012"></a>Setting Scene
+   - **Requirement ID**: FR-012
    - **Scene ID**: SC-010
    - **Description**:
       - // Dark/light mode
@@ -569,8 +577,8 @@ A quick quiz button should be also present.
       - // 
 
 ## Miscellaneous
-1. ### Subscription
-   - **Requirement ID**: FR-011
+1. ### <a id="fr-013"></a>Subscription
+   - **Requirement ID**: FR-013
    - **Description**:
       - New users should be offered with free 7 day trial access. Each user should only be granted one free trial
       - Subscription is required for users to continue usage after free trial  
