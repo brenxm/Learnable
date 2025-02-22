@@ -543,15 +543,19 @@ This feature enhances user autonomy and supports voluntary learning, complementi
    - **Requirement ID**: FR-008
    - **Scene ID**: SC-001
    - **Descriptions**:
-      - Users should be able to navigate from this scene to:
-        - Most recent lecture
-        - New lecture
-        - Question Management Scene
-        - Subject Management Scene (Library)
-        - Daily Quiz Scene
-        - Quick Quiz Scene
-        - Personal Achievement Scene
-        - Settings Scene
+This is the scene every time the app is freshly opened (fresh start up not reopened from minimize) unless the daily quiz is not performed yet which takes priority
+Most **recent lecture** has a prominent area in the scene, which has resume button where the users can pick up where they left of at the study material. 
+The other prominent area is the list of the subjects in the users library. This is mainly covered in the Subject Management Scene (FR-007).
+And there should be also a navigation bar with buttons that will navigate to:
+Library (home scene)
+Personal Achievement Scene
+Search scene (book marketplace)
+Question management
+settings
+
+And at the very top of the layout. A notification bar should be taken account, this is where notification will show, like for a daily quiz that was not completed yet. And or to promote/advertise the subscription mode. The UI will just be responsive, meaning if no notification to display, the other UI will cover the area, otherwise it will insert the bar at the very top
+A quick quiz button should be also present. 
+
 9. ### Question Management Scene
    - **Requirement ID**: FR-009
    - **Scene ID**: SC-009
