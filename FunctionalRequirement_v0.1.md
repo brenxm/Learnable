@@ -568,23 +568,58 @@ A quick quiz button should be also present.
 
      
 10. ### <a id="fr-012"></a>Setting Scene
-   - **Requirement ID**: FR-012
-   - **Scene ID**: SC-010
-   - **Description**:
-      - // Dark/light mode
-      - // Subscription
-      - // Delete account
-      - // 
+**Requirement ID**: FR-012
+**Scene ID**: SC-010
+#### Description**:
+// This is the scene where users can configure the setting of their app
+// Configurable settings:
+	// Account information
+ 		// This is an optional settings the users can fill up, but it is recommended when distributing a self authored course to the bookplace to build audience and to show that the course is coming from a legitimate or knowledgable creator.
+   		// The users can fill up/change
+ 			// Name
+   			// Occupation
+     			// Workplace
+       			// bio
+	  	// The system shall have a section explaining why this info is being asked:
+    			// This is not a mandatory, but suggested when planning to distribute self structured 
+       			// Users personal data is not used beyond the intended usage
+	  		// Complies the data and regulation applicable
+ 	// Theme and Fonts
+  		// For changing setting for 2 main area.
+    			// 1. System layout (All the menu excluding the subject material)
+       			// 2. Subject material
+	  		// 3. Chat assistant (Except for special containers)
+  	// Keyboard
+   		// activating the two special formatter in the keyboard
+     			// code block
+			// math latex
+   	// Notification
+    		// Enabling/disable reminder settings
+    			// 1. Reinfocement activity reminder (if not taken today)
+       			// 2. 15 minutes study reminder (if not taken today)
+	  		// 3. Quick reinforcement activity
+     				// Frequency
+    	// Data and Privacy
+     		// No configuration on the part of the users, users can only:
+       			// download their data (json)
+	  		// terms of service (view)
+     			// Privacy Policy (view)
+     	// Subscription
+      		// TBD
+	// Delete data and Start over
+ 		// The option to delete all data and do a fresh start (A confirmation modal must be prompted to the users)
+ 	// Delete account
+ 		// The option to terminate users account and delete all data (A confirmation modal must be prompted to the user)
+
 
 ## Miscellaneous
 1. ### <a id="fr-013"></a>Subscription
    - **Requirement ID**: FR-013
    - **Description**:
       - New users should be offered with free 7 day trial access. Each user should only be granted one free trial
-      - Subscription is required for users to continue usage after free trial  
-2. ### Subscription Scene
-   - **Scene ID**: TBD
-   - **Description**:
-      - Subscription scene should be displayed as a start up scene with each app reset or if app is newly opened. Only applicable to non-subscriber or free-trial users.
-      - Subscription scene should display the cost of the subscription, perks, benefits and days of free trial remaining (if applicable)
-      - Users with expired free trial access should not be able to bypass the subscription scene. The user is required to sign up for a subscription to continue/gain access to the service.
+      - Subscription is required for users to continue usage after free trial, meaning after trial period, this will block the users from continuing to use the entire service or parts/features that requires a subscrition.
+      - The display scene should display the perks of a pro subscriber
+      	- Chat assistant
+       	- Unlimited creation of subject
+        - Publishing sources to bookmarketplace
+        - Verified user
