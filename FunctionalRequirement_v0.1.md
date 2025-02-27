@@ -17,7 +17,7 @@
 
 
 ## Table of contents
-|Requirement ID|Title|Subdomain|
+|Requirement ID|Title|Scene ID|
 |:---|:---|:--- |
 | [FR-001](#fr-001) | Home Page | |
 | [FR-003](#fr-003) | Lecture Scene || 
@@ -30,7 +30,8 @@
 | [FR-010](#fr-010)| Optional Quiz |
 | [FR-011](#fr-011)| Question Management |
 | [FR-012](#fr-012)| Setting Scene |
-| [FR-013](#fr-013)| Subscription |
+| [FR-013](#fr-013)| Personal Achievement Scene | SC-002|
+| [FR-014](#fr-014)| Subscription |
 
 # Functional Requirements
 1. ## <a id="fr-003"></a>Lecture Scene
@@ -518,28 +519,64 @@ This feature enhances user autonomy and supports voluntary learning, complementi
 
      
 2. ### <a id="fr-007"></a>Personal Achievement Scene
-   - **Requirement ID**: FR-007
-   - **Scene ID**: SC-002
-   - **Description**:
-      Personal Achievement Scene
-	This is where user will view and track their overall progress
-	It shall display the progress to the users:
-		Total of generated subjects
-		Total of completed subjects
-		Total of questions generated
-		Total of questions answered
-		Total of time studying
+**Requirement ID**: FR-013 
 
-	It shall also display the streaks of studied daily
-	and streaks of took the quiz
-		
-	
-	System -> Evaluate the efficiency and mastery of each subject
-		    based on the completion of each subjects percentage
-		    based on total generated questions and correct answers
+**Scene ID**: SC-002
+#### Description**:
+The Personal Achievement Scene allows users to view and track their overall progress within the app. It serves as a motivational and analytical hub, presenting key statistics and insights about their learning journey. The system shall provide the following features:
 
-	The system shall present the evaluation to a graph and an AI that explain what 
-	the users are not proficient by examining the wrong answers. Pending progressions
+- **Progress Metrics**: The scene shall display the following user progress data:
+	- **Total of Generated Subjects**: The number of subjects created by the user.
+	- **Total of Completed Subjects**: The number of subjects fully completed.
+	- **Total of Questions Generated**: The total number of questions created across all subjects.
+	- **Total of Questions Answered**: The total number of questions the user has responded to (correct or incorrect).
+	- **Total Time Studying**: The cumulative time spent studying, tracked across all activities.
+- **Streaks Tracking**: The system shall display:
+	- **Study Streaks**: The number of consecutive days the user has studied.
+	- **Quiz Streaks**: The number of consecutive days the user has completed the daily quiz.
+	- These streaks are presented in a calendar view, with a toggle option to switch between study streaks and quiz streaks.
+- **Efficiency and Mastery Evaluation**: The system shall evaluate each subject’s efficiency and mastery based on:
+	- The percentage of completion for each subject.
+	- The ratio of total generated questions to correct answers for that subject.
+	- This evaluation shall be visualized in a graph view (e.g., bar or line graph) for each subject.
+- **AI-Driven Evaluation**: The system shall include a feature where an AI analyzes the user’s overall progress and provides a textual evaluation. This evaluation covers:
+	- Progress across the entire course.
+  	- User shortcomings (e.g., areas with lower mastery or slower progress).
+	- User strengths (e.g., subjects or topics with high completion and accuracy).
+	- Example output: "You’ve completed 80% of Mathematics with strong accuracy in algebra but could improve in geometry, where only 50% of questions were answered correctly."
+#### Workflow
+- Users access this scene to get a snapshot of their learning achievements.
+- The progress metrics and streaks update in real-time as the user interacts with subjects and quizzes.
+- The graph view and AI evaluation dynamically reflect the latest data, offering actionable insights.
+  
+#### Acceptance Criteria
+To ensure the Personal Achievement Scene meets its intended purpose, the following must be verified:
+
+1. The scene displays accurate counts for:
+	- Total generated subjects.
+	- Total completed subjects.
+	- Total questions generated.
+	- Total questions answered (regardless of correctness).
+	- Total study time (in a readable format, e.g., hours and minutes).
+2. A calendar view shows study streaks and quiz streaks, with a functional toggle to switch between the two views.
+3. Streaks reset to zero if a day is missed for either studying or taking the daily quiz, and the calendar reflects this accurately.
+4. For each subject, a graph visualizes:
+	- Completion percentage (e.g., 75% complete).
+	- Mastery score (e.g., percentage of correct answers out of generated questions).
+5. The AI evaluation feature generates a text summary that:
+	Reflects the user’s overall progress (e.g., subjects completed vs. generated).
+	Identifies at least one strength and one shortcoming based on data (e.g., high accuracy in one subject, low completion in another).
+	Updates whenever new progress data is available.
+6. All displayed data (metrics, streaks, graphs, AI text) must match the user’s actual activity in the app.
+7. The scene loads without delay and updates dynamically as the user progresses through subjects or quizzes.
+#### Rationale
+The Personal Achievement Scene is designed to motivate users and provide actionable feedback on their learning journey. Here’s why each component is included: 
+
+- **Progress Metrics**: Displaying totals for subjects, questions, and study time gives users a clear, quantifiable sense of their efforts, fostering a sense of accomplishment and encouraging continued engagement.
+- **Streaks in Calendar View**: Tracking daily study and quiz streaks in a toggleable calendar format gamifies the experience, leveraging habit formation to boost consistency. The toggle keeps the interface clean and focused.
+- **Efficiency and Mastery Graphs**: Visualizing subject completion and question accuracy in a graph offers an intuitive way to assess performance, helping users identify areas needing improvement at a glance.
+- **AI Evaluation**: The textual analysis by AI personalizes the experience, offering insights beyond raw numbers. Highlighting strengths and shortcomings empowers users to adjust their focus, aligning with the app’s goal of enhancing learning efficiency.
+This scene combines data-driven insights with motivational elements, making it a vital tool for users to reflect on and optimize their educational progress within the app.
 		
 		
 8. ### <a id="fr-001"></a>Home Scene
