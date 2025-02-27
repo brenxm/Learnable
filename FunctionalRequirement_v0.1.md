@@ -28,8 +28,8 @@
 | [FR-008](#fr-008)| Subject Creation |
 | [FR-009](#fr-009)| Daily Quiz |
 | [FR-010](#fr-010)| Optional Quiz |
-| [FR-011](#fr-011)| Question Management |
-| [FR-012](#fr-012)| Setting Scene |
+| [FR-011](#fr-011)| Question Management | SC-009 |
+| [FR-012](#fr-012)| Setting Scene | SC-010|
 | [FR-013](#fr-013)| Personal Achievement Scene | SC-002|
 | [FR-014](#fr-014)| Subscription |
 
@@ -577,76 +577,202 @@ The Personal Achievement Scene is designed to motivate users and provide actiona
 - **Efficiency and Mastery Graphs**: Visualizing subject completion and question accuracy in a graph offers an intuitive way to assess performance, helping users identify areas needing improvement at a glance.
 - **AI Evaluation**: The textual analysis by AI personalizes the experience, offering insights beyond raw numbers. Highlighting strengths and shortcomings empowers users to adjust their focus, aligning with the app’s goal of enhancing learning efficiency.
 This scene combines data-driven insights with motivational elements, making it a vital tool for users to reflect on and optimize their educational progress within the app.
-		
+
+
+
+  
 		
 8. ### <a id="fr-001"></a>Home Scene
-   - **Requirement ID**: FR-001
-   - **Scene ID**: SC-001
-   - **Descriptions**:
-This is the scene every time the app is freshly opened (fresh start up not reopened from minimize) unless the daily quiz is not performed yet which takes priority
-Most **recent lecture** has a prominent area in the scene, which has resume button where the users can pick up where they left of at the study material. 
-The other prominent area is the list of the subjects in the users library. This is mainly covered in the Subject Management Scene (FR-007).
-And there should be also a navigation bar with buttons that will navigate to:
-Library (home scene)
-Personal Achievement Scene
-Search scene (book marketplace)
-Question management
-settings
+**Requirement ID**: FR-001  
 
-And at the very top of the layout. A notification bar should be taken account, this is where notification will show, like for a daily quiz that was not completed yet. And or to promote/advertise the subscription mode. The UI will just be responsive, meaning if no notification to display, the other UI will cover the area, otherwise it will insert the bar at the very top
-A quick quiz button should be also present. 
+**Scene ID**: SC-001
+#### Descriptions:
+The Home Scene serves as the primary landing page when the app is freshly opened (i.e., a fresh startup, not reopened from a minimized state), unless the daily quiz has not been completed, in which case the Daily Quiz Scene (FR-006) takes priority. The scene is designed to provide quick access to key features and an overview of the user’s current activities. Here’s how it’s structured:
+
+- **Recent Lecture Section**: A prominent area displays the most recent lecture or study material the user was working on. It includes a "Resume" button, allowing users to pick up where they left off in their studies.
+- **Subject Library**: Another prominent area lists the subjects in the user’s library. This section ties into the functionality detailed in the Subject Management Scene (FR-004), providing a summary view of available subjects.
+- **Navigation Bar**: Located at the bottom of the screen, a navigation bar contains buttons to access the following scenes:
+- **Library**: Returns to or remains on the Home Scene (SC-001).
+- **Personal Achievement Scene**: Navigates to SC-002.
+- **Search Scene (Book Marketplace)**: Navigates to a scene for browsing educational content or resources.
+- **Question Management**: Navigates to a scene for managing quiz questions (e.g., disabling mastered questions).
+- **Settings**: Navigates to the app’s settings scene.
+- **Notification Bar**: Positioned at the very top of the layout, this responsive bar displays notifications when applicable, such as:
+	- A reminder that the daily quiz is due if not yet completed.
+	- Promotional messages (e.g., advertising a subscription mode).
+	- If no notifications are present, the bar collapses, and the remaining UI elements expand to fill the space; otherwise, it inserts itself at the top, pushing content downward.
+- **Quick Quiz Button**: A button is present to initiate the Optional Quiz (FR-010), navigating the user to its dedicated scene (SC-010) upon clicking.
+- **New Subject Button**: A button allows users to add a new subject, navigating to the Subject Creation Scene (FR-005, SC-005) when clicked.
+#### Workflow
+- On a fresh app launch, if the daily quiz is incomplete, the user is directed to SC-006 first. Otherwise, SC-001 loads.
+- The scene prioritizes resuming recent activity and accessing subjects, with navigation options for deeper exploration or management.
+#### Acceptance Criteria
+To ensure the Home Scene functions as intended, the following must be verified:
+
+- On a fresh app startup (not from minimize), the Home Scene loads unless the daily quiz is due, in which case the Daily Quiz Scene (SC-006) appears first.
+- The "Recent Lecture" section prominently displays the title or details of the most recently accessed lecture, with a functional "Resume" button that navigates to the exact point where the user left off.
+- The subject library section lists all user subjects (consistent with FR-004), showing at least their titles, and allows navigation to the Subject Management Scene if interacted with further.
+- The navigation bar at the bottom includes five buttons (Library, Personal Achievement, Search, Question Management, Settings), each correctly navigating to its respective scene:
+	- **Library:** Stays on SC-001.
+	- **Personal Achievement**: SC-002.
+	- **Search Scene**: Book marketplace scene.
+	- **Question Management**: Question management scene.
+	- **Settings**: Settings scene.
+- The notification bar at the top:
+	- Displays a "Quiz Due" message if the daily quiz is incomplete, visible until completed or skipped.
+	- Shows promotional messages (e.g., subscription ads) when triggered.
+	- Collapses when no notifications are active, with the UI adjusting responsively to fill the space.
+- A "Quick Quiz" button is visible and, when clicked, navigates to the Optional Quiz Scene (SC-010).
+- A "New Subject" button is visible and, when clicked, navigates to the Subject Creation Scene (SC-005).
+- All elements load without delay and remain accessible regardless of notification bar state.
+#### Rationale
+The Home Scene is the central hub of the app, designed to streamline user interaction and encourage continued learning. Here’s why each feature is included:
+
+- **Fresh Startup Priority**: Defaulting to the Home Scene (unless the daily quiz is due) ensures users have immediate access to their learning materials, while prioritizing the quiz maintains reinforcement consistency.
+- **Recent Lecture Section**: Highlighting the last lecture with a "Resume" button reduces friction, allowing users to dive back into their studies effortlessly, which is key for retention and engagement.
+- **Subject Library**: Summarizing subjects ties into the broader management system (FR-004), giving users a quick overview and entry point to their content.
+- **Navigation Bar**: Placing essential navigation at the bottom ensures accessibility and aligns with mobile design standards, supporting exploration of achievements, resources, and settings.
+- **Notification Bar**: A responsive top bar keeps users informed about critical tasks (e.g., quizzes) or promotions without cluttering the interface when inactive, balancing utility and aesthetics.
+- **Quick Quiz and New Subject Buttons**: These options empower users to practice voluntarily or expand their library, enhancing flexibility and personalization.
+  
+This scene balances immediate usability with long-term engagement, serving as an intuitive gateway to the app’s core features. 
+
+
+
+
 
 9. ### <a id="fr-011"></a>Question Management Scene
-   - **Requirement ID**: FR-011
-   - **Scene ID**: SC-009
-// Users can view the question pool that are used in daily quiz and optional quiz
-// Users can also delete. Though updating and adding will not be supported at the first version yet
-// The statistic for each question can be viewed here too like how many times this question was already asked and how many times the users has correct answer.
+- **Requirement ID**: FR-011
+     
+- **Scene ID**: SC-009
+#### Descriptions
+The Question Management Scene provides users with an interface to oversee and manage the question pool used in both the Daily Quiz Scene (FR-009) and the Optional Quiz (FR-010). This scene focuses on visibility and limited control over the questions, with the following features:
+
+- **View Question Pool**: Users can view all questions currently in the question pool, which includes questions generated from completed topics and used in daily and optional quizzes.
+- **Delete Questions**: Users can delete individual questions from the pool. However, at this initial version, updating existing questions or adding new ones manually will not be supported.
+- **Question Statistics**: For each question, the system shall display detailed statistics, including:
+	- **Times Asked**: The total number of times the question has been presented to the user (across both daily and optional quizzes).
+	- **Times Correctly Answered**: The total number of times the user has answered the question correctly.
+#### Workflow
+- Users navigate to this scene (e.g., via the navigation bar in the Home Scene) to review their question pool.
+- Questions are listed with their associated stats, and a delete option is available for each.
+- Deleting a question removes it permanently from the pool, affecting its availability in future quizzes.
+#### Acceptance Criteria
+To ensure the Question Management Scene meets its intended purpose, the following must be verified:
+
+- The scene displays a complete list of all questions in the question pool, sourced from both the Daily Quiz and Optional Quiz systems.
+- Each question entry shows:
+	- The question text (e.g., "What is 2 + 2?").
+	- **Statistics**:
+		- "Times Asked" (e.g., "Asked: 5 times").
+		- "Times Correctly Answered" (e.g., "Correct: 3 times").
+- A "Delete" option (e.g., a button or icon) is available next to each question.
+- Clicking "Delete" removes the question from the pool permanently, and it no longer appears in future daily or optional quizzes.
+- Deleting a question requires a confirmation prompt (e.g., "Are you sure you want to delete this question?") to prevent accidental removal.
+- The system does not provide options to manually add new questions or edit existing ones in this version.
+- Statistics for each question accurately reflect the user’s history (e.g., matching the number of times asked and answered correctly in past quizzes).
+- The scene loads without delay and updates the list immediately after a question is deleted.
+#### Rationale
+The Question Management Scene empowers users with visibility and control over their learning reinforcement system, while keeping the initial implementation simple. Here’s why each feature is included:
+
+- **View Question Pool**: Displaying all questions gives users transparency into the content driving their quizzes, helping them understand what they’ve encountered and mastered.
+- **Delete Functionality**: Allowing deletion without updating or adding (in this version) provides a basic level of customization, letting users remove questions they no longer want (e.g., mastered or irrelevant ones), while keeping development scope manageable.
+- **Question Statistics**: Showing "Times Asked" and "Times Correct" offers valuable feedback on question exposure and performance, aiding users in assessing their consistency and areas of difficulty.
+- **Limited Scope**: Excluding add/edit features in the first version simplifies the interface and prioritizes core functionality, with potential expansion in future updates based on user needs.
+This scene supports user autonomy by providing insight and control over the quiz system, enhancing the app’s personalization while aligning with a phased development approach.
 
      
 10. ### <a id="fr-012"></a>Setting Scene
-**Requirement ID**: FR-012
+**Requirement ID**: FR-012 
+
 **Scene ID**: SC-010
-#### Description**:
-// This is the scene where users can configure the setting of their app
-// Configurable settings:
-	// Account information
- 		// This is an optional settings the users can fill up, but it is recommended when distributing a self authored course to the bookplace to build audience and to show that the course is coming from a legitimate or knowledgable creator.
-   		// The users can fill up/change
- 			// Name
-   			// Occupation
-     			// Workplace
-       			// bio
-	  	// The system shall have a section explaining why this info is being asked:
-    			// This is not a mandatory, but suggested when planning to distribute self structured 
-       			// Users personal data is not used beyond the intended usage
-	  		// Complies the data and regulation applicable
- 	// Theme and Fonts
-  		// For changing setting for 2 main area.
-    			// 1. System layout (All the menu excluding the subject material)
-       			// 2. Subject material
-	  		// 3. Chat assistant (Except for special containers)
-  	// Keyboard
-   		// activating the two special formatter in the keyboard
-     			// code block
-			// math latex
-   	// Notification
-    		// Enabling/disable reminder settings
-    			// 1. Reinfocement activity reminder (if not taken today)
-       			// 2. 15 minutes study reminder (if not taken today)
-	  		// 3. Quick reinforcement activity
-     				// Frequency
-    	// Data and Privacy
-     		// No configuration on the part of the users, users can only:
-       			// download their data (json)
-	  		// terms of service (view)
-     			// Privacy Policy (view)
-     	// Subscription
-      		// TBD
-	// Delete data and Start over
- 		// The option to delete all data and do a fresh start (A confirmation modal must be prompted to the users)
- 	// Delete account
- 		// The option to terminate users account and delete all data (A confirmation modal must be prompted to the user)
+#### Descriptions
+The Setting Scene is where users can configure various aspects of their app experience. It serves as a centralized hub for personalization and account management. The scene operates as follows:
+
+- **Landing Scene**: Upon entering, users see a list of configurable settings. Clicking each item navigates to a dedicated sub-page for that setting.
+- **Configurable Settings**:
+	- Account Information:
+		- An optional section for users to fill out, recommended when distributing self-authored courses via the book marketplace to establish credibility and build an audience.
+		- **Editable fields**:
+			- **Name**: User’s full name.
+			- **Occupation**: User’s job or profession.
+			- **Workplace**: User’s employer or institution.
+			- **Bio**: A short description of the user.
+		- Includes an explanatory section:
+			- States that this information is optional but suggested for course distribution.
+			- Assures users that personal data is used only for the intended purpose (e.g., course authorship display).
+			- Confirms compliance with applicable data protection regulations.
+- **Theme and Fonts**:			
+	- Allows customization of font size and style for three distinct areas:
+		- **System Layout**: Menus and navigation (excluding subject material).
+		- **Subject Material**: Lecture and study content.
+		- **Chat Assistant**: Chat interface (excluding special containers like code/math fields).
+- **Keyboard**:
+	- Enables or disables two special formatters in the keyboard:
+		- **Code Block**: For programming code input.
+		- **Math LaTeX**: For mathematical equation input.
+- **Notification**:
+	- Toggle settings for reminders:
+		- Reinforcement Activity Reminder: Notifies if the daily quiz isn’t taken that day.
+		- 15-Minute Study Reminder: Alerts if no studying occurs that day.
+		- Quick Reinforcement Activity: Adjustable frequency for optional quiz reminders.
+- **Data and Privacy**:
+	- No user-configurable options, but provides:
+		- **Download Data**: Exports user data in JSON format.
+		- **Terms of Service**: Viewable document.
+		- **Privacy Policy**: Viewable document.
+- **Subscription**:
+	- Displays current subscription perks (if subscribed).
+	- Offers options to:
+		- Cancel an active subscription.
+		- Subscribe if not currently enrolled.
+- **Delete Data and Start Over**:
+	- Allows users to erase all app data for a fresh start, with a confirmation modal required before execution.
+- **Delete Account**:
+	- Permits users to terminate their account and delete all associated data, with a confirmation modal required before execution.
+#### Workflow
+- Users access the scene via the navigation bar (e.g., from the Home Scene).
+- The list of settings acts as a menu, with sub-pages providing detailed configuration options or information.
+#### Acceptance Criteria
+To ensure the Setting Scene meets its intended purpose, the following must be verified:
+
+- The landing page displays a list of all settings (Account Information, Theme and Fonts, Keyboard, Notification, Data and Privacy, Subscription, Delete Data, Delete Account), each clickable to a sub-page.
+- **Account Information sub-page**:
+	- Allows editing of Name, Occupation, Workplace, and Bio.
+	- Displays an explanation about optional use, data purpose, and regulatory compliance.
+- **Theme and Fonts sub-page**:
+	- Offers font size and style options for System Layout, Subject Material, and Chat Assistant, with changes applied instantly upon selection.
+- **Keyboard sub-page**:
+	- Provides toggles to enable/disable Code Block and Math LaTeX formatters, affecting keyboard behavior in relevant areas.
+- **Notification sub-page**:
+	- Includes toggles for Reinforcement Activity, 15-Minute Study, and Quick Reinforcement reminders.
+	- Allows frequency adjustment for Quick Reinforcement (e.g., daily, weekly).
+- **Data and Privacy sub-page**:
+	- Offers a "Download Data" button that exports a JSON file.
+	- Provides viewable links for Terms of Service and Privacy Policy.
+- **Subscription sub-page**:
+	- Shows current subscription details (if any).
+	- Includes "Cancel" and "Subscribe" options based on user status, with functional navigation to payment flows.
+- **Delete Data and Start Over sub-page**:
+	- Displays a button that, when clicked, prompts a confirmation modal (e.g., "Are you sure? This will erase all data").
+	- Upon confirmation, resets the app to its initial state.
+- **Delete Account sub-page**:
+	- Displays a button that, when clicked, prompts a confirmation modal (e.g., "Are you sure? This will delete your account and data").
+	- Upon confirmation, terminates the account and erases all data.
+- All sub-pages load without delay and save changes persistently.
+#### Rationale
+The Setting Scene enhances user control and trust in the app by offering a range of personalization and management options. Here’s why each feature is included:
+
+- **Centralized Configuration**: A list-based landing page with sub-pages simplifies navigation, making settings easy to find and adjust.
+- **Account Information**: Optional fields with a clear purpose encourage course creators to build credibility, while transparency about data use builds trust.
+- **Theme and Fonts**: Customizable visuals improve accessibility and comfort, catering to diverse user preferences.
+- **Keyboard Options**: Special formatters enhance technical input efficiency, aligning with educational needs.
+- **Notification Controls**: Flexible reminders support user habits without being intrusive, balancing engagement and autonomy.
+- **Data and Privacy**: Providing data access and policy visibility ensures transparency and compliance, fostering confidence.
+- **Subscription Management**: Clear subscription info and options streamline user decisions about premium features.
+- **Data/Account Deletion**: Reset and termination options give users ultimate control, reinforcing trust and flexibility.
+This scene empowers users to tailor their experience while ensuring transparency and compliance, aligning with the app’s goal of a user-centric learning environment.
+
 
 
 ## Miscellaneous
