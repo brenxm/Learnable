@@ -561,12 +561,12 @@ To ensure the Personal Achievement Scene meets its intended purpose, the followi
 2. A calendar view shows study streaks and quiz streaks, with a functional toggle to switch between the two views.
 3. Streaks reset to zero if a day is missed for either studying or taking the daily quiz, and the calendar reflects this accurately.
 4. For each subject, a graph visualizes:
-	- Completion percentage (e.g., 75% complete).
-	- Mastery score (e.g., percentage of correct answers out of generated questions).
+	- Completion percentage (e.g., 75% complete) if the "all subject" (default item) is selected.
+	- Mastery score percentage of correct answers for the selected subject.
 5. The AI evaluation feature generates a text summary that:
-	Reflects the user’s overall progress (e.g., subjects completed vs. generated).
-	Identifies at least one strength and one shortcoming based on data (e.g., high accuracy in one subject, low completion in another).
-	Updates whenever new progress data is available.
+	- Reflects the user’s overall progress for the selected subject.
+	- Identifies at least one strength and one shortcoming based on data (e.g., high accuracy in one subject, low completion in another).
+	- Updates whenever new progress data is available.
 6. All displayed data (metrics, streaks, graphs, AI text) must match the user’s actual activity in the app.
 7. The scene loads without delay and updates dynamically as the user progresses through subjects or quizzes.
 #### Rationale
