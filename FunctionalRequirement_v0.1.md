@@ -38,8 +38,7 @@
 **Requirement ID:** FR-003  
   
 **Scene ID:** SC-003
-
-**Descriptions**:
+### Descriptions:
 - **Lecture Content Display:**  
    - The scene shall present lecture content in a **linear, top-to-bottom scrollable interface**.  
    - Navigation is restricted to moving forward and backward **within the current topic only**.
@@ -59,7 +58,7 @@
    - The scene shall allow users to access a **chat assistant** ([FR-002](#fr-002)) for real-time guidance, explanations, and support related to the lecture content.  
    - The chat assistant box shall display the chat history for the current topic only.
    
-#### Acceptance Criteria
+### Acceptance Criteria
  - The system must provide smooth vertical scrolling from the start to the end of the topic.
  - Upon reaching the end of a topic, the engagement question must be triggered.  
  - A user must submit a response, after which appropriate feedback is provided before proceeding.
@@ -68,7 +67,7 @@
  - It can also be accessed with left-to-right scroll gesture.   
  - The chat assistant must be accessible at any point during the lecture and display only the chat history relevant to the current topic.
     
-#### Rationale
+### Rationale
 - **Linear Navigation Focus:**  
   A linear, top-to-bottom scrolling interface ensures that users focus on one topic at a time, reducing cognitive load and maintaining a structured learning flow.
 - **Enhanced Readability:**  
@@ -86,7 +85,7 @@
    
 **UI Requirement**: SC-003.6
 
-**Descriptions**:
+### Descriptions:
 - **Context of the question**:
     - The question shall be related to the current topic.
 - **Flow interruption**: 
@@ -99,7 +98,7 @@
     - Upon submitting their response, the system shall provide feedback, including an explanation or additional information, regardless the answer was correct or incorrect.
     - After receiving feedback, the system shall offer the user the option to ask one additional question or proceed with the next topic via rendering two buttons after the question.
          
-#### Acceptance Criteria:
+### Acceptance Criteria:
 - The system must display an engagment question at the end of each topic page.
 - The engagement question must be either a multiple-choice question or a free-text-response question.
 - The question must be embedded within the topic page, not on a separate page.
@@ -107,7 +106,7 @@
 - Upon submission, the system must provide feedback on the response, including an explanation or additional information, regardless of correctness.
 - After feedback is provided, the system must present the user with two options: to ask one additional question or proceed with the next topic via rendering two buttons after the question.
 
-#### Rationale:
+### Rationale:
 - **Active Engagement**:
     - Interrupting the lecture with an engagement question at the end of each topic reinforces learning by prompting users to reflect on and apply what they’ve learned, thereby improving retention.
 - **Immediate Feedback**:
@@ -122,14 +121,14 @@
 
 **UI Requirement**: UI-003.5  
 
-**Descriptions**:
+### Descriptions:
 - The system shall be accessible within the Lecture Scene (SC-003), utilizing a vertical sliding behavior within its own UI layer. Users can open or close the chat system via a toggle button within the Lecture Scene.
 - The system shall maintain context awareness by tracking both the topic and chat history for interactions between the chat assistant and users. The system shall erase the chat history once moved forward to a different topic.
 - The system shall provide **dedicated fields** with **specialized formatting support** and ensure compatability to standard rendering for entering programming code or mathematical equations. It will automatically detect such inputs and prompt users to embed a **special field** for the detected format. Users can also manually embed these **dedicated fields** via button in the chat text field.
 - The system shall support multiple dedicated fields within the input flow, each functioning as a self-contained unit. Users shall be able to create, delete, and navigate between these fields, as well as return to a standard text input.
 - The system shall provide additional keyboard input for commonly used characters when the typing keyboard and a special container mode is active, reducing the need for users to browse the default keyboard system. UI buttons that simulate keyboard keys shall be available while users are typing. (e.g., **tab** button for tab spaces when writing a programming code)
      
-#### Acceptance Criteria
+### Acceptance Criteria
 - The chatbox should slide in top-bottom vertical behavior in it's own page (separate page in front of the topic page).
 - The chatbox should open via engaging in type mode (clicking the chat assistant text field) and can be closed by clicking the close button while chatbox is active.
 - The chat should retain the history of messages between the user and the AI.
@@ -140,7 +139,7 @@
 - While in typing mode, the keyboard should provide additional keyboard key for the commonly used characters for that mode that is not provided by the default keyboard. (TODO: Separated design spec should be provided)
 - The chatbox should support multiple **dedicated fields** and the users have the option to create new field, step out (return to normal input), delete or enter to an existing field.
 
-#### Rationale
+### Rationale
 - **Seamless Integration with Lecture Scene**:
 - The vertical sliding behavior and toggle button ensure the chat system integrates smoothly into the Lecture Scene without disrupting the user's focus on the primary content. By residing in its own UI layer, the chat remains accessible yet unobtrusive, allowing users to engage with the assistant as needed while maintaining a clean and intuitive interface. This aligns with UI-003.5’s goal of providing a cohesive and user-friendly experience.
 - **Context Awareness for Enhanced Interaction**:
@@ -157,7 +156,7 @@ Providing additional keyboard inputs for commonly used characters (e.g., tab spa
 4. ## <a id="fr-006"></a>Table of Contents
 **Requirement ID**: FR-006
 **UI Requirement**: UI-003.4
-#### Descriptions:
+### Descriptions:
 - The system shall display all topics in a list format within the Table of Contents, providing users with a comprehensive overview of the subject’s structure.
 The Table of Contents shall be accessible within the Lecture Scene (SC-003) via a toggle button, allowing users to open or close it as needed without leaving the current context.
 - The system shall allow navigation to completed topics by selecting them from the list, while preventing navigation to uncompleted topics to enforce sequential progress.
@@ -166,7 +165,7 @@ The Table of Contents shall be accessible within the Lecture Scene (SC-003) via 
 - The system shall indicate when a quiz is available and ready for a specific topic, using a clear visual cue (e.g., a badge or icon) to prompt user engagement.
 - The system shall distinguish completed topics from uncompleted topics by rendering the text of uncompleted topics in gray, while completed topics remain in a standard, readable color (e.g., black or theme default).
   
-#### Acceptance Criteria
+### Acceptance Criteria
 - The Table of Contents must present all topics in a vertically scrollable list, ensuring visibility of the entire subject structure, even for lengthy subjects.
 - The toggle button must be prominently placed within the Lecture Scene and, when clicked, smoothly open or close the Table of Contents in its own UI layer without obstructing the lecture content.
 - A horizontal sliding gesture (left-right) can also be used to open or close the Table of Contents section.
@@ -175,7 +174,7 @@ The Table of Contents shall be accessible within the Lecture Scene (SC-003) via 
 - Completed topics must appear in a standard, legible color (e.g., black), while uncompleted topics must be rendered in gray, with sufficient contrast to remain readable but clearly differentiated.
 - The system must refresh the Table of Contents state (progress, current topic, quiz availability) in real-time as the user interacts with the Lecture Scene.
   
-#### Rationale
+### Rationale
 The Table of Contents (FR-006) serves as a navigational and motivational tool within the Lecture Scene, enhancing user experience by providing structure, clarity, and feedback on progress. The following points justify its design and functionality:
 
 - **Comprehensive Topic Overview**:
@@ -195,7 +194,7 @@ The Table of Contents (FR-006) serves as a navigational and motivational tool wi
 **Requirement ID**: FR-007  
 
 **Scene ID**: TBD
-#### Descriptions:
+### Descriptions:
 - Users should be able to create a new subject from this scene, allowing them to add new learning modules or courses to their list.
 - Users can delete a subject, with a confirmation step to prevent accidental removal.
 - Users can choose a subject from this scene to access its associated content, such as lectures or quizzes.
@@ -209,7 +208,7 @@ The Table of Contents (FR-006) serves as a navigational and motivational tool wi
    - **Date last time accessed**: The most recent date the subject was opened (e.g., "2023-10-10").
    - **Total of chapters**: The total number of chapters or sections in the subject (e.g., "10 chapters").
 - Each subject should have a button at the very right where, when clicked, it will open up a list of options, including "Delete" and potentially other actions like "Rename" or "Archive."
-#### Acceptance Criteria:
+### Acceptance Criteria:
 - **Creating a Subject**:
    - A "Create New Subject" button must be visible and functional, allowing users to add a new subject.
 Upon creation, the users must be navigated to the **New subject creation page**.
@@ -236,7 +235,7 @@ Upon creation, the users must be navigated to the **New subject creation page**.
 - **Edge Cases**:
    - If no subjects exist, display a message like "No subjects available. Create one to begin."
    - Subjects with no progress (0%) or no access history ("Never accessed") must still display correctly.
-#### Rationale:
+### Rationale:
 The Subject Management Scene is a core feature for users to organize and interact with their educational content. Here’s why each component is included:
 
 - **Creating and Deleting Subjects**:
@@ -251,12 +250,12 @@ The Subject Management Scene is a core feature for users to organize and interac
    - Placing actionable options (like "Delete") in a right-side button keeps the interface clean while providing essential controls. This design balances functionality with simplicity.
 
   
-2. ### <a id="fr-008"></a>Subject Creation Scene
+2. ## <a id="fr-008"></a>Subject Creation Scene
 **Requirement ID**: FR-008  
 
 **Scene ID**: SC-005  
 
-#### Descriptions:
+### Descriptions:
    The Subject Creation Scene is a 3-step wizard designed to help users generate a customized curriculum for a new subject. The wizard takes user inputs and preferences to create a structured output in the following structured format:
 - **A title**:
    - This is a string that represents the name or identifier of the entire structure, such as curriculum or course.
@@ -309,7 +308,7 @@ Curriculum Title
          - Adds questions to a reinforcement system (e.g., for spaced repetition or review). (Default: False)
       - **Final Action**:
          - A **Generate** button is placed at the bottom of this step. When clicked, it triggers the creation of the full subject material based on all prior inputs and navigates the user to a loading screen while the content is prepared.
-#### How It All Ties Together
+### How It All Ties Together
    - **Step-by-Step Flow**:
       - The wizard progresses sequentially from Step 1 (defining the curriculum) to Step 2 (setting the tone) to Step 3 (adding features). Each step builds on the previous one, ensuring a cohesive and personalized subject-creation process.
    - **Navigation**:
@@ -319,7 +318,7 @@ Curriculum Title
    - **Output**:
       - Once the "Generate" button is clicked, the system compiles the curriculum, applies the chosen tone, and incorporates the selected add-ons, delivering a fully customized subject ready for use.
 
-#### Acceptance Criteria
+### Acceptance Criteria
 The Acceptance Criteria outline the specific conditions that must be met to ensure the Subject Creation Scene works as intended. These are broken down by the three steps of the process and include general requirements:
 
 #### Step 1: Create Base Curriculum
@@ -343,7 +342,7 @@ The Acceptance Criteria outline the specific conditions that must be met to ensu
       - A prominent "Generate" button must appear at the bottom of this step. When clicked, it must start the subject creation process and display a loading screen.
    - **Loading Screen**:
       - The loading screen must show a progress indicator or message to inform users that the subject is being generated.
-#### General
+### General
    - **Navigation**:
       - Users must be able to move between the three steps freely by scrolling vertically until the final "Generate" action is completed.
    - **Error Handling**:
@@ -351,7 +350,7 @@ The Acceptance Criteria outline the specific conditions that must be met to ensu
    - **Data Persistence**:
       - User inputs must be temporarily saved during the process, allowing users to go back and edit without losing their work.
 
-#### Rationale
+### Rationale
 The Rationale explains why these features are included and how they support the overall purpose of the Subject Creation Scene:
 
 - **Step-by-Step Wizard**:
@@ -373,7 +372,7 @@ The Rationale explains why these features are included and how they support the 
 **Requirement ID**: FR-009  
  
 **SC ID**: SC-006
-#### Descriptions:
+### Descriptions:
 The Daily Quiz Scene is a key feature designed to reinforce user learning through a structured, daily quiz activity. Here’s how it works:
 - **Activation**:
    -  The quiz activates every time the app is opened for the first time each day. If the daily reinforcement activity (i.e., the quiz) hasn’t been completed, it takes precedence over all other app features, ensuring users engage with it before proceeding.
@@ -407,7 +406,7 @@ The Daily Quiz Scene is a key feature designed to reinforce user learning throug
          - How the question is presented (multiple choice or free-text).
       - **Occurrence**:
          - The number of times a question must be answered correctly before advancing to the next level.
-#### Levels of Questions
+### Levels of Questions
 - **Level 1**:
    - **Difficulty**: Basic
    - **Frequency**: Every 1-2 days
@@ -432,7 +431,7 @@ The Daily Quiz Scene is a key feature designed to reinforce user learning throug
    - After completing Level 4 (7 correct answers), the question is marked as Mastered.
    - Mastered questions reappear every 20 days with a random difficulty level.
    - Users can disable the recurrence of mastered questions via the Question Management Scene.
-#### Workflow
+### Workflow
 - **Generation**:
    - When a user completes a topic, questions are created and added to the question pool at Level 1.
 - **Scheduling**:
@@ -443,7 +442,7 @@ The Daily Quiz Scene is a key feature designed to reinforce user learning throug
    - On the first app open of the day, if questions are due, the quiz is presented. Users must complete it to access other features unless skipped. If no questions are due, the quiz is skipped.
  
      
-#### Acceptance Criteria
+### Acceptance Criteria
 To ensure the Daily Quiz Scene meets its intended purpose, the following must be verified:
 - The quiz appears on the first app open of the day if the reinforcement activity hasn’t been completed and questions are due.
 - The quiz is skippable, but if skipped, a notification or indicator must appear on the homepage showing that a quiz is due for today.
@@ -454,7 +453,7 @@ To ensure the Daily Quiz Scene meets its intended purpose, the following must be
 - After 7 correct answers at a level, the question advances to the next level, with updated frequency and format.
 - Mastered questions (post-Level 4) appear every 20 days with random difficulty unless disabled by the user in the Question Management Scene.
 - If no questions are due, the quiz does not appear, and the app should navigate to the homepage immediately.
-#### Rationale
+### Rationale
 The Daily Quiz Scene uses a spaced repetition approach to reinforce learning, gradually increasing question difficulty and intervals as users demonstrate mastery. By presenting the quiz on the first daily app open with a skippable option, it encourages consistent engagement while offering flexibility. The two question formats cater to different learning styles—multiple choice for quick recall, free-text for deeper understanding. The level system and question pool provide a structured progression, while the option to disable mastered questions respects user preferences, making the feature both effective and adaptable.
 
 2. ## <a id="fr-010"></a>Optional Quiz
@@ -462,7 +461,7 @@ The Daily Quiz Scene uses a spaced repetition approach to reinforce learning, gr
 
 **Scene ID: TBD
 
-#### Descriptions
+### Descriptions
 
 The Optional Quiz is a user-initiated feature designed to provide additional practice without impacting the progress or attributes of questions in the main reinforcement system. Here’s how it functions:
 
@@ -482,13 +481,13 @@ The Optional Quiz is a user-initiated feature designed to provide additional pra
 - **Error Handling and Termination**:
    - **No Time Limit**: There is no timeout or time restriction for completing the quiz.
    - **App Termination**: If the app is closed or terminated while the quiz is in progress, no data is saved or affected. Upon reopening the app, it resumes normal operation, bypassing the quiz unless the user initiates it again.
-#### Workflow
+### Workflow
 1. Users manually start the Optional Quiz from an accessible point in the app (e.g., a button on the homepage or a menu).
 2. The system randomly selects 5 questions from the question pool, ignoring their current level or due status.
 3. Questions are presented one at a time, following the same layout as the Daily Quiz.
 4. After answering all 5 questions, the quiz ends, returning the user to normal app operation.
 5. If interrupted (e.g., app closure), the quiz resets upon the next app launch, with no record of the prior session.
-#### Acceptance Criteria
+### Acceptance Criteria
 To ensure the Optional Quiz meets its intended purpose, the following conditions must be verified:
 
 - The quiz presents exactly 5 questions per session when initiated.
@@ -502,7 +501,7 @@ To ensure the Optional Quiz meets its intended purpose, the following conditions
 - The quiz has no time limit; users can take as long as needed to answer each question.
 - If the app is terminated mid-quiz (e.g., closed or crashed), no quiz progress is saved, and reopening the app navigates to the homepage or normal operation without resuming the quiz.
 - The quiz is only accessible via user initiation (e.g., a button or menu option), not triggered automatically like the Daily Quiz.
-#### Rationale
+### Rationale
 The Optional Quiz provides a low-stakes, flexible practice option for users who want additional engagement without affecting their structured learning progress. Here’s why each aspect is included:
 
 - **Fixed Question Count (5)**: Limiting the quiz to 5 questions keeps it manageable and focused, encouraging casual use without overwhelming the user.
@@ -518,11 +517,11 @@ This feature enhances user autonomy and supports voluntary learning, complementi
 
 
      
-2. ### <a id="fr-007"></a>Personal Achievement Scene
+2. ## <a id="fr-007"></a>Personal Achievement Scene
 **Requirement ID**: FR-013 
 
 **Scene ID**: SC-002
-#### Description**:
+### Description**:
 The Personal Achievement Scene allows users to view and track their overall progress within the app. It serves as a motivational and analytical hub, presenting key statistics and insights about their learning journey. The system shall provide the following features:
 
 - **Progress Metrics**: The scene shall display the following user progress data:
@@ -544,12 +543,12 @@ The Personal Achievement Scene allows users to view and track their overall prog
   	- User shortcomings (e.g., areas with lower mastery or slower progress).
 	- User strengths (e.g., subjects or topics with high completion and accuracy).
 	- Example output: "You’ve completed 80% of Mathematics with strong accuracy in algebra but could improve in geometry, where only 50% of questions were answered correctly."
-#### Workflow
+### Workflow
 - Users access this scene to get a snapshot of their learning achievements.
 - The progress metrics and streaks update in real-time as the user interacts with subjects and quizzes.
 - The graph view and AI evaluation dynamically reflect the latest data, offering actionable insights.
   
-#### Acceptance Criteria
+### Acceptance Criteria
 To ensure the Personal Achievement Scene meets its intended purpose, the following must be verified:
 
 1. The scene displays accurate counts for:
@@ -569,7 +568,7 @@ To ensure the Personal Achievement Scene meets its intended purpose, the followi
 	- Updates whenever new progress data is available.
 6. All displayed data (metrics, streaks, graphs, AI text) must match the user’s actual activity in the app.
 7. The scene loads without delay and updates dynamically as the user progresses through subjects or quizzes.
-#### Rationale
+### Rationale
 The Personal Achievement Scene is designed to motivate users and provide actionable feedback on their learning journey. Here’s why each component is included: 
 
 - **Progress Metrics**: Displaying totals for subjects, questions, and study time gives users a clear, quantifiable sense of their efforts, fostering a sense of accomplishment and encouraging continued engagement.
@@ -582,11 +581,11 @@ This scene combines data-driven insights with motivational elements, making it a
 
   
 		
-8. ### <a id="fr-001"></a>Home Scene
+8. ## <a id="fr-001"></a>Home Scene
 **Requirement ID**: FR-001  
 
 **Scene ID**: SC-001
-#### Descriptions:
+### Descriptions:
 The Home Scene serves as the primary landing page when the app is freshly opened (i.e., a fresh startup, not reopened from a minimized state), unless the daily quiz has not been completed, in which case the Daily Quiz Scene (FR-006) takes priority. The scene is designed to provide quick access to key features and an overview of the user’s current activities. Here’s how it’s structured:
 
 - **Recent Lecture Section**: A prominent area displays the most recent lecture or study material the user was working on. It includes a "Resume" button, allowing users to pick up where they left off in their studies.
@@ -603,7 +602,7 @@ The Home Scene serves as the primary landing page when the app is freshly opened
 	- If no notifications are present, the bar collapses, and the remaining UI elements expand to fill the space; otherwise, it inserts itself at the top, pushing content downward.
 - **Quick Quiz Button**: A button is present to initiate the Optional Quiz (FR-010), navigating the user to its dedicated scene (SC-010) upon clicking.
 - **New Subject Button**: A button allows users to add a new subject, navigating to the Subject Creation Scene (FR-005, SC-005) when clicked.
-#### Workflow
+### Workflow
 - On a fresh app launch, if the daily quiz is incomplete, the user is directed to SC-006 first. Otherwise, SC-001 loads.
 - The scene prioritizes resuming recent activity and accessing subjects, with navigation options for deeper exploration or management.
 #### Acceptance Criteria
@@ -625,7 +624,7 @@ To ensure the Home Scene functions as intended, the following must be verified:
 - A "Quick Quiz" button is visible and, when clicked, navigates to the Optional Quiz Scene (SC-010).
 - A "New Subject" button is visible and, when clicked, navigates to the Subject Creation Scene (SC-005).
 - All elements load without delay and remain accessible regardless of notification bar state.
-#### Rationale
+### Rationale
 The Home Scene is the central hub of the app, designed to streamline user interaction and encourage continued learning. Here’s why each feature is included:
 
 - **Fresh Startup Priority**: Defaulting to the Home Scene (unless the daily quiz is due) ensures users have immediate access to their learning materials, while prioritizing the quiz maintains reinforcement consistency.
@@ -641,11 +640,11 @@ This scene balances immediate usability with long-term engagement, serving as an
 
 
 
-9. ### <a id="fr-011"></a>Question Management Scene
-- **Requirement ID**: FR-011
+9. ## <a id="fr-011"></a>Question Management Scene
+**Requirement ID**: FR-011 
      
-- **Scene ID**: SC-009
-#### Descriptions
+**Scene ID**: SC-009
+### Descriptions
 The Question Management Scene provides users with an interface to oversee and manage the question pool used in both the Daily Quiz Scene (FR-009) and the Optional Quiz (FR-010). This scene focuses on visibility and limited control over the questions, with the following features:
 
 - **View Question Pool**: Users can view all questions currently in the question pool, which includes questions generated from completed topics and used in daily and optional quizzes.
@@ -653,11 +652,11 @@ The Question Management Scene provides users with an interface to oversee and ma
 - **Question Statistics**: For each question, the system shall display detailed statistics, including:
 	- **Times Asked**: The total number of times the question has been presented to the user (across both daily and optional quizzes).
 	- **Times Correctly Answered**: The total number of times the user has answered the question correctly.
-#### Workflow
+### Workflow
 - Users navigate to this scene (e.g., via the navigation bar in the Home Scene) to review their question pool.
 - Questions are listed with their associated stats, and a delete option is available for each.
 - Deleting a question removes it permanently from the pool, affecting its availability in future quizzes.
-#### Acceptance Criteria
+### Acceptance Criteria
 To ensure the Question Management Scene meets its intended purpose, the following must be verified:
 
 - The scene displays a complete list of all questions in the question pool, sourced from both the Daily Quiz and Optional Quiz systems.
@@ -672,7 +671,7 @@ To ensure the Question Management Scene meets its intended purpose, the followin
 - The system does not provide options to manually add new questions or edit existing ones in this version.
 - Statistics for each question accurately reflect the user’s history (e.g., matching the number of times asked and answered correctly in past quizzes).
 - The scene loads without delay and updates the list immediately after a question is deleted.
-#### Rationale
+### Rationale
 The Question Management Scene empowers users with visibility and control over their learning reinforcement system, while keeping the initial implementation simple. Here’s why each feature is included:
 
 - **View Question Pool**: Displaying all questions gives users transparency into the content driving their quizzes, helping them understand what they’ve encountered and mastered.
@@ -682,11 +681,11 @@ The Question Management Scene empowers users with visibility and control over th
 This scene supports user autonomy by providing insight and control over the quiz system, enhancing the app’s personalization while aligning with a phased development approach.
 
      
-10. ### <a id="fr-012"></a>Setting Scene
+10. ## <a id="fr-012"></a>Setting Scene
 **Requirement ID**: FR-012 
 
 **Scene ID**: SC-010
-#### Descriptions
+### Descriptions
 The Setting Scene is where users can configure various aspects of their app experience. It serves as a centralized hub for personalization and account management. The scene operates as follows:
 
 - **Landing Scene**: Upon entering, users see a list of configurable settings. Clicking each item navigates to a dedicated sub-page for that setting.
@@ -730,10 +729,10 @@ The Setting Scene is where users can configure various aspects of their app expe
 	- Allows users to erase all app data for a fresh start, with a confirmation modal required before execution.
 - **Delete Account**:
 	- Permits users to terminate their account and delete all associated data, with a confirmation modal required before execution.
-#### Workflow
+### Workflow
 - Users access the scene via the navigation bar (e.g., from the Home Scene).
 - The list of settings acts as a menu, with sub-pages providing detailed configuration options or information.
-#### Acceptance Criteria
+### Acceptance Criteria
 To ensure the Setting Scene meets its intended purpose, the following must be verified:
 
 - The landing page displays a list of all settings (Account Information, Theme and Fonts, Keyboard, Notification, Data and Privacy, Subscription, Delete Data, Delete Account), each clickable to a sub-page.
@@ -760,7 +759,7 @@ To ensure the Setting Scene meets its intended purpose, the following must be ve
 	- Displays a button that, when clicked, prompts a confirmation modal (e.g., "Are you sure? This will delete your account and data").
 	- Upon confirmation, terminates the account and erases all data.
 - All sub-pages load without delay and save changes persistently.
-#### Rationale
+### Rationale
 The Setting Scene enhances user control and trust in the app by offering a range of personalization and management options. Here’s why each feature is included:
 
 - **Centralized Configuration**: A list-based landing page with sub-pages simplifies navigation, making settings easy to find and adjust.
@@ -776,11 +775,11 @@ This scene empowers users to tailor their experience while ensuring transparency
 
 
 ## Miscellaneous
-1. ### <a id="fr-014"></a>Subscription
+1. ## <a id="fr-014"></a>Subscription
 **Requirement ID**: FR-014 
 
 **Scene ID**: TBD
-#### Descriptions
+### Descriptions
 The Subscription feature governs access to premium functionalities within the app, balancing free trial access with paid subscription requirements. Here’s how it operates:
 
 - **Free Trial**: New users are offered a 7-day free trial upon first using the app, providing full access to all features. Each user is limited to a single free trial, tracked by their account or device identifier.
@@ -792,11 +791,11 @@ The Subscription feature governs access to premium functionalities within the ap
 	- **Unlimited Creation of Subjects**: No limit on the number of subjects users can create.
 	- **Publishing Sources to Book Marketplace**: Ability to distribute self-authored courses to the marketplace.
 	- **Verified User**: A badge or indicator marking the user as a verified subscriber, enhancing credibility (e.g., for course publishing).
-#### Workflow
+### Workflow
 - New users activate the trial upon app signup or first use.
 - During the trial, all features are available; a countdown or notification may remind users of the trial’s end.
 - Post-trial, non-subscribers face restricted access until they subscribe, with the subscription scene guiding them through the process and highlighting benefits.
-#### Acceptance Criteria
+### Acceptance Criteria
 To ensure the Subscription feature functions as intended, the following must be verified:
 
 - New users receive a 7-day free trial upon first app use, granting full access to all features.
@@ -813,7 +812,7 @@ To ensure the Subscription feature functions as intended, the following must be 
 - Subscribing removes all restrictions, enabling full access to listed perks.
 - The trial countdown (e.g., "3 days remaining") is visible during the trial period, ideally in the - Setting Scene or Home Scene notification bar.
 - Existing subscribers (post-trial or otherwise) see their current subscription status and perks without trial prompts.
-#### Rationale
+### Rationale
 The Subscription feature balances accessibility for new users with a sustainable model for ongoing app usage. Here’s why each aspect is included:
 
 - **7-Day Free Trial**: Offering a trial period attracts new users by allowing them to explore the app’s full potential risk-free, encouraging adoption while setting a clear expectation of future cost.
