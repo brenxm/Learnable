@@ -31,7 +31,7 @@
 | [FR-011](#fr-011)| Question Management | SC-009 |
 | [FR-012](#fr-012)| Setting Scene | SC-010|
 | [FR-013](#fr-013)| Personal Achievement Scene | SC-002|
-| [FR-014](#fr-014)| Subscription |
+| [FR-014](#fr-014)| Subscription | TBD |
 
 # Functional Requirements
 1. ## <a id="fr-003"></a>Lecture Scene
@@ -776,13 +776,51 @@ This scene empowers users to tailor their experience while ensuring transparency
 
 
 ## Miscellaneous
-1. ### <a id="fr-013"></a>Subscription
-   - **Requirement ID**: FR-013
-   - **Description**:
-      - New users should be offered with free 7 day trial access. Each user should only be granted one free trial
-      - Subscription is required for users to continue usage after free trial, meaning after trial period, this will block the users from continuing to use the entire service or parts/features that requires a subscrition.
-      - The display scene should display the perks of a pro subscriber
-      	- Chat assistant
-       	- Unlimited creation of subject
-        - Publishing sources to bookmarketplace
-        - Verified user
+1. ### <a id="fr-014"></a>Subscription
+**Requirement ID**: FR-014 
+
+**Scene ID**: TBD
+#### Descriptions
+The Subscription feature governs access to premium functionalities within the app, balancing free trial access with paid subscription requirements. Here’s how it operates:
+
+- **Free Trial**: New users are offered a 7-day free trial upon first using the app, providing full access to all features. Each user is limited to a single free trial, tracked by their account or device identifier.
+- **Post-Trial Restriction**: After the 7-day trial expires, users must subscribe to continue using the app. Without a subscription:
+	Access to the entire app or specific premium features is blocked.
+	The system prompts users to subscribe to regain access.
+- **Subscription Display Scene**: A dedicated scene (or section within an existing scene, e.g., Setting Scene) showcases the perks of a pro subscription, including:
+	- **Chat Assistant**: Full access to the assistive AI chat feature.
+	- **Unlimited Creation of Subjects**: No limit on the number of subjects users can create.
+	- **Publishing Sources to Book Marketplace**: Ability to distribute self-authored courses to the marketplace.
+	- **Verified User**: A badge or indicator marking the user as a verified subscriber, enhancing credibility (e.g., for course publishing).
+#### Workflow
+- New users activate the trial upon app signup or first use.
+- During the trial, all features are available; a countdown or notification may remind users of the trial’s end.
+- Post-trial, non-subscribers face restricted access until they subscribe, with the subscription scene guiding them through the process and highlighting benefits.
+#### Acceptance Criteria
+To ensure the Subscription feature functions as intended, the following must be verified:
+
+- New users receive a 7-day free trial upon first app use, granting full access to all features.
+- The system tracks trial usage, ensuring each user (via account or device ID) receives only one trial period.
+- After 7 days, non-subscribed users are blocked from:
+	- Using the entire app, or
+	- Accessing specific premium features (e.g., Chat Assistant, subject creation beyond a limit, marketplace publishing, verified status), depending on implementation.
+- A subscription prompt appears post-trial, preventing further use until a subscription is activated.
+- The subscription display scene lists all pro subscriber perks:
+	- "Chat Assistant" access.
+	- "Unlimited Creation of Subjects" with no cap.
+	- "Publishing Sources to Book Marketplace" functionality.
+- "Verified User" badge or indicator.
+- Subscribing removes all restrictions, enabling full access to listed perks.
+- The trial countdown (e.g., "3 days remaining") is visible during the trial period, ideally in the - Setting Scene or Home Scene notification bar.
+- Existing subscribers (post-trial or otherwise) see their current subscription status and perks without trial prompts.
+#### Rationale
+The Subscription feature balances accessibility for new users with a sustainable model for ongoing app usage. Here’s why each aspect is included:
+
+- **7-Day Free Trial**: Offering a trial period attracts new users by allowing them to explore the app’s full potential risk-free, encouraging adoption while setting a clear expectation of future cost.
+- **Single Trial Limit**: Restricting trials to one per user prevents abuse, ensuring fairness and protecting revenue potential.
+- **Post-Trial Restriction**: Blocking access after the trial incentivizes subscription while maintaining a clear distinction between free and paid tiers, aligning with a freemium model.
+- **Perks Display**: Highlighting benefits like Chat Assistant, unlimited subject creation, marketplace publishing, and verified status clarifies the value of subscribing, motivating users to upgrade for enhanced functionality and credibility.
+- **Feature-Specific Blocking**: Limiting premium features post-trial (if not the entire app) provides flexibility in design, allowing partial use to retain users while pushing for subscription.
+  
+This feature supports user onboarding and retention while establishing a clear monetization strategy, ensuring the app’s long-term viability and rewarding subscribers with meaningful enhancements.
+ 
