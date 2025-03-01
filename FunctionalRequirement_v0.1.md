@@ -19,15 +19,15 @@
 ## Table of contents
 |Requirement ID|Title|Scene ID|
 |:---|:---|:--- |
-| [FR-001](#fr-001) | Home Page | |
-| [FR-003](#fr-003) | Lecture Scene || 
-| [FR-004](#fr-004)| Engagement Question |
-| [FR-005](#fr-005)| Assistive AI Chat |
-| [FR-006](#fr-006)| Table of Contents |
-| [FR-007](#fr-007)| Subject Management |
-| [FR-008](#fr-008)| Subject Creation |
-| [FR-009](#fr-009)| Daily Quiz |
-| [FR-010](#fr-010)| Optional Quiz |
+| [FR-001](#fr-001) | Home Page | SC-001 |
+| [FR-003](#fr-003) | Lecture Scene | SC-003 | 
+| [FR-004](#fr-004)| Engagement Question | SC-003 |
+| [FR-005](#fr-005)| Assistive AI Chat | SC-003 |
+| [FR-006](#fr-006)| Table of Contents | SC-003|
+| [FR-007](#fr-007)| Subject Management | SC-001 |
+| [FR-008](#fr-008)| Subject Creation | SC-005 |
+| [FR-009](#fr-009)| Daily Quiz | |
+| [FR-010](#fr-010)| Optional Quiz | |
 | [FR-011](#fr-011)| Question Management | SC-009 |
 | [FR-012](#fr-012)| Setting Scene | SC-010|
 | [FR-013](#fr-013)| Personal Achievement Scene | SC-002|
