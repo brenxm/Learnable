@@ -26,7 +26,7 @@
 | [FR-006](#fr-006)| Table of Contents | SC-003|
 | [FR-007](#fr-007)| Subject Management | SC-001 |
 | [FR-008](#fr-008)| Subject Creation | SC-005 |
-| [FR-009](#fr-009)| Daily Quiz | |
+| [FR-009](#fr-009)| Daily Quiz | SC-004 |
 | [FR-010](#fr-010)| Optional Quiz | |
 | [FR-011](#fr-011)| Question Management | SC-009 |
 | [FR-012](#fr-012)| Setting Scene | SC-010|
