@@ -27,11 +27,11 @@
 | [FR-007](#fr-007)| Subject Management | SC-001 |
 | [FR-008](#fr-008)| Subject Creation | SC-005 |
 | [FR-009](#fr-009)| Daily Quiz | SC-004 |
-| [FR-010](#fr-010)| Optional Quiz | |
+| [FR-010](#fr-010)| Optional Quiz | SC-007|
 | [FR-011](#fr-011)| Question Management | SC-009 |
 | [FR-012](#fr-012)| Setting Scene | SC-010|
 | [FR-013](#fr-013)| Personal Achievement Scene | SC-002|
-| [FR-014](#fr-014)| Subscription | TBD |
+| [FR-014](#fr-014)| Subscription | SC-011 |
 
 # Functional Requirements
 1. ## <a id="fr-003"></a>Lecture Scene
