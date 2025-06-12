@@ -5,8 +5,8 @@
 ---------------------------------
 - **Harness AI to enable learning across virtually any subject.**
 - **Revolutionize education by replacing traditional classroom methods with innovative technology and AI-driven approaches.**
-- **Personalize the learning experience—tailoring content selection and delivery tone to maximize effectiveness.**
-- **Transform expert knowledge into structured lectures, empowering specialists to share insights and mentor others.**
+- **TODO: Maximize focus and engagement by actively asking the users with questions**
+- **TODO: Marketplace for generated lectures**
 
 **Core Functions of This App**
 ------------------------------
@@ -14,6 +14,7 @@
 - **Customize lectures fully with AI assistance, creating a personalized learning journey.**
 - **Share or monetize your lectures via the Lecture Shop, expanding access to a wider audience.**
 - **Reinforce learning with daily quizzes that apply spaced repetition, ensuring long-term retention of key topics.**
+- **TODO: Generation of flashcards**
 
 
 ## Table of contents
