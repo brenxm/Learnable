@@ -33,6 +33,7 @@
 | [FR-012](#fr-012)| Setting Scene | SC-010|
 | [FR-013](#fr-013)| Personal Achievement Scene | SC-002|
 | [FR-014](#fr-014)| Subscription | SC-011 |
+| [FR-015](#fr-015)| Flashcard | SC-012 |
 
 # Functional Requirements
 1. ## <a id="fr-003"></a>Lecture Scene
