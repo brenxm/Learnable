@@ -8,7 +8,7 @@
 
 
 # TODO For prototype:
-## Preparation (Deadline 07/07/2025)
+## Brainstorming (Deadline 07/07/2025)
 1. Provide Examples and Cases for flashcards
 2. Come up with Pedagogical method for delivering the material
 3. Revisit Question scene
