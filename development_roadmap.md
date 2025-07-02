@@ -11,7 +11,9 @@
 ## Brainstorming (Deadline 07/07/2025)
 1. Provide Examples and Cases for flashcards
 2. Come up with Pedagogical method for delivering the material
-3. Revisit Question scene
+3. Revisit Question scene & repition algorithm 
+4. Base UI/UX flowchart
+
 
 ## Production of Prompts (Deadline 07/14/2025)
 1. Generating lecture outline (TOC)
@@ -19,7 +21,12 @@
 3. Generating flashcard scene
 4. Generating Question scene
 
+
 ## Asset prepration & production (Deadline 07/21/2025)
+1.
+2.
+
 
 ## IOS UI Implementation (Deadline 07/28/2025)
-
+1.
+2.
