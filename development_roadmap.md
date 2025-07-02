@@ -11,7 +11,7 @@
 ## Brainstorming (Deadline 07/07/2025)
 1. Provide Examples and Cases for flashcards
 2. Come up with Pedagogical method for delivering the material
-3. Revisit Question scene & repition algorithm 
+3. Revisit Question scene & come up with the space repitition algorithm
 4. Base UI/UX flowchart
 
 
