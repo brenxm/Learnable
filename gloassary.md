@@ -1,0 +1,1 @@
+Key points - A set of information that has title, category, question, and answer. Used for flashcard scene and questionaire scene. Generated dynamically when user completed a topic in the Lecture Scene
