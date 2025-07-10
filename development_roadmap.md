@@ -10,16 +10,17 @@
 # TODO For prototype:
 ## Brainstorming (Deadline 07/07/2025)
 1. Provide Examples and Cases for flashcards
-2. Come up with Pedagogical method for delivering the material
+2. Come up with Pedagogical method for delivering the subject material in Lecture Scene
 3. Revisit Question scene & come up with the space repitition algorithm
 4. Base UI/UX flowchart
 
 
 ## Production of Prompts (Deadline 07/14/2025)
-1. Generating lecture outline (TOC)
-2. Generating delivery method
-3. Generating flashcard scene
-4. Generating Question scene
+1. Study prompt engineering (google, perflexity, antropic, OpenAI, claude)
+2. Generating lecture outline (TOC)
+3. Generating delivery method
+4. Generating flashcard scene
+5. Generating Question scene
 
 
 ## Asset prepration & production (Deadline 07/21/2025)
